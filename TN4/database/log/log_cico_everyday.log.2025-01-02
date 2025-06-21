@@ -1,0 +1,801 @@
+2025-01-02 08:12:20,547 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv3 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 08:12:20,549 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv3', 'status': 'start'}
+2025-01-02 08:12:20,551 - ERROR - [in /home/erpfarm/workspace/farm-iot/app.py:802] Lỗi khi xử lý dữ liệu với idchip PLC_LOGO_1: Expecting value: line 1 column 1 (char 0)
+2025-01-02 08:12:25,547 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv3 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 08:12:25,548 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv3', 'status': 'start'}
+2025-01-02 08:12:25,549 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv3: {'mac_address': 'GF_TN4_CAMERA1', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'on', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 08:12:55,605 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 08:13:02,547 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv5 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 08:13:02,547 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv5', 'status': 'start'}
+2025-01-02 08:13:03,546 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv6 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 08:13:03,547 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv6', 'status': 'start'}
+2025-01-02 08:13:03,939 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 08:13:03,940 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA1', 'action_name': 'start', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 200
+2025-01-02 08:13:03,940 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv5: {'mac_address': 'GF_TN4_CAMERA5', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '30', 'status': 'on', 'previous_status': 'off', 'previous_timer': '30'}
+2025-01-02 08:13:07,547 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv5 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 08:13:07,547 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv5', 'status': 'start'}
+2025-01-02 08:13:08,546 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv6 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 08:13:08,546 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv6', 'status': 'start'}
+2025-01-02 08:13:33,999 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 08:13:36,899 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 08:13:36,899 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA5', 'action_name': 'start', 'timer': '30'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 200
+2025-01-02 08:13:36,899 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv6: {'mac_address': 'GF_TN4_CAMERA6', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '30', 'status': 'on', 'previous_status': 'on', 'previous_timer': '30'}
+2025-01-02 08:14:06,954 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 08:14:09,408 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 08:14:09,408 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA6', 'action_name': 'start', 'timer': '30'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 200
+2025-01-02 08:14:09,408 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv5: {'mac_address': 'GF_TN4_CAMERA5', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '30', 'status': 'on', 'previous_status': 'on', 'previous_timer': '30'}
+2025-01-02 08:14:39,461 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 08:14:39,481 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 08:14:39,481 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA5', 'action_name': 'start', 'timer': '30'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 202
+2025-01-02 08:14:39,481 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv6: {'mac_address': 'GF_TN4_CAMERA6', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '30', 'status': 'on', 'previous_status': 'on', 'previous_timer': '30'}
+2025-01-02 08:15:09,536 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 08:15:09,557 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 08:15:09,557 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA6', 'action_name': 'start', 'timer': '30'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 202
+2025-01-02 08:43:02,530 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv5 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 08:43:02,531 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv5: {'mac_address': 'GF_TN4_CAMERA5', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '30', 'status': 'on', 'previous_status': 'on', 'previous_timer': '30'}
+2025-01-02 08:43:02,530 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv5', 'status': 'end'}
+2025-01-02 08:43:03,530 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv6 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 08:43:03,531 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv6', 'status': 'end'}
+2025-01-02 08:43:03,531 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv9 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 08:43:03,531 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv9', 'status': 'start'}
+2025-01-02 08:43:07,530 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv5 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 08:43:07,532 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv5', 'status': 'end'}
+2025-01-02 08:43:07,532 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv9 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 08:43:07,532 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv9', 'status': 'start'}
+2025-01-02 08:43:08,529 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv6 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 08:43:08,529 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv6', 'status': 'end'}
+2025-01-02 08:43:10,530 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv9 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 08:43:10,530 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv9', 'status': 'end'}
+2025-01-02 08:43:14,530 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv9 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 08:43:14,530 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv9', 'status': 'end'}
+2025-01-02 08:43:32,586 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 08:43:36,619 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 08:43:36,619 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA5', 'action_name': 'end', 'timer': '30'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 200
+2025-01-02 08:43:36,620 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv6: {'mac_address': 'GF_TN4_CAMERA6', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '30', 'status': 'off', 'previous_status': 'off', 'previous_timer': '30'}
+2025-01-02 08:44:06,676 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 08:44:09,500 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 08:44:09,500 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA6', 'action_name': 'end', 'timer': '30'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 200
+2025-01-02 08:44:09,501 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv9: {'mac_address': 'GF_TN4_CAMERA9', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 08:44:39,555 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 08:44:39,579 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 08:44:39,579 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA9', 'action_name': 'start', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 101
+2025-01-02 08:44:39,580 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv5: {'mac_address': 'GF_TN4_CAMERA5', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '30', 'status': 'off', 'previous_status': 'off', 'previous_timer': '30'}
+2025-01-02 08:45:09,634 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 08:45:09,653 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 08:45:09,653 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA5', 'action_name': 'end', 'timer': '30'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 201
+2025-01-02 08:45:09,654 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv9: {'mac_address': 'GF_TN4_CAMERA9', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 08:45:39,711 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 08:45:39,729 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 08:45:39,729 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA9', 'action_name': 'start', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 101
+2025-01-02 08:45:39,729 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv6: {'mac_address': 'GF_TN4_CAMERA6', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '30', 'status': 'off', 'previous_status': 'off', 'previous_timer': '30'}
+2025-01-02 08:46:09,785 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 08:46:09,810 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 08:46:09,810 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA6', 'action_name': 'end', 'timer': '30'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 201
+2025-01-02 08:46:09,811 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv9: {'mac_address': 'GF_TN4_CAMERA9', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 08:46:39,867 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 08:46:39,886 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 08:46:39,886 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA9', 'action_name': 'end', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 101
+2025-01-02 08:46:39,887 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv9: {'mac_address': 'GF_TN4_CAMERA9', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 08:47:09,941 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 08:47:09,961 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 08:47:09,961 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA9', 'action_name': 'end', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 101
+2025-01-02 09:42:20,501 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv3 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 09:42:20,502 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv3: {'mac_address': 'GF_TN4_CAMERA1', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'on', 'previous_status': 'on', 'previous_timer': '87'}
+2025-01-02 09:42:20,502 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv3', 'status': 'end'}
+2025-01-02 09:42:21,501 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv9 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 09:42:21,501 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv9', 'status': 'start'}
+2025-01-02 09:42:25,501 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv3 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 09:42:25,502 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv3', 'status': 'end'}
+2025-01-02 09:42:25,504 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv9 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 09:42:25,504 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv9', 'status': 'start'}
+2025-01-02 09:42:28,501 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv9 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 09:42:28,501 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv9', 'status': 'end'}
+2025-01-02 09:42:32,502 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv9 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 09:42:32,504 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv9', 'status': 'end'}
+2025-01-02 09:42:50,560 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 09:42:54,829 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 09:42:54,829 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA1', 'action_name': 'end', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 200
+2025-01-02 09:42:54,830 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv9: {'mac_address': 'GF_TN4_CAMERA9', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 09:43:24,886 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 09:43:24,916 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 09:43:24,916 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA9', 'action_name': 'start', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 101
+2025-01-02 09:43:24,917 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv3: {'mac_address': 'GF_TN4_CAMERA1', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 09:43:54,972 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 09:43:54,995 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 09:43:54,995 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA1', 'action_name': 'end', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 201
+2025-01-02 09:43:54,996 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv9: {'mac_address': 'GF_TN4_CAMERA9', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 09:44:25,051 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 09:44:25,070 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 09:44:25,070 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA9', 'action_name': 'start', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 101
+2025-01-02 09:44:25,071 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv9: {'mac_address': 'GF_TN4_CAMERA9', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 09:44:55,128 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 09:44:55,146 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 09:44:55,146 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA9', 'action_name': 'end', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 101
+2025-01-02 09:44:55,147 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv9: {'mac_address': 'GF_TN4_CAMERA9', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 09:45:25,205 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 09:45:25,225 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 09:45:25,226 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA9', 'action_name': 'end', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 101
+2025-01-02 10:03:40,179 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv2 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 10:03:40,179 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'ESP32', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv2', 'status': 'start'}
+2025-01-02 10:03:40,180 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv2 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 10:03:40,180 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'ESP32', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv2', 'status': 'start'}
+2025-01-02 10:03:40,181 - ERROR - [in /home/erpfarm/workspace/farm-iot/app.py:802] Lỗi khi xử lý dữ liệu với idchip ESP32: Expecting value: line 1 column 1 (char 0)
+2025-01-02 10:03:40,182 - ERROR - [in /home/erpfarm/workspace/farm-iot/app.py:802] Lỗi khi xử lý dữ liệu với idchip ESP32: Expecting value: line 1 column 1 (char 0)
+2025-01-02 11:33:32,806 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv2 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 11:33:32,807 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv2: {'mac_address': 'GF_TN4_2_CAMERA3', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '86', 'status': 'on', 'previous_status': 'on', 'previous_timer': '86'}
+2025-01-02 11:33:32,807 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'ESP32', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv2', 'status': 'end'}
+2025-01-02 11:33:33,817 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv2 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 11:33:33,817 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'ESP32', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv2', 'status': 'end'}
+2025-01-02 11:34:02,863 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 11:34:04,328 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid ESP32 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 11:34:04,329 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_2_CAMERA3', 'action_name': 'end', 'timer': '86'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 201
+2025-01-02 11:34:04,329 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv2: {'mac_address': 'GF_TN4_2_CAMERA3', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '86', 'status': 'off', 'previous_status': 'off', 'previous_timer': '86'}
+2025-01-02 11:34:34,385 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 11:34:34,421 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid ESP32 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 11:34:34,421 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_2_CAMERA3', 'action_name': 'end', 'timer': '86'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 201
+2025-01-02 14:17:17,374 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv7 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 14:17:17,374 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv7: {'mac_address': 'GF_TN4_CAMERA2', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '27', 'status': 'off', 'previous_status': 'off', 'previous_timer': '27'}
+2025-01-02 14:17:17,374 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv7', 'status': 'start'}
+2025-01-02 14:17:23,372 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv7 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 14:17:23,373 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv7', 'status': 'start'}
+2025-01-02 14:17:41,372 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv9 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 14:17:41,372 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv9', 'status': 'start'}
+2025-01-02 14:17:47,372 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv9 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 14:17:47,373 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv9', 'status': 'start'}
+2025-01-02 14:17:47,431 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 14:17:51,479 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 14:17:51,479 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA2', 'action_name': 'start', 'timer': '27'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 200
+2025-01-02 14:17:51,479 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv7: {'mac_address': 'GF_TN4_CAMERA2', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '27', 'status': 'on', 'previous_status': 'on', 'previous_timer': '27'}
+2025-01-02 14:18:21,536 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 14:18:21,566 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 14:18:21,566 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA2', 'action_name': 'start', 'timer': '27'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 202
+2025-01-02 14:18:21,566 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv9: {'mac_address': 'GF_TN4_CAMERA9', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'on', 'previous_status': 'on', 'previous_timer': '87'}
+2025-01-02 14:18:45,373 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv9 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 14:18:45,373 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv9', 'status': 'end'}
+2025-01-02 14:18:50,372 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv9 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 14:18:50,373 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv9', 'status': 'end'}
+2025-01-02 14:18:51,621 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 14:18:51,645 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 14:18:51,645 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA9', 'action_name': 'start', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 101
+2025-01-02 14:18:51,646 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv9: {'mac_address': 'GF_TN4_CAMERA9', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 14:19:21,701 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 14:19:21,721 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 14:19:21,721 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA9', 'action_name': 'start', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 101
+2025-01-02 14:19:21,722 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv9: {'mac_address': 'GF_TN4_CAMERA9', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 14:19:51,775 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 14:19:51,796 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 14:19:51,796 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA9', 'action_name': 'end', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 101
+2025-01-02 14:19:51,797 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv9: {'mac_address': 'GF_TN4_CAMERA9', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 14:20:21,851 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 14:20:21,869 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 14:20:21,870 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA9', 'action_name': 'end', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 101
+2025-01-02 14:47:17,359 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv7 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 14:47:17,360 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv7', 'status': 'end'}
+2025-01-02 14:47:17,361 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv7: {'mac_address': 'GF_TN4_CAMERA2', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '27', 'status': 'off', 'previous_status': 'on', 'previous_timer': '27'}
+2025-01-02 14:47:18,359 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv9 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 14:47:18,359 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv9', 'status': 'start'}
+2025-01-02 14:47:22,360 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv9 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 14:47:22,360 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv9', 'status': 'start'}
+2025-01-02 14:47:23,359 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv7 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 14:47:23,359 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv7', 'status': 'end'}
+2025-01-02 14:47:25,358 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv9 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 14:47:25,358 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv9', 'status': 'end'}
+2025-01-02 14:47:29,359 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv9 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 14:47:29,359 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv9', 'status': 'end'}
+2025-01-02 14:47:47,418 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 14:47:51,602 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 14:47:51,602 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA2', 'action_name': 'end', 'timer': '27'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 200
+2025-01-02 14:47:51,603 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv9: {'mac_address': 'GF_TN4_CAMERA9', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 14:48:21,657 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 14:48:21,688 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 14:48:21,689 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA9', 'action_name': 'start', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 101
+2025-01-02 14:48:21,689 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv9: {'mac_address': 'GF_TN4_CAMERA9', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 14:48:51,748 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 14:48:51,769 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 14:48:51,769 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA9', 'action_name': 'start', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 101
+2025-01-02 14:48:51,770 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv7: {'mac_address': 'GF_TN4_CAMERA2', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '27', 'status': 'off', 'previous_status': 'off', 'previous_timer': '27'}
+2025-01-02 14:49:21,828 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 14:49:21,853 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 14:49:21,853 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA2', 'action_name': 'end', 'timer': '27'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 201
+2025-01-02 14:49:21,854 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv9: {'mac_address': 'GF_TN4_CAMERA9', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 14:49:51,911 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 14:49:51,932 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 14:49:51,932 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA9', 'action_name': 'end', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 101
+2025-01-02 14:49:51,933 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv9: {'mac_address': 'GF_TN4_CAMERA9', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 14:50:21,988 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 14:50:22,008 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 14:50:22,008 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA9', 'action_name': 'end', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 101
+2025-01-02 15:35:53,336 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv3 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 15:35:53,339 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv3: {'mac_address': 'GF_TN4_CAMERA1', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 15:35:53,338 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv3', 'status': 'start'}
+2025-01-02 15:35:58,336 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv3 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 15:35:58,338 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv3', 'status': 'start'}
+2025-01-02 15:36:23,409 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 15:36:27,326 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 15:36:27,326 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA1', 'action_name': 'start', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 200
+2025-01-02 15:36:27,327 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv3: {'mac_address': 'GF_TN4_CAMERA1', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'on', 'previous_status': 'on', 'previous_timer': '87'}
+2025-01-02 15:36:57,382 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 15:36:57,412 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 15:36:57,412 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA1', 'action_name': 'start', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 202
+2025-01-02 15:49:38,330 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv5 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 15:49:38,332 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv5', 'status': 'start'}
+2025-01-02 15:49:38,333 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv5: {'mac_address': 'GF_TN4_CAMERA5', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '30', 'status': 'off', 'previous_status': 'off', 'previous_timer': '30'}
+2025-01-02 15:49:39,329 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv6 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 15:49:39,329 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv6', 'status': 'start'}
+2025-01-02 15:49:43,330 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv5 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 15:49:43,330 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv5', 'status': 'start'}
+2025-01-02 15:49:44,330 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv6 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 15:49:44,330 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv6', 'status': 'start'}
+2025-01-02 15:50:08,388 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 15:50:10,870 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 15:50:10,871 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA5', 'action_name': 'start', 'timer': '30'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 200
+2025-01-02 15:50:10,871 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv6: {'mac_address': 'GF_TN4_CAMERA6', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '30', 'status': 'on', 'previous_status': 'on', 'previous_timer': '30'}
+2025-01-02 15:50:40,943 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 15:50:43,768 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 15:50:43,768 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA6', 'action_name': 'start', 'timer': '30'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 200
+2025-01-02 15:50:43,769 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv5: {'mac_address': 'GF_TN4_CAMERA5', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '30', 'status': 'on', 'previous_status': 'on', 'previous_timer': '30'}
+2025-01-02 15:51:00,393 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv-3 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 15:51:00,393 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'ESP32', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv-3', 'status': 'start'}
+2025-01-02 15:51:01,430 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv-3 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 15:51:01,430 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'ESP32', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv-3', 'status': 'start'}
+2025-01-02 15:51:13,858 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 15:51:13,879 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 15:51:13,879 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA5', 'action_name': 'start', 'timer': '30'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 202
+2025-01-02 15:51:13,880 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv6: {'mac_address': 'GF_TN4_CAMERA6', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '30', 'status': 'on', 'previous_status': 'on', 'previous_timer': '30'}
+2025-01-02 15:51:43,969 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 15:51:43,988 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 15:51:43,988 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA6', 'action_name': 'start', 'timer': '30'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 202
+2025-01-02 15:51:43,989 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv-3: {'mac_address': 'GF_TN4_2_CAMERA2', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '57', 'status': 'on', 'previous_status': 'on', 'previous_timer': '57'}
+2025-01-02 15:52:14,057 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 15:52:16,934 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid ESP32 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 15:52:16,934 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_2_CAMERA2', 'action_name': 'start', 'timer': '57'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 200
+2025-01-02 15:52:16,935 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv-3: {'mac_address': 'GF_TN4_2_CAMERA2', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '57', 'status': 'on', 'previous_status': 'on', 'previous_timer': '57'}
+2025-01-02 15:52:47,005 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 15:52:47,023 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid ESP32 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 15:52:47,024 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_2_CAMERA2', 'action_name': 'start', 'timer': '57'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 202
+2025-01-02 16:19:38,316 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv5 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 16:19:38,317 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv5: {'mac_address': 'GF_TN4_CAMERA5', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '30', 'status': 'on', 'previous_status': 'on', 'previous_timer': '30'}
+2025-01-02 16:19:38,317 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv5', 'status': 'end'}
+2025-01-02 16:19:39,316 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv6 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 16:19:39,317 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv6', 'status': 'end'}
+2025-01-02 16:19:39,317 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv9 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 16:19:39,317 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv9', 'status': 'start'}
+2025-01-02 16:19:43,317 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv5 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 16:19:43,317 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv5', 'status': 'end'}
+2025-01-02 16:19:43,317 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv9 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 16:19:43,317 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv9', 'status': 'start'}
+2025-01-02 16:19:44,316 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv6 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 16:19:44,317 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv6', 'status': 'end'}
+2025-01-02 16:19:46,316 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv9 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 16:19:46,317 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv9', 'status': 'end'}
+2025-01-02 16:19:50,317 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv9 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 16:19:50,317 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv9', 'status': 'end'}
+2025-01-02 16:20:08,380 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 16:20:12,783 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 16:20:12,783 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA5', 'action_name': 'end', 'timer': '30'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 200
+2025-01-02 16:20:12,784 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv6: {'mac_address': 'GF_TN4_CAMERA6', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '30', 'status': 'off', 'previous_status': 'off', 'previous_timer': '30'}
+2025-01-02 16:20:42,850 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 16:20:45,298 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 16:20:45,298 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA6', 'action_name': 'end', 'timer': '30'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 200
+2025-01-02 16:20:45,301 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv9: {'mac_address': 'GF_TN4_CAMERA9', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 16:21:15,371 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 16:21:15,391 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 16:21:15,391 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA9', 'action_name': 'start', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 101
+2025-01-02 16:21:15,392 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv5: {'mac_address': 'GF_TN4_CAMERA5', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '30', 'status': 'off', 'previous_status': 'off', 'previous_timer': '30'}
+2025-01-02 16:21:45,457 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 16:21:45,477 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 16:21:45,477 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA5', 'action_name': 'end', 'timer': '30'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 201
+2025-01-02 16:21:45,478 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv9: {'mac_address': 'GF_TN4_CAMERA9', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 16:22:15,547 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 16:22:15,567 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 16:22:15,567 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA9', 'action_name': 'start', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 101
+2025-01-02 16:22:15,569 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv6: {'mac_address': 'GF_TN4_CAMERA6', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '30', 'status': 'off', 'previous_status': 'off', 'previous_timer': '30'}
+2025-01-02 16:22:45,634 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 16:22:45,653 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 16:22:45,654 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA6', 'action_name': 'end', 'timer': '30'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 201
+2025-01-02 16:22:45,655 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv9: {'mac_address': 'GF_TN4_CAMERA9', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 16:23:15,719 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 16:23:15,736 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 16:23:15,736 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA9', 'action_name': 'end', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 101
+2025-01-02 16:23:15,736 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv9: {'mac_address': 'GF_TN4_CAMERA9', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 16:23:45,800 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 16:23:45,817 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 16:23:45,818 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA9', 'action_name': 'end', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 101
+2025-01-02 16:36:34,309 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv4 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 16:36:34,311 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv4: {'mac_address': 'GF_TN4_CAMERA3', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '30'}
+2025-01-02 16:36:34,310 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv4', 'status': 'start'}
+2025-01-02 16:36:39,309 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv4 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 16:36:39,311 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv4', 'status': 'start'}
+2025-01-02 16:36:48,309 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv5 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 16:36:48,310 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv5', 'status': 'start'}
+2025-01-02 16:36:49,309 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv6 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 16:36:49,310 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv6', 'status': 'start'}
+2025-01-02 16:36:53,309 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv5 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 16:36:53,309 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv5', 'status': 'start'}
+2025-01-02 16:36:54,309 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv6 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 16:36:54,310 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv6', 'status': 'start'}
+2025-01-02 16:37:04,372 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 16:37:06,852 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 16:37:06,852 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA3', 'action_name': 'start', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 200
+2025-01-02 16:37:06,853 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv4: {'mac_address': 'GF_TN4_CAMERA3', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'on', 'previous_status': 'on', 'previous_timer': '30'}
+2025-01-02 16:37:36,910 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 16:37:36,928 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 16:37:36,928 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA3', 'action_name': 'start', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 202
+2025-01-02 16:37:36,929 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv5: {'mac_address': 'GF_TN4_CAMERA5', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '30', 'status': 'on', 'previous_status': 'on', 'previous_timer': '30'}
+2025-01-02 16:38:06,993 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 16:38:10,478 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 16:38:10,478 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA5', 'action_name': 'start', 'timer': '30'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 200
+2025-01-02 16:38:10,479 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv6: {'mac_address': 'GF_TN4_CAMERA6', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '30', 'status': 'on', 'previous_status': 'on', 'previous_timer': '30'}
+2025-01-02 16:38:40,550 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 16:38:43,292 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 16:38:43,292 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA6', 'action_name': 'start', 'timer': '30'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 200
+2025-01-02 16:38:43,293 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv5: {'mac_address': 'GF_TN4_CAMERA5', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '30', 'status': 'on', 'previous_status': 'on', 'previous_timer': '30'}
+2025-01-02 16:38:45,231 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv-3 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 16:38:45,232 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'ESP32', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv-3', 'status': 'end'}
+2025-01-02 16:38:46,244 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv-3 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 16:38:46,244 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'ESP32', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv-3', 'status': 'end'}
+2025-01-02 16:38:54,340 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv-3 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 16:38:54,340 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'ESP32', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv-3', 'status': 'start'}
+2025-01-02 16:38:55,351 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv-3 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 16:38:55,353 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'ESP32', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv-3', 'status': 'start'}
+2025-01-02 16:39:13,362 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 16:39:13,383 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 16:39:13,383 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA5', 'action_name': 'start', 'timer': '30'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 202
+2025-01-02 16:39:13,384 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv6: {'mac_address': 'GF_TN4_CAMERA6', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '30', 'status': 'on', 'previous_status': 'on', 'previous_timer': '30'}
+2025-01-02 16:39:43,447 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 16:39:43,463 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 16:39:43,464 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA6', 'action_name': 'start', 'timer': '30'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 202
+2025-01-02 16:39:43,464 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv-3: {'mac_address': 'GF_TN4_2_CAMERA2', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '57', 'status': 'on', 'previous_status': 'on', 'previous_timer': '57'}
+2025-01-02 16:40:13,533 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 16:40:15,833 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid ESP32 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 16:40:15,833 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_2_CAMERA2', 'action_name': 'end', 'timer': '57'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 200
+2025-01-02 16:40:15,834 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv-3: {'mac_address': 'GF_TN4_2_CAMERA2', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '57', 'status': 'on', 'previous_status': 'on', 'previous_timer': '57'}
+2025-01-02 16:40:45,896 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 16:40:45,913 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid ESP32 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 16:40:45,913 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_2_CAMERA2', 'action_name': 'end', 'timer': '57'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 201
+2025-01-02 16:40:45,914 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv-3: {'mac_address': 'GF_TN4_2_CAMERA2', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '57', 'status': 'on', 'previous_status': 'on', 'previous_timer': '57'}
+2025-01-02 16:41:15,979 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 16:41:18,586 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid ESP32 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 16:41:18,586 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_2_CAMERA2', 'action_name': 'start', 'timer': '57'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 200
+2025-01-02 16:41:18,587 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv-3: {'mac_address': 'GF_TN4_2_CAMERA2', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '57', 'status': 'on', 'previous_status': 'on', 'previous_timer': '57'}
+2025-01-02 16:41:48,646 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 16:41:48,662 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid ESP32 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 16:41:48,663 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_2_CAMERA2', 'action_name': 'start', 'timer': '57'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 202
+2025-01-02 16:56:15,657 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv2 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 16:56:15,658 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv2: {'mac_address': 'GF_TN4_2_CAMERA3', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '86', 'status': 'off', 'previous_status': 'off', 'previous_timer': '86'}
+2025-01-02 16:56:15,657 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'ESP32', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv2', 'status': 'start'}
+2025-01-02 16:56:16,671 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv2 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 16:56:16,671 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'ESP32', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv2', 'status': 'start'}
+2025-01-02 16:56:45,722 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 16:56:48,540 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid ESP32 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 16:56:48,540 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_2_CAMERA3', 'action_name': 'start', 'timer': '86'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 200
+2025-01-02 16:56:48,541 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv2: {'mac_address': 'GF_TN4_2_CAMERA3', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '86', 'status': 'on', 'previous_status': 'on', 'previous_timer': '86'}
+2025-01-02 16:57:18,601 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 16:57:18,620 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid ESP32 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 16:57:18,620 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_2_CAMERA3', 'action_name': 'start', 'timer': '86'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 202
+2025-01-02 17:05:53,297 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv3 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 17:05:53,298 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv3: {'mac_address': 'GF_TN4_CAMERA1', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'on', 'previous_status': 'on', 'previous_timer': '87'}
+2025-01-02 17:05:53,297 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv3', 'status': 'end'}
+2025-01-02 17:05:54,298 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv9 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 17:05:54,298 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv9', 'status': 'start'}
+2025-01-02 17:05:58,297 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv3 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 17:05:58,300 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv3', 'status': 'end'}
+2025-01-02 17:05:58,301 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv9 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 17:05:58,301 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv9', 'status': 'start'}
+2025-01-02 17:06:01,297 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv9 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 17:06:01,298 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv9', 'status': 'end'}
+2025-01-02 17:06:05,297 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv9 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 17:06:05,299 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv9', 'status': 'end'}
+2025-01-02 17:06:23,366 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 17:06:26,435 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 17:06:26,435 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA1', 'action_name': 'end', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 200
+2025-01-02 17:06:26,436 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv9: {'mac_address': 'GF_TN4_CAMERA9', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 17:06:48,298 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv5 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 17:06:48,299 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv5', 'status': 'end'}
+2025-01-02 17:06:49,298 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv6 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 17:06:49,298 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv6', 'status': 'end'}
+2025-01-02 17:06:49,299 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv9 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 17:06:49,299 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv9', 'status': 'start'}
+2025-01-02 17:06:53,305 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv5 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 17:06:53,306 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv5', 'status': 'end'}
+2025-01-02 17:06:53,306 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv9 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 17:06:53,306 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv9', 'status': 'start'}
+2025-01-02 17:06:54,297 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv6 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 17:06:54,298 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv6', 'status': 'end'}
+2025-01-02 17:06:56,298 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv9 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 17:06:56,298 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv9', 'status': 'end'}
+2025-01-02 17:06:56,502 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 17:06:56,531 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 17:06:56,531 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA9', 'action_name': 'start', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 101
+2025-01-02 17:06:56,532 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv3: {'mac_address': 'GF_TN4_CAMERA1', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 17:07:00,298 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv9 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 17:07:00,298 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv9', 'status': 'end'}
+2025-01-02 17:07:26,601 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 17:07:26,623 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 17:07:26,623 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA1', 'action_name': 'end', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 201
+2025-01-02 17:07:26,624 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv9: {'mac_address': 'GF_TN4_CAMERA9', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 17:07:56,690 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 17:07:56,706 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 17:07:56,706 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA9', 'action_name': 'start', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 101
+2025-01-02 17:07:56,706 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv9: {'mac_address': 'GF_TN4_CAMERA9', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 17:08:26,768 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 17:08:26,784 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 17:08:26,784 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA9', 'action_name': 'end', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 101
+2025-01-02 17:08:26,784 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv9: {'mac_address': 'GF_TN4_CAMERA9', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 17:08:56,846 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 17:08:56,861 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 17:08:56,861 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA9', 'action_name': 'end', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 101
+2025-01-02 17:08:56,862 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv5: {'mac_address': 'GF_TN4_CAMERA5', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '30', 'status': 'off', 'previous_status': 'off', 'previous_timer': '30'}
+2025-01-02 17:09:26,925 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 17:09:29,768 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 17:09:29,768 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA5', 'action_name': 'end', 'timer': '30'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 200
+2025-01-02 17:09:29,769 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv6: {'mac_address': 'GF_TN4_CAMERA6', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '30', 'status': 'off', 'previous_status': 'off', 'previous_timer': '30'}
+2025-01-02 17:09:59,832 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 17:10:02,801 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 17:10:02,801 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA6', 'action_name': 'end', 'timer': '30'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 200
+2025-01-02 17:10:02,801 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv9: {'mac_address': 'GF_TN4_CAMERA9', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 17:10:32,862 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 17:10:32,880 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 17:10:32,880 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA9', 'action_name': 'start', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 101
+2025-01-02 17:10:32,881 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv5: {'mac_address': 'GF_TN4_CAMERA5', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '30', 'status': 'off', 'previous_status': 'off', 'previous_timer': '30'}
+2025-01-02 17:11:02,946 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 17:11:02,963 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 17:11:02,963 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA5', 'action_name': 'end', 'timer': '30'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 201
+2025-01-02 17:11:02,964 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv9: {'mac_address': 'GF_TN4_CAMERA9', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 17:11:33,025 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 17:11:33,041 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 17:11:33,042 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA9', 'action_name': 'start', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 101
+2025-01-02 17:11:33,042 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv6: {'mac_address': 'GF_TN4_CAMERA6', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '30', 'status': 'off', 'previous_status': 'off', 'previous_timer': '30'}
+2025-01-02 17:12:03,107 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 17:12:03,123 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 17:12:03,123 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA6', 'action_name': 'end', 'timer': '30'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 201
+2025-01-02 17:12:03,123 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv9: {'mac_address': 'GF_TN4_CAMERA9', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 17:12:33,192 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 17:12:33,206 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 17:12:33,206 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA9', 'action_name': 'end', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 101
+2025-01-02 17:12:33,207 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv9: {'mac_address': 'GF_TN4_CAMERA9', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 17:13:03,268 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 17:13:03,282 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 17:13:03,282 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA9', 'action_name': 'end', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 101
+2025-01-02 17:38:48,848 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv-3 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 17:38:48,849 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv-3: {'mac_address': 'GF_TN4_2_CAMERA2', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '57', 'status': 'on', 'previous_status': 'on', 'previous_timer': '57'}
+2025-01-02 17:38:48,849 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'ESP32', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv-3', 'status': 'end'}
+2025-01-02 17:38:49,863 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv-3 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 17:38:49,863 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'ESP32', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv-3', 'status': 'end'}
+2025-01-02 17:39:18,904 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 17:39:23,238 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid ESP32 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 17:39:23,238 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_2_CAMERA2', 'action_name': 'end', 'timer': '57'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 200
+2025-01-02 17:39:23,239 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv-3: {'mac_address': 'GF_TN4_2_CAMERA2', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '57', 'status': 'off', 'previous_status': 'off', 'previous_timer': '57'}
+2025-01-02 17:39:53,297 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 17:39:53,328 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid ESP32 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 17:39:53,328 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_2_CAMERA2', 'action_name': 'end', 'timer': '57'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 201
+2025-01-02 17:49:16,286 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv3 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 17:49:16,287 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv3: {'mac_address': 'GF_TN4_CAMERA1', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 17:49:16,286 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv3', 'status': 'start'}
+2025-01-02 17:49:21,280 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv3 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 17:49:21,281 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv3', 'status': 'start'}
+2025-01-02 17:49:46,344 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 17:49:52,301 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 17:49:52,301 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA1', 'action_name': 'start', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 200
+2025-01-02 17:49:52,302 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv3: {'mac_address': 'GF_TN4_CAMERA1', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'on', 'previous_status': 'on', 'previous_timer': '87'}
+2025-01-02 17:50:22,359 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 17:50:22,382 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 17:50:22,382 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA1', 'action_name': 'start', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 202
+2025-01-02 18:06:34,275 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv4 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 18:06:34,275 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv4', 'status': 'end'}
+2025-01-02 18:06:34,277 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv4: {'mac_address': 'GF_TN4_CAMERA3', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'on', 'previous_timer': '30'}
+2025-01-02 18:06:35,274 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv9 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 18:06:35,275 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv9', 'status': 'start'}
+2025-01-02 18:06:39,274 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv4 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 18:06:39,274 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv4', 'status': 'end'}
+2025-01-02 18:06:39,275 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv9 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 18:06:39,275 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv9', 'status': 'start'}
+2025-01-02 18:06:42,274 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv9 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 18:06:42,274 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv9', 'status': 'end'}
+2025-01-02 18:06:46,274 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv9 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 18:06:46,274 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv9', 'status': 'end'}
+2025-01-02 18:07:04,331 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 18:07:06,808 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 18:07:06,809 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA3', 'action_name': 'end', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 200
+2025-01-02 18:07:06,809 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv9: {'mac_address': 'GF_TN4_CAMERA9', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 18:07:36,862 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 18:07:36,882 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 18:07:36,882 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA9', 'action_name': 'start', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 101
+2025-01-02 18:07:36,883 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv4: {'mac_address': 'GF_TN4_CAMERA3', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '30'}
+2025-01-02 18:08:06,937 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 18:08:06,962 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 18:08:06,962 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA3', 'action_name': 'end', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 201
+2025-01-02 18:08:06,962 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv9: {'mac_address': 'GF_TN4_CAMERA9', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 18:08:37,018 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 18:08:37,033 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 18:08:37,034 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA9', 'action_name': 'start', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 101
+2025-01-02 18:08:37,035 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv9: {'mac_address': 'GF_TN4_CAMERA9', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 18:09:07,091 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 18:09:07,108 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 18:09:07,108 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA9', 'action_name': 'end', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 101
+2025-01-02 18:09:07,108 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv9: {'mac_address': 'GF_TN4_CAMERA9', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 18:09:37,162 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 18:09:37,191 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 18:09:37,192 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA9', 'action_name': 'end', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 101
+2025-01-02 18:26:09,471 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv2 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 18:26:09,472 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv2: {'mac_address': 'GF_TN4_2_CAMERA3', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '86', 'status': 'on', 'previous_status': 'on', 'previous_timer': '86'}
+2025-01-02 18:26:09,471 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'ESP32', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv2', 'status': 'end'}
+2025-01-02 18:26:10,485 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv2 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 18:26:10,486 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'ESP32', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv2', 'status': 'end'}
+2025-01-02 18:26:39,531 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 18:26:43,461 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid ESP32 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 18:26:43,461 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_2_CAMERA3', 'action_name': 'end', 'timer': '86'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 200
+2025-01-02 18:26:43,462 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv2: {'mac_address': 'GF_TN4_2_CAMERA3', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '86', 'status': 'off', 'previous_status': 'off', 'previous_timer': '86'}
+2025-01-02 18:27:13,515 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 18:27:13,533 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid ESP32 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 18:27:13,533 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_2_CAMERA3', 'action_name': 'end', 'timer': '86'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 201
+2025-01-02 18:59:32,166 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv2 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 18:59:32,167 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv2: {'mac_address': 'GF_TN4_2_CAMERA3', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '86', 'status': 'off', 'previous_status': 'off', 'previous_timer': '86'}
+2025-01-02 18:59:32,167 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'ESP32', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv2', 'status': 'start'}
+2025-01-02 18:59:33,178 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv2 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 18:59:33,178 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'ESP32', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv2', 'status': 'start'}
+2025-01-02 19:00:02,221 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 19:00:06,269 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid ESP32 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 19:00:06,269 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_2_CAMERA3', 'action_name': 'start', 'timer': '86'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 200
+2025-01-02 19:00:06,269 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv2: {'mac_address': 'GF_TN4_2_CAMERA3', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '86', 'status': 'on', 'previous_status': 'on', 'previous_timer': '86'}
+2025-01-02 19:00:36,324 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 19:00:36,356 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid ESP32 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 19:00:36,356 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_2_CAMERA3', 'action_name': 'start', 'timer': '86'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 202
+2025-01-02 19:19:16,246 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv3 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 19:19:16,247 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv3: {'mac_address': 'GF_TN4_CAMERA1', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'on', 'previous_status': 'on', 'previous_timer': '87'}
+2025-01-02 19:19:16,247 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv3', 'status': 'end'}
+2025-01-02 19:19:17,243 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv9 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 19:19:17,243 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv9', 'status': 'start'}
+2025-01-02 19:19:21,243 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv3 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 19:19:21,243 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv3', 'status': 'end'}
+2025-01-02 19:19:21,243 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv9 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 19:19:21,244 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv9', 'status': 'start'}
+2025-01-02 19:19:24,243 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv9 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 19:19:24,243 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv9', 'status': 'end'}
+2025-01-02 19:19:28,242 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv9 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 19:19:28,243 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv9', 'status': 'end'}
+2025-01-02 19:19:46,303 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 19:19:49,075 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 19:19:49,075 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA1', 'action_name': 'end', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 200
+2025-01-02 19:19:49,076 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv9: {'mac_address': 'GF_TN4_CAMERA9', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 19:20:19,132 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 19:20:19,154 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 19:20:19,154 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA9', 'action_name': 'start', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 101
+2025-01-02 19:20:19,155 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv3: {'mac_address': 'GF_TN4_CAMERA1', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 19:20:49,209 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 19:20:49,231 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 19:20:49,231 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA1', 'action_name': 'end', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 201
+2025-01-02 19:20:49,232 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv9: {'mac_address': 'GF_TN4_CAMERA9', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 19:21:19,287 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 19:21:19,306 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 19:21:19,306 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA9', 'action_name': 'start', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 101
+2025-01-02 19:21:19,307 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv9: {'mac_address': 'GF_TN4_CAMERA9', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 19:21:49,364 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 19:21:49,382 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 19:21:49,382 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA9', 'action_name': 'end', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 101
+2025-01-02 19:21:49,383 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv9: {'mac_address': 'GF_TN4_CAMERA9', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '87', 'status': 'off', 'previous_status': 'off', 'previous_timer': '87'}
+2025-01-02 19:22:19,439 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 19:22:19,456 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid PLC_LOGO_1 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 19:22:19,456 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_CAMERA9', 'action_name': 'end', 'timer': '87'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 101
+2025-01-02 20:29:26,912 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv2 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 20:29:26,913 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv2: {'mac_address': 'GF_TN4_2_CAMERA3', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '86', 'status': 'on', 'previous_status': 'on', 'previous_timer': '86'}
+2025-01-02 20:29:26,913 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'ESP32', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv2', 'status': 'end'}
+2025-01-02 20:29:27,916 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv2 đã thay đổi từ 1 thành 0 với status: end
+2025-01-02 20:29:27,916 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'ESP32', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv2', 'status': 'end'}
+2025-01-02 20:29:56,970 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 20:30:01,147 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid ESP32 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 20:30:01,147 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_2_CAMERA3', 'action_name': 'end', 'timer': '86'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 200
+2025-01-02 20:30:01,148 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv2: {'mac_address': 'GF_TN4_2_CAMERA3', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '86', 'status': 'off', 'previous_status': 'off', 'previous_timer': '86'}
+2025-01-02 20:30:31,202 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 20:30:31,233 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid ESP32 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 20:30:31,233 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_2_CAMERA3', 'action_name': 'end', 'timer': '86'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 201
+2025-01-02 23:11:46,357 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv2 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 23:11:46,359 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv2: {'mac_address': 'GF_TN4_2_CAMERA3', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '86', 'status': 'off', 'previous_status': 'off', 'previous_timer': '86'}
+2025-01-02 23:11:46,358 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'ESP32', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv2', 'status': 'start'}
+2025-01-02 23:11:47,361 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:187] Giá trị của uv2 đã thay đổi từ 0 thành 1 với status: start
+2025-01-02 23:11:47,362 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/app.py:198] event_data = {'idchip': 'ESP32', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv2', 'status': 'start'}
+2025-01-02 23:12:16,420 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 23:12:20,413 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid ESP32 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 23:12:20,413 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_2_CAMERA3', 'action_name': 'start', 'timer': '86'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 200
+2025-01-02 23:12:20,414 - DEBUG - [in /home/erpfarm/workspace/farm-iot/data_processor.py:53] Dữ liệu cho uv2: {'mac_address': 'GF_TN4_2_CAMERA3', 'camera': 'rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0', 'timer': '86', 'status': 'on', 'previous_status': 'on', 'previous_timer': '86'}
+2025-01-02 23:12:50,470 - WARNING - [in /home/erpfarm/workspace/farm-iot/data_processor.py:61] Không thể đọc frame từ camera: rtsp://admin:admin@2024!@10.16.40.239/cam/realmonitor?channel=1&subtype=0, sử dụng ảnh mặc định.
+2025-01-02 23:12:50,502 - INFO - [in /home/erpfarm/workspace/farm-iot/data_processor.py:85] Chipid ESP32 nằm trong danh sách loại trừ, không cập nhật dữ liệu.
+2025-01-02 23:12:50,502 - CRITICAL - [in /home/erpfarm/workspace/farm-iot/data_processor.py:103] 
+ Dữ liệu process_data: {'mac_address': 'GF_TN4_2_CAMERA3', 'action_name': 'start', 'timer': '86'}
+ Mã trạng thái HTTP server: 200, Phản hồi từ server: 202

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-12">
+    <h2>Lịch sử truy cập</h2>
+
+    <form method="POST" class="form-inline mb-3">
+      <select name="filter" class="form-control mr-2">
+        <option value="today">Hôm nay</option>
+        <option value="this_week">Tuần này</option>
+        <option value="this_month">Tháng này</option>
+      </select>
+      <input type="submit" value="Lọc" class="btn btn-success">
+    </form>
+
+    <div id="access-table">
+      {% include 'access_history/access_history_partial.html' %}
+    </div>
+  </div>
+</div>
+{% endblock %}

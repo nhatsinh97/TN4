@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- Meta, title, CSS, favicons, etc. -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../static/images/logo-greenfeed.png" type="image/ico" />
+  <title>{{ seo.title if seo.title else 'Farm GreenFeed || giám sát phòng uv' }}</title>
+  <!-- Bootstrap -->
+  <link href="../static/dashboard/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="../static/dashboard/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <!-- NProgress -->
+  <link href="../static/dashboard/vendors/nprogress/nprogress.css" rel="stylesheet">
+  <!-- iCheck -->
+  <link href="../static/dashboard/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+  <!-- bootstrap-progressbar -->
+  <link href="../static/dashboard/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css"
+    rel="stylesheet">
+  <!-- JQVMap -->
+  <link href="../static/dashboard/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet" />
+  <!-- bootstrap-daterangepicker -->
+  <link href="../static/dashboard/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+  <!-- Custom Theme Style -->
+  <link href="../static/dashboard/build/css/custom.min.css" rel="stylesheet">
+  <!-- biểu đồ char  -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="../static/dashboard/char.css" rel="stylesheet">
+  <!-- {% block extra_css %}{% endblock %} -->
+
+</head>
+
+<body class="nav-md">
+  <div class="container body">
+    <div class="main_container">
+      <div class="col-md-3 left_col">
+        <div class="left_col scroll-view">
+          <div class="navbar nav_title" style="border: 0;">
+            <a href="/Home" class="site_title">
+              <!-- <img src="{{ user.avatar }}" alt="Logo" style="height: 42px; margin-right: 1px;"> -->
+              <img src="{{ url_for('static', filename='/images/logotn4.png') }}" alt="Logo" style="height: 42px; margin-right: 1px;">
+              <span>Project - SINH</span>
+            </a>
+          </div>
+
+          <div class="clearfix"></div>
+
+          <!-- menu profile quick info -->
+          {% include 'common/profile.html' %}
+          <!-- /menu profile quick info -->
+
+          <br />
+
+          <!-- sidebar menu -->
+          {% include 'common/sidebar.html' %}
+          <!-- /sidebar menu -->
+
+          <!-- /menu footer buttons -->
+          {% include 'common/menu_footer_buttons.html' %}
+          <!-- /menu footer buttons -->
+        </div>
+      </div>
+
+      <!-- top navigation -->
+      {% include 'common/header.html' %}
+      <!-- /top navigation -->
+
+      <!-- page content -->
+      <div class="right_col" role="main" id="content">
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <div class="container mt-3">
+          {% for category, message in messages %}
+          <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Đóng">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+      </div>
+
+      <!-- /page content -->
+
+      <!-- footer content -->
+      <footer>
+        <div class="pull-right">
+          Bản quyền thuộc về <a href="https://locohost">Nguyễn Nhất Sinh</a>
+        </div>
+        <div class="clearfix"></div>
+      </footer>
+      <!-- /footer content -->
+    </div>
+  </div>
+
+  <!-- jQuery -->
+  <script src="../static/dashboard/vendors/jquery/dist/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="../static/dashboard/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- FastClick -->
+  <script src="../static/dashboard/vendors/fastclick/lib/fastclick.js"></script>
+  <!-- NProgress -->
+  <script src="../static/dashboard/vendors/nprogress/nprogress.js"></script>
+  <!-- Chart.js -->
+  <script src="../static/dashboard/vendors/Chart.js/dist/Chart.min.js"></script>
+  <!-- gauge.js -->
+  <script src="../static/dashboard/vendors/gauge.js/dist/gauge.min.js"></script>
+  <!-- bootstrap-progressbar -->
+  <script src="../static/dashboard/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+  <!-- iCheck -->
+  <script src="../static/dashboard/vendors/iCheck/icheck.min.js"></script>
+  <!-- Skycons -->
+  <script src="../static/dashboard/vendors/skycons/skycons.js"></script>
+  <!-- Flot -->
+  <script src="../static/dashboard/vendors/Flot/jquery.flot.js"></script>
+  <script src="../static/dashboard/vendors/Flot/jquery.flot.pie.js"></script>
+  <script src="../static/dashboard/vendors/Flot/jquery.flot.time.js"></script>
+  <script src="../static/dashboard/vendors/Flot/jquery.flot.stack.js"></script>
+  <script src="../static/dashboard/vendors/Flot/jquery.flot.resize.js"></script>
+  <!-- Flot plugins -->
+  <script src="../static/dashboard/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+  <script src="../static/dashboard/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+  <script src="../static/dashboard/vendors/flot.curvedlines/curvedLines.js"></script>
+  <!-- DateJS -->
+  <script src="../static/dashboard/vendors/DateJS/build/date.js"></script>
+  <!-- JQVMap -->
+  <script src="../static/dashboard/vendors/jqvmap/dist/jquery.vmap.js"></script>
+  <script src="../static/dashboard/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+  <script src="../static/dashboard/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+  <!-- bootstrap-daterangepicker -->
+  <script src="../static/dashboard/vendors/moment/min/moment.min.js"></script>
+  <script src="../static/dashboard/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+  <!-- Custom Theme Scripts -->
+  <script src="../static/dashboard/build/js/custom.min.js"></script>
+  <!-- sinh js -->
+  <script src="../static/js/index.js"></script>
+
+
+  <script>
+    // $(document).on('click', '.ajax-link', function (e) {
+    //   e.preventDefault();
+    //   var url = $(this).attr('href');
+
+    //   $('#content').load(url, function (response, status, xhr) {
+    //     if (status == "error") {
+    //       $('#content').html("<div class='alert alert-danger'>Không thể tải nội dung: " + xhr.status + "</div>");
+    //     }
+    //   });
+    // });
+  </script>
+  
+</body>
+
+
+</html>

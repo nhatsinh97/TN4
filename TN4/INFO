@@ -1,0 +1,179 @@
+farm-iot/
+├── application/
+│   ├── config/
+│   │   ├── autoload.py
+│   │   ├── config.py
+│   │   ├── constants.py
+│   │   ├── database.py
+│   │   ├── doctypes.py
+│   │   ├── foreign_chars.py
+│   │   ├── hooks.py
+│   │   ├── migration.py
+│   │   ├── mimes.py
+│   │   ├── profiler.py
+│   │   ├── routes.py
+│   │   ├── smileys.py
+│   │   ├── user_agents.py
+│   │   └── index.html
+│   ├── controllers/
+│   │   ├── account.py
+│   │   ├── ajax.py
+│   │   ├── authentication.py
+│   │   ├── config.py
+│   │   ├── customer.py
+│   │   ├── dashboard.py
+│   │   ├── import.py
+│   │   ├── index.py
+│   │   ├── inventory.py
+│   │   ├── orders.py
+│   │   ├── pos.py
+│   │   ├── product.py
+│   │   ├── profit.py
+│   │   ├── revenue.py
+│   │   ├── setting.py
+│   │   ├── supplier.py
+│   │   ├── user.py
+│   │   └── welcome.py
+│   ├── core/
+│   │   ├── cms_controller.py
+│   │   └── index.html
+│   ├── errors/
+│   │   ├── error_404.py
+│   │   ├── error_db.py
+│   │   ├── error_general.py
+│   │   ├── error_py.py
+│   │   └── index.html
+│   ├── helpers/
+│   │   ├── useful_helper.py
+│   │   └── index.html
+│   ├── hooks/
+│   │   └── index.html
+│   ├── language/
+│   │   ├── english/
+│   │   ├── vietnamese/
+│   │   └── index.html
+│   ├── libraries/
+│   │   ├── cms_authentication.py
+│   │   ├── cms_common_string.py
+│   │   ├── cms_common.py
+│   │   ├── cms_cookie.py
+│   │   ├── cms_nestedset.py
+│   │   ├── cms_session.py
+│   │   └── index.html
+│   ├── models/
+│   │   ├── authentication.py
+│   │   └── index.html
+│   └──  views/
+│       ├── layout.html
+│       ├── login.html
+│       ├── forgot_password.html
+│       ├── reset_password.html
+├── static/
+├── system/
+│   ├── core/
+│   │   ├── Benchmark.py
+│   │   ├── CodeIgniter.py
+│   │   ├── Common.py
+│   │   ├── Config.py
+│   │   ├── Controller.py
+│   │   ├── Exceptions.py
+│   │   ├── Hooks.py
+│   │   ├── index.html
+│   │   ├── input.py
+│   │   ├── Lang.py
+│   │   ├── Loader.py
+│   │   ├── Model.py
+│   │   ├── Output.py
+│   │   ├── Router.py
+│   │   ├── Security.py
+│   │   ├── URI.py
+│   │   └── Utf8.py
+│   ├── database/
+│   │   ├── drivers/
+│   │   ├── DB_active_rec.py
+│   │   ├── DB_cache.py
+│   │   ├── DB_driver.py
+│   │   ├── DB_forge.py
+│   │   ├── DB_result.py
+│   │   ├── DB_utility.py
+│   │   ├── DB.py
+│   │   └── index.html
+│   ├── fonts/
+│   │   ├── index.html
+│   │   └── texb.ttf
+│   ├── helpers/
+│   │   ├── array_helper.py
+│   │   ├── captcha_helper.py
+│   │   ├── cookie_helper.py
+│   │   ├── date_helper.py
+│   │   ├── directory_helper.py
+│   │   ├── download_helper.py
+│   │   ├── email_helper.py
+│   │   ├── file_helper.py
+│   │   ├── form_helper.py
+│   │   ├── html_helper.py
+│   │   ├── inflector_helper.py
+│   │   ├── language_helper.py
+│   │   ├── number_helper.py
+│   │   ├── path_helper.py
+│   │   ├── security_helper.py
+│   │   ├── smiley_helper.py
+│   │   ├── string_helper.py
+│   │   ├── text_helper.py
+│   │   ├── typography_helper.py
+│   │   ├── url_helper.py
+│   │   ├── xml_helper.py
+│   │   └── index.html
+│   ├── language/
+│   │   ├── english/
+│   │   └── index.html
+│   ├── libraries/
+│   │   ├── Cache/
+│   │   │   ├── drivers/
+│   │   │   │   ├── Cache_apc.py
+│   │   │   │   ├── Cache_dummy.py
+│   │   │   │   ├── Cache_file.py
+│   │   │   │   ├── Cache_memcached.py
+│   │   │   │   └── index.html
+│   │   │   ├── Cache.py
+│   │   │   └── index.html
+│   │   ├── javascript/
+│   │   │   ├── index.html
+│   │   │   └── Jquery.py
+│   │   ├── Calendar.py
+│   │   ├── Cart.py
+│   │   ├── Driver.py
+│   │   ├── Email.py
+│   │   ├── Encrypt.py
+│   │   ├── Form_validation.py
+│   │   ├── Ftp.py
+│   │   ├── Image_lib.py
+│   │   ├── index.html
+│   │   ├── Javascript.py
+│   │   ├── Log.py
+│   │   ├── Migration.py
+│   │   ├── Pagination.py
+│   │   ├── Parser.py
+│   │   ├── Profiler.py
+│   │   ├── Session.py
+│   │   ├── Sha1.py
+│   │   ├── Table.py
+│   │   ├── Trackback.py
+│   │   ├── Typography.py
+│   │   ├── Unit_test.py
+│   │   ├── Upload.py
+│   │   ├── User_agent.py
+│   │   ├── Xmlrpc.py
+│   │   ├── Xmlrpcs.py
+│   │   └── Zip.py
+│   └── index.html
+├── templates/
+│   ├── common/
+│   │   ├── header.html
+│   │   ├── modal.html
+│   │   └── sidebar.html
+│   ├── base.html
+│   └── index.html
+├── app.py
+├── wsgi.py
+└── requirements.txt

@@ -1,0 +1,58 @@
+{
+    "GF_TN4": {
+        "about": {
+            "chip": "ESP34",
+            "version": "19.2.5",
+            "ip": "10.16.40.38",
+            "check": "0"
+        },
+        "input1": {
+            "cam_1": "rtsp://admin:L2C05357@10.16.40.131/cam/realmonitor?channel=1&subtype=00&authbasic=YWRtaW46QWRtaW4xMjM=",
+            "data_timer_1": "90",
+            "LOG_1": "end"
+        },
+        "input2": {
+            "cam_1": "rtsp://admin:L2C05357@10.16.40.131/cam/realmonitor?channel=1&subtype=00&authbasic=YWRtaW46QWRtaW4xMjM=",
+            "data_timer_1": "90",
+            "LOG_1": "end"
+        },
+        "input3": {
+            "cam_1": "rtsp://admin:L2C05357@10.16.40.131/cam/realmonitor?channel=1&subtype=00&authbasic=YWRtaW46QWRtaW4xMjM=",
+            "data_timer_1": "90",
+            "LOG_1": "end"
+        },
+        "input4": {
+            "cam_1": "rtsp://admin:L2C05357@10.16.40.131/cam/realmonitor?channel=1&subtype=00&authbasic=YWRtaW46QWRtaW4xMjM=",
+            "data_timer_1": "90",
+            "LOG_1": "end"
+        }
+    },
+    "GF_TN4_2": {
+        "about": {
+            "chip": "ESP33",
+            "version": "19.2.5",
+            "ip": "10.16.40.38",
+            "check": "0"
+        },
+        "input1": {
+            "cam_1": "rtsp://admin:L2C05357@10.16.40.131/cam/realmonitor?channel=1&subtype=00&authbasic=YWRtaW46QWRtaW4xMjM=",
+            "data_timer_1": "90",
+            "LOG_1": "end"
+        },
+        "input2": {
+            "cam_1": "rtsp://admin:L2C05357@10.16.40.131/cam/realmonitor?channel=1&subtype=00&authbasic=YWRtaW46QWRtaW4xMjM=",
+            "data_timer_1": "90",
+            "LOG_1": "end"
+        },
+        "input3": {
+            "cam_1": "rtsp://admin:L2C05357@10.16.40.131/cam/realmonitor?channel=1&subtype=00&authbasic=YWRtaW46QWRtaW4xMjM=",
+            "data_timer_1": "90",
+            "LOG_1": "end"
+        },
+        "input4": {
+            "cam_1": "rtsp://admin:L2C05357@10.16.40.131/cam/realmonitor?channel=1&subtype=00&authbasic=YWRtaW46QWRtaW4xMjM=",
+            "data_timer_1": "90",
+            "LOG_1": "end"
+        }
+    }
+}

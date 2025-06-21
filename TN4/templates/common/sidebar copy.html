@@ -1,0 +1,36 @@
+<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+    <div class="menu_section">
+      <h3>General</h3>
+      <ul class="nav side-menu">
+        {% if 'view_dashboard' in permissions %}
+        <li><a href="/ats"><i class="fa fa-home"></i> Dashboard</a></li>
+        {% endif %}
+        {% if 'view_dashboard_ats' in permissions %}
+        <li><a href="/trangchinh"><i class="fa fa-home"></i> Dashboard ats</a></li>
+        {% endif %}
+        {% if 'uv' in permissions %}
+        <li><a href="/uv" class="ajax-link"><i class="fa fa-edit"></i> Phòng UV</a></li>
+        {% endif %}
+        {% if 'edit_settings' in permissions %}
+        <li><a href="/manage_users" class="ajax-link"><i class="fa fa-edit"></i> Phân Quyền</a></li>
+        {% endif %}
+        {% if 'access_history' in permissions %}
+        <li><a href="/access_history" class="ajax-link"><i class="fa fa-edit"></i> Lịch sử đăng nhập</a></li>
+        {% endif %}
+      </ul>
+    </div>
+    <div class="menu_section">
+      <h3>Xem Camera trại</h3>
+      <ul class="nav side-menu">
+        <li><a><i class="fa fa-video-camera"></i> Farm TN4 <span class="fa fa-chevron-down"></span></a>
+          <ul class="nav child_menu">
+            <li><a href="/camera" class="ajax-link">Camera hủy xác</a></li>
+            <li><a href="projects.html">Camera bảo vệ</a></li>
+            <li><a href="project_detail.html">Camera đường lùa heo</a></li>
+            <li><a href="contacts.html">Camera rửa xe 1</a></li>
+            <li><a href="profile.html">Camera rửa xe 2</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+</div>

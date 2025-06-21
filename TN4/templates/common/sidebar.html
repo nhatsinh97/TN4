@@ -1,0 +1,59 @@
+<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+  <div class="menu_section">
+    <h3>General</h3>
+    {% if menu_items %}
+    <ul class="nav side-menu">
+      {% for item in menu_items %}
+      {% if item.permission in permissions %}
+      <li class="{% if request.path == item.url %}active{% endif %}">
+        <a href="{{ item.url }}" class="ajax-link"><i class="{{ item.icon }}"></i> {{ item.label }}</a>
+      </li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>Không có mục menu nào để hiển thị.</p>
+    {% endif %}
+  </div>
+
+  {% if 'manage_users' in permissions or 'edit_settings' in permissions or 'access_history' in permissions %}
+  <div class="menu_section">
+    <h3>Quản lý</h3>
+    <ul class="nav side-menu">
+      {% if 'manage_users' in permissions or 'access_history' in permissions %}
+      <li>
+        <a><i class="fa fa-users"></i> Quản lý người dùng <span class="fa fa-chevron-down"></span></a>
+        <ul class="nav child_menu">
+          {% if 'manage_users' in permissions %}
+          <li><a href="/manage_users" class="ajax-link"><i class="fa fa-users"></i> Phân quyền</a></li>
+          {% endif %}
+          {% if 'access_history' in permissions %}
+          <li><a href="/access_history" class="ajax-link">Lịch sử đăng nhập</a></li>
+          {% endif %}
+        </ul>
+      </li>
+      {% endif %}
+      {% if 'edit_settings' in permissions %}
+      <li><a href="/settings" class="ajax-link"><i class="fa fa-sliders"></i> Cài đặt</a></li>
+      {% endif %}
+    </ul>
+  </div>
+  {% endif %}
+
+  <div class="menu_section">
+    <h3>Xem Camera trại</h3>
+    {% if camera_items %}
+    <ul class="nav side-menu">
+      <li><a><i class="fa fa-video-camera"></i> Farm TN4 <span class="fa fa-chevron-down"></span></a>
+        <ul class="nav child_menu">
+          {% for cam in camera_items %}
+          <li><a href="{{ cam.url }}" class="ajax-link">{{ cam.label }}</a></li>
+          {% endfor %}
+        </ul>
+      </li>
+    </ul>
+    {% else %}
+    <p>Không có camera nào để hiển thị.</p>
+    {% endif %}
+  </div>
+</div>

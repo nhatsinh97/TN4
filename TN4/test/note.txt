@@ -1,0 +1,11 @@
+cd /home/erpfarm/workspace/farm-iot
+sudo systemctl edit --full atsh_uv_system.service
+sudo systemctl daemon-reload
+sudo systemctl status atsh_uv_system.service
+sudo systemctl start atsh_uv_system.service
+sudo systemctl stop atsh_uv_system.service
+sudo systemctl reload atsh_uv_system.service
+python3 check_cam.py
+python3 service.py
+xem cac service dang hoat dong
+systemctl list-units --type=service

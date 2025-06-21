@@ -1,0 +1,9 @@
+2025-06-05 22:19:04,045 - INFO - [in /home/jetson/project/TN4/app.py:104] Start: GF-CICO
+2025-06-05 22:19:06,947 - INFO - [in /home/jetson/project/TN4/app.py:104] Start: GF-CICO
+2025-06-05 22:19:59,074 - INFO - [in /home/jetson/project/TN4/app.py:104] Start: GF-CICO
+2025-06-05 22:20:03,164 - INFO - [in /home/jetson/project/TN4/app.py:104] Start: GF-CICO
+2025-06-05 22:24:48,492 - INFO - [in /home/jetson/project/TN4/app.py:104] Start: GF-CICO
+2025-06-05 22:26:23,925 - INFO - [in /home/jetson/project/TN4/app.py:104] Start: GF-CICO
+2025-06-05 22:27:35,369 - INFO - [in /home/jetson/project/TN4/app.py:104] Start: GF-CICO
+2025-06-05 22:27:39,287 - INFO - [in /home/jetson/project/TN4/app.py:104] Start: GF-CICO
+2025-06-05 22:27:48,139 - ERROR - [in /home/jetson/project/TN4/app.py:199] Reported data is not in the expected format.

@@ -1,0 +1,20 @@
+<!-- access_history_partial.html -->
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Tên đăng nhập</th>
+        <th>Địa chỉ IP</th>
+        <th>Thời gian truy cập</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in history %}
+      <tr>
+        <td>{{ item.username }}</td>
+        <td>{{ item.ip }}</td>
+        <td>{{ item.timestamp }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  

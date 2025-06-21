@@ -1,0 +1,12 @@
+<link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet">
+<script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
+
+<video id="my_video" class="video-js vjs-default-skin" controls preload="auto" width="640" height="480" data-setup='{}'>
+    <source src="{{ url_for('static', filename='camera/stream.m3u8') }}" type="application/x-mpegURL">
+    Trình duyệt của bạn không hỗ trợ thẻ video.
+</video>
+
+
+<!-- ////////////////////////  -->
+    <h1>Frame từ camera</h1>
+    <img src="/camera_image" alt="Camera Frame" style="width:600px; height:auto;">

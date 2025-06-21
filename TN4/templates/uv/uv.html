@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Device Events</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .device-table {
+            width: 100%;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .device-table th, .device-table td {
+            text-align: center;
+            padding: 10px;
+        }
+        .device-table th {
+            background-color: #007bff;
+            color: white;
+        }
+        .device-table img {
+            max-width: 80px;
+        }
+        .status-on {
+            color: green;
+            font-weight: bold;
+        }
+        .status-off {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>IoT Device Events</h1>
+
+    <div class="table-responsive">
+        <table class="table device-table table-bordered">
+            <thead>
+                <tr>
+                    <th>Device Name</th>
+                    <th>MAC Address</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th>Status</th>
+                    <th>Start Image</th>
+                    <th>End Image</th>
+                </tr>
+            </thead>
+            <tbody id="device-event-table-body">
+                <!-- Dữ liệu sẽ được tải vào đây bằng JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Hàm để load dữ liệu sự kiện từ API và hiển thị trên bảng
+        function loadDeviceEvents() {
+            $.ajax({
+                url: '/api/get_device_events',  // URL của API để lấy dữ liệu sự kiện
+                method: 'GET',
+                success: function(response) {
+                    var tableBody = $('#device-event-table-body');
+                    tableBody.empty();  // Xóa nội dung bảng cũ
+
+                    response.forEach(function(event) {
+                        var statusClass = event.status === 'on' ? 'status-on' : 'status-off';
+                        var row = `
+                            <tr>
+                                <td>${event.name}</td>
+                                <td>${event.mac_address}</td>
+                                <td>${event.start_time}</td>
+                                <td>${event.end_time || 'N/A'}</td>
+                                <td class="${statusClass}">${event.status}</td>
+                                <td><img src="${event.start_img}" alt="Start Image"></td>
+                                <td>${event.end_img ? '<img src="' + event.end_img + '" alt="End Image">' : 'N/A'}</td>
+                            </tr>
+                        `;
+                        tableBody.append(row);
+                    });
+                },
+                error: function(error) {
+                    console.error('Error loading device events:', error);
+                }
+            });
+        }
+
+        // Gọi hàm loadDeviceEvents khi trang được tải
+        $(document).ready(function() {
+            loadDeviceEvents();
+
+            // Thiết lập để cập nhật dữ liệu mỗi 60 giây
+            setInterval(loadDeviceEvents, 60000);  // 60,000 ms = 60 giây
+        });
+    </script>
+
+</body>
+</html>

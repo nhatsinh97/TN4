@@ -1,0 +1,180 @@
+/* Reset mặc định */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Layout chung */
+body, html {
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.main-container {
+    display: flex;
+    height: calc(100% - 50px); /* Trừ chiều cao của header */
+    width: 100%;
+    overflow: hidden; /* Loại bỏ mọi khoảng trống có thể xuất hiện ngoài viewport */
+}
+.view-container {
+    display: flex;
+    height: calc(100% - 50px); /* Trừ chiều cao của header */
+    width: 100%;
+    overflow: hidden; /* Loại bỏ mọi khoảng trống có thể xuất hiện ngoài viewport */
+}
+
+
+nav {
+    background-color: #f8f9fa;
+    width: 250px;
+    max-width: 250px;
+    transition: width 0.3s ease-in-out;
+    overflow: hidden;
+    flex-shrink: 0; /* Đảm bảo sidebar không chiếm thêm không gian */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    padding: 8px 20px;
+    margin: 0;
+    background-color: #ddd;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Căn chỉnh biểu tượng và văn bản */
+}
+
+nav ul li i {
+    font-size: 1.5em;
+    margin-right: 15px; /* Khoảng cách giữa biểu tượng và văn bản */
+    color: #000;
+}
+
+nav ul li p {
+    margin: 0;
+    flex-grow: 1;
+    color: #000;
+}
+
+nav ul li:hover {
+    background-color: #ccc;
+}
+
+/* Nút toggle */
+.toggle-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Khi sidebar thu nhỏ */
+.sidebar-collapsed nav {
+    width: 50px;
+    max-width: 50px;
+}
+
+.sidebar-collapsed nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-collapsed nav ul li {
+    padding: 8px;
+    margin: 0;
+    justify-content: center;
+}
+
+.sidebar-collapsed nav ul li i {
+    font-size: 1.5em;
+}
+
+.sidebar-collapsed nav ul li .nav-text {
+    display: none !important;
+}
+
+/* Ẩn logo khi sidebar thu nhỏ */
+.sidebar-collapsed header .logo {
+    display: none;
+}
+
+/* Nội dung chính */
+section {
+    flex: 1;
+    padding: 20px;
+    background-color: #f0f0f0;
+    transition: margin-left 0.3s ease-in-out;
+    width: 100%;
+    overflow: auto;
+}
+
+.chart {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+/* Style khi sidebar được thu nhỏ */
+.sidebar-collapsed section {
+    margin-left: 50px;
+}
+
+/* Media queries for responsive design */
+@media only screen and (max-width: 768px) {
+    nav {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .sidebar-collapsed nav {
+        width: 0;
+        max-width: 0;
+    }
+
+    .sidebar-collapsed section {
+        margin-left: 0;
+    }
+}
+
+/* Căn chỉnh biểu tượng và văn bản theo chiều dọc */
+nav ul li i, nav ul li p {
+    margin-left: 15px; /* Điều chỉnh khoảng cách bên trái để căn chỉnh theo vạch đỏ */
+}
+nav ul li a {
+    text-decoration: none;
+    color: inherit; /* Đảm bảo giữ màu sắc của văn bản */
+}
+
+nav ul li a:hover {
+    text-decoration: none; /* Đảm bảo rằng ngay cả khi hover, gạch dưới vẫn không xuất hiện */
+}

@@ -1,0 +1,6 @@
+môi trường ảo:
+source ~/project/venv/bin/activate
+
+thoát:
+deactivate
+

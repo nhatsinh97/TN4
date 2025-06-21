@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Giám sát ATS - Realtime Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/luxon@3/build/global/luxon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.3.1"></script>
+
+  <style>
+    body {
+      background-color: #f1f5f9;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      padding: 10px;
+    }
+
+    /* Giới hạn chiều rộng của nội dung và căn giữa */
+    .container-fluid {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 15px;
+    }
+
+    .card {
+      border-radius: 0.75rem;
+      box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+      padding: 1rem;
+    }
+
+    .phase-col {
+      background: #f8f9fa;
+      border-radius: 0.5rem;
+      padding: 0.5rem;
+      font-size: 13px;
+    }
+
+    .phase-col p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.3;
+    }
+
+    h4,
+    h5,
+    h6 {
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    p {
+      margin-bottom: 0.3rem;
+      font-size: 14px;
+    }
+
+    .control-buttons .btn {
+      margin: 0.2rem;
+      padding: 0.3rem 0.7rem;
+      font-size: 0.85rem;
+    }
+
+    .small {
+      font-size: 0.85rem;
+    }
+
+    /* Căn giữa tiêu đề trong hàng */
+    .row.mb-3 .col.text-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row mb-3">
+      <a href="{{ url_for('trangchinh') }}" class="btn btn-secondary">Back to Dashboard</a>
+      <div class="col text-center">
+        <h4><i class="fas fa-bolt"></i> Giám sát nguồn điện Farm TN4 Realtime</h4>
+      </div>
+      <!-- test -->
+      <div class="row mt-4">
+        <div class="col-md-12">
+          <div class="card">
+            <h5 class="text-primary">Biểu đồ dòng điện</h5>
+
+            <div class="row mb-3">
+              <div class="col-md-4">
+                <label for="genSelect" class="form-label">Chọn nguồn:</label>
+                <select id="genSelect" class="form-select">
+                  <option value="1" selected>NGUỒN 1</option>
+                  <option value="2">NGUỒN 2</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label for="rangeSelect" class="form-label">Khoảng thời gian:</label>
+                <select id="rangeSelect" class="form-select">
+                  <option value="1h">1 Giờ</option>
+                  <option value="6h">6 Giờ</option>
+                  <option value="1d" selected>1 Ngày</option>
+                  <option value="1w">1 Tuần</option>
+                  <option value="1M">1 Tháng</option>
+                  <option value="1y">1 Năm</option>
+                </select>
+              </div>
+            </div>
+
+            <canvas id="chart-history-ats" height="340"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        const historyChart = new Chart(document.getElementById("chart-history-ats").getContext("2d"), {
+          type: "line",
+          data: {
+            labels: [],
+            datasets: [
+              {
+                label: "Pha A",
+                data: [],
+                borderColor: "red",
+                backgroundColor: "rgba(255,0,0,0.1)",
+                fill: false,
+                tension: 0.3,
+                pointRadius: 3,
+                pointHoverRadius: 6
+              },
+              {
+                label: "Pha B",
+                data: [],
+                borderColor: "green",
+                backgroundColor: "rgba(0,128,0,0.1)",
+                fill: false,
+                tension: 0.3,
+                pointRadius: 3,
+                pointHoverRadius: 6
+              },
+              {
+                label: "Pha C",
+                data: [],
+                borderColor: "blue",
+                backgroundColor: "rgba(0,0,255,0.1)",
+                fill: false,
+                tension: 0.3,
+                pointRadius: 3,
+                pointHoverRadius: 6
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            animation: true,
+            scales: {
+              x: {
+                type: 'time',
+                time: {
+                  tooltipFormat: 'HH:mm dd/MM/yyyy',
+                  displayFormats: {
+                    minute: 'HH:mm',
+                    hour: 'HH:mm',
+                    day: 'dd/MM',
+                    month: 'MM/yyyy',
+                    year: 'yyyy'
+                  }
+                },
+                title: { display: true, text: "Thời gian" },
+                ticks: {
+                  autoSkip: true,
+                  maxTicksLimit: 20
+                }
+              },
+              y: {
+                title: { display: true, text: "Dòng điện (A)" },
+                beginAtZero: true
+              }
+            },
+            plugins: {
+              legend: {
+                labels: {
+                  usePointStyle: true,
+                  boxWidth: 10
+                }
+              },
+              tooltip: {
+                mode: 'index',
+                intersect: false
+              }
+            },
+            interaction: {
+              mode: 'nearest',
+              axis: 'x',
+              intersect: false
+            }
+          }
+        });
+
+
+        function loadHistoryRange(genId = 1, range = "1d") {
+          fetch(`/api/ats/history/${genId}?range=${range}`)
+            .then(res => res.json())
+            .then(data => {
+              // Chuyển UTC sang giờ VN (+7) và định dạng
+              historyChart.data.labels = data.map(d => new Date(d.time));
+              historyChart.data.datasets[0].data = data.map(d => d.ia);
+              historyChart.data.datasets[1].data = data.map(d => d.ib);
+              historyChart.data.datasets[2].data = data.map(d => d.ic);
+              historyChart.update();
+            })
+            .catch(err => console.error("Lỗi khi tải dữ liệu lịch sử:", err));
+        }
+
+        // Mặc định tải ATS 1 trong 1 ngày
+        loadHistoryRange(1, "1d");
+
+        document.getElementById("rangeSelect").addEventListener("change", () => {
+          const genId = document.getElementById("genSelect").value;
+          const range = document.getElementById("rangeSelect").value;
+          loadHistoryRange(genId, range);
+        });
+
+        document.getElementById("genSelect").addEventListener("change", () => {
+          const genId = document.getElementById("genSelect").value;
+          const range = document.getElementById("rangeSelect").value;
+          loadHistoryRange(genId, range);
+        });
+      </script>
+      <!-- end test -->
+    </div>
+    <div class="row g-3">
+      <!-- ATS 1 -->
+      <div class="col-md-6">
+        <div class="card">
+          <h5 class="text-primary">NGUỒN 1</h5>
+          <h6 class="text-secondary mt-3">Thông số điện lưới ATS 1</h6>
+          <div class="row mb-2">
+            <div class="col phase-col">
+              <strong>Pha A</strong>
+              <p>UAB: <span id="gen1-uab1">-</span></p>
+              <p>UA: <span id="gen1-ua1">-</span></p>
+              <p>Góc pha: <span id="gen1-phaA1">-</span></p>
+            </div>
+            <div class="col phase-col">
+              <strong>Pha B</strong>
+              <p>UBC: <span id="gen1-ubc1">-</span></p>
+              <p>UB: <span id="gen1-ub1">-</span></p>
+              <p>Góc pha: <span id="gen1-phaB1">-</span></p>
+            </div>
+            <div class="col phase-col">
+              <strong>Pha C</strong>
+              <p>UCA: <span id="gen1-uca1">-</span></p>
+              <p>UC: <span id="gen1-uc1">-</span></p>
+              <p>Góc pha: <span id="gen1-phaC1">-</span></p>
+            </div>
+          </div>
+          <p>Tần số điện lưới: <span id="gen1-freq1">-</span> Hz</p>
+          <h6 class="text-secondary mt-3">Thông số máy phát 1</h6>
+          <div class="row mb-2">
+            <div class="col phase-col">
+              <strong>Pha A</strong>
+              <p>UAB: <span id="gen1-uab2">-</span></p>
+              <p>UA: <span id="gen1-ua2">-</span></p>
+              <p>Góc pha: <span id="gen1-phaA2">-</span></p>
+            </div>
+            <div class="col phase-col">
+              <strong>Pha B</strong>
+              <p>UBC: <span id="gen1-ubc2">-</span></p>
+              <p>UB: <span id="gen1-ub2">-</span></p>
+              <p>Góc pha: <span id="gen1-phaB2">-</span></p>
+            </div>
+            <div class="col phase-col">
+              <strong>Pha C</strong>
+              <p>UCA: <span id="gen1-uca2">-</span></p>
+              <p>UC: <span id="gen1-uc2">-</span></p>
+              <p>Góc pha: <span id="gen1-phaC2">-</span></p>
+            </div>
+          </div>
+          <p>Tần số máy phát: <span id="gen1-freq2">-</span> Hz</p>
+          <h6 class="text-secondary mt-3">Thông số dòng điện tổng ATS 1</h6>
+          <div class="row mb-2">
+            <div class="col phase-col">
+              <strong>Pha A</strong>
+              <p>Dòng điện pha A: <span id="gen1-ia">-</span> A</p>
+            </div>
+            <div class="col phase-col">
+              <strong>Pha B</strong>
+              <p>Dòng điện pha B: <span id="gen1-ib">-</span> A</p>
+            </div>
+            <div class="col phase-col">
+              <strong>Pha C</strong>
+              <p>Dòng điện pha C: <span id="gen1-ic">-</span> A</p>
+            </div>
+          </div>
+          <canvas id="chart-gen1" height="220"></canvas>
+          <p class="text-muted small">Cập nhật: <span id="updated-time-gen1">-</span></p>
+          <div class="control-buttons text-center">
+            <button class="btn btn-primary" onclick="sendControl(1, 'start')">Khởi động</button>
+            <button class="btn btn-danger" onclick="sendControl(1, 'stop')">Tắt</button>
+            <button class="btn btn-success" onclick="sendControl(1, 'acb_on')">Đóng ACB</button>
+            <button class="btn btn-warning" onclick="sendControl(1, 'acb_off')">Ngắt ACB</button>
+          </div>
+          <div class="text-center text-danger fw-bold mt-1" id="status1"></div>
+        </div>
+      </div>
+
+      <!-- ATS 2 -->
+      <div class="col-md-6">
+        <div class="card">
+          <h5 class="text-primary">NGUỒN 2</h5>
+          <h6 class="text-secondary mt-3">Thông số điện lưới ATS 2</h6>
+          <div class="row mb-2">
+            <div class="col phase-col">
+              <strong>Pha A</strong>
+              <p>UAB: <span id="gen2-uab1">-</span></p>
+              <p>UA: <span id="gen2-ua1">-</span></p>
+              <p>Góc pha: <span id="gen2-phaA1">-</span></p>
+            </div>
+            <div class="col phase-col">
+              <strong>Pha B</strong>
+              <p>UBC: <span id="gen2-ubc1">-</span></p>
+              <p>UB: <span id="gen2-ub1">-</span></p>
+              <p>Góc pha: <span id="gen2-phaB1">-</span></p>
+            </div>
+            <div class="col phase-col">
+              <strong>Pha C</strong>
+              <p>UCA: <span id="gen2-uca1">-</span></p>
+              <p>UC: <span id="gen2-uc1">-</span></p>
+              <p>Góc pha: <span id="gen2-phaC1">-</span></p>
+            </div>
+          </div>
+          <p>Tần số điện lưới: <span id="gen2-freq1">-</span> Hz</p>
+
+          <h6 class="text-secondary mt-3">Thông số máy phát 2</h6>
+          <div class="row mb-2">
+            <div class="col phase-col">
+              <strong>Pha A</strong>
+              <p>UAB: <span id="gen2-uab2">-</span></p>
+              <p>UA: <span id="gen2-ua2">-</span></p>
+              <p>Góc pha: <span id="gen2-phaA2">-</span></p>
+            </div>
+            <div class="col phase-col">
+              <strong>Pha B</strong>
+              <p>UBC: <span id="gen2-ubc2">-</span></p>
+              <p>UB: <span id="gen2-ub2">-</span></p>
+              <p>Góc pha: <span id="gen2-phaB2">-</span></p>
+            </div>
+            <div class="col phase-col">
+              <strong>Pha C</strong>
+              <p>UCA: <span id="gen2-uca2">-</span></p>
+              <p>UC: <span id="gen2-uc2">-</span></p>
+              <p>Góc pha: <span id="gen2-phaC2">-</span></p>
+            </div>
+          </div>
+          <p>Tần số máy phát: <span id="gen2-freq2">-</span> Hz</p>
+          <h6 class="text-secondary mt-3">Thông số dòng điện tổng ATS 2</h6>
+          <div class="row mb-2">
+            <div class="col phase-col">
+              <strong>Pha A</strong>
+              <p>Dòng điện pha A: <span id="gen2-ia">-</span> A</p>
+            </div>
+            <div class="col phase-col">
+              <strong>Pha B</strong>
+              <p>Dòng điện pha B: <span id="gen2-ib">-</span> A</p>
+            </div>
+            <div class="col phase-col">
+              <strong>Pha C</strong>
+              <p>Dòng điện pha C: <span id="gen2-ic">-</span> A</p>
+            </div>
+          </div>
+          <canvas id="chart-gen2" height="220"></canvas>
+          <p class="text-muted small">Cập nhật: <span id="updated-time-gen2">-</span></p>
+          <!-- test biểu đồ -->
+          <!-- Biểu đồ lịch sử ATS cho gen1 và gen2 -->
+
+          <!-- end -->
+          <div class="control-buttons text-center">
+            <button class="btn btn-primary" onclick="sendControl(2, 'start')">Khởi động</button>
+            <button class="btn btn-danger" onclick="sendControl(2, 'stop')">Tắt</button>
+            <button class="btn btn-success" onclick="sendControl(2, 'acb_on')">Đóng ACB</button>
+            <button class="btn btn-warning" onclick="sendControl(2, 'acb_off')">Ngắt ACB</button>
+          </div>
+          <div class="text-center text-danger fw-bold mt-1" id="status2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+  <script>
+    const socket = io();
+    const chartGen1 = createCurrentChart("chart-gen1");
+    const chartGen2 = createCurrentChart("chart-gen2");
+
+    socket.on("ats_data", (data) => {
+      updateData("gen1", data.gen1);
+      updateData("gen2", data.gen2);
+      updateChart(chartGen1, data.gen1.ia, data.gen1.ib, data.gen1.ic);
+      updateChart(chartGen2, data.gen2.ia, data.gen2.ib, data.gen2.ic);
+      const now = new Date().toLocaleTimeString('vi-VN', { hour12: false });
+      document.getElementById("updated-time-gen1").textContent = now;
+      document.getElementById("updated-time-gen2").textContent = now;
+    });
+
+    function displayPhase(val) {
+      return val >= 3276.5 ? "-" : val.toFixed(1) + "°";
+    }
+
+    function displayFreq(val) {
+      return val <= 0.1 ? "-" : val.toFixed(2);
+    }
+
+    function updateData(prefix, data) {
+      for (const [key, val] of Object.entries(data)) {
+        const el = document.getElementById(`${prefix}-${key}`);
+        if (!el) continue;
+
+        const current = parseFloat(el.textContent);
+        const newValue = (key.startsWith("pha")) ? displayPhase(val) :
+          (key.startsWith("freq")) ? displayFreq(val) :
+            parseFloat(val).toFixed(1);
+
+        // So sánh nếu là số
+        if (!isNaN(current) && !isNaN(parseFloat(newValue))) {
+          if (parseFloat(newValue) > current) {
+            el.style.color = "red";
+          } else if (parseFloat(newValue) < current) {
+            el.style.color = "green";
+          } else {
+            el.style.color = "black";
+          }
+        }
+
+        el.textContent = newValue;
+      }
+    }
+
+
+    function sendControl(id, action) {
+      fetch('/api/modbus/control', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ generatorId: id, action })
+      })
+        .then(res => res.json().then(data => ({ status: res.status, body: data })))
+        .then(({ status, body }) => {
+          if (status === 401) {
+            alert("Bạn cần đăng nhập để điều khiển!");
+            window.location.href = "/login";  // Chuyển hướng về trang đăng nhập
+          } else if (status === 403) {
+            alert("Bạn không có quyền thực hiện hành động này!");
+          } else {
+            document.getElementById(`status${id}`).textContent = body.message || 'Đã gửi lệnh';
+          }
+        })
+        .catch(() => {
+          document.getElementById(`status${id}`).textContent = 'Lỗi gửi lệnh';
+        });
+    }
+
+
+    function createCurrentChart(canvasId) {
+      const ctx = document.getElementById(canvasId).getContext("2d");
+      return new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: [],
+          datasets: [
+            { label: "Pha A", data: [], borderWidth: 1, borderColor: 'red' },
+            { label: "Pha B", data: [], borderWidth: 1, borderColor: 'green' },
+            { label: "Pha C", data: [], borderWidth: 1, borderColor: 'blue' }
+          ]
+        },
+        options: {
+          responsive: true,
+          animation: false,
+          scales: {
+            x: { ticks: { maxTicksLimit: 5 } },
+            y: { beginAtZero: true }
+          }
+        }
+      });
+    }
+
+    function updateChart(chart, ia, ib, ic) {
+      const now = new Date().toLocaleTimeString('vi-VN', { hour12: false });
+      const data = chart.data;
+      data.labels.push(now);
+      data.datasets[0].data.push(ia);
+      data.datasets[1].data.push(ib);
+      data.datasets[2].data.push(ic);
+      if (data.labels.length > 10) {
+        data.labels.shift();
+        data.datasets.forEach(ds => ds.data.shift());
+      }
+      chart.update();
+    }
+  </script>
+</body>
+
+</html>

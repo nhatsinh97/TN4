@@ -1,0 +1,17 @@
+#myChart {
+    width: 100% !important; /* Đảm bảo canvas chiếm 100% chiều rộng của khung chứa */
+    height: 100% !important; /* Đảm bảo canvas chiếm 100% chiều cao của khung chứa */
+    max-width: 100%; /* Ngăn canvas vượt quá kích thước của khung */
+    max-height: 100%; /* Ngăn canvas vượt quá kích thước của khung */
+    display: block; /* Loại bỏ khoảng cách mặc định của canvas (nếu có) */
+}
+
+
+.status-incomplete {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+.status-complete {
+    background-color: #d4edda;
+    color: #155724;
+}

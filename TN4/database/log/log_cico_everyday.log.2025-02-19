@@ -1,0 +1,23 @@
+2025-02-19 17:33:27,799 - INFO - [in /home/erpfarm/workspace/farm-iot/app.py:50] Start: GF-CICO
+2025-02-19 17:33:27,801 - INFO - [in /home/erpfarm/workspace/farm-iot/app.py:63] Danh sách các cơ sở dữ liệu:
+2025-02-19 17:33:27,807 - INFO - [in /home/erpfarm/workspace/farm-iot/app.py:64] [{'name': '_internal'}, {'name': 'cico_iot'}, {'name': 'farm_data'}]
+2025-02-19 17:34:27,874 - ERROR - [in /home/erpfarm/workspace/farm-iot/app.py:228] MQTT Loop Error: timed out
+2025-02-19 17:38:38,889 - INFO - [in /home/erpfarm/workspace/farm-iot/app.py:50] Start: GF-CICO
+2025-02-19 17:38:38,890 - INFO - [in /home/erpfarm/workspace/farm-iot/app.py:63] Danh sách các cơ sở dữ liệu:
+2025-02-19 17:38:38,893 - INFO - [in /home/erpfarm/workspace/farm-iot/app.py:64] [{'name': '_internal'}, {'name': 'cico_iot'}, {'name': 'farm_data'}]
+2025-02-19 17:39:38,979 - ERROR - [in /home/erpfarm/workspace/farm-iot/app.py:228] MQTT Loop Error: timed out
+2025-02-19 17:41:02,936 - INFO - [in /home/erpfarm/workspace/farm-iot/app.py:50] Start: GF-CICO
+2025-02-19 17:41:02,937 - INFO - [in /home/erpfarm/workspace/farm-iot/app.py:63] Danh sách các cơ sở dữ liệu:
+2025-02-19 17:41:02,942 - INFO - [in /home/erpfarm/workspace/farm-iot/app.py:64] [{'name': '_internal'}, {'name': 'cico_iot'}, {'name': 'farm_data'}]
+2025-02-19 17:42:03,019 - ERROR - [in /home/erpfarm/workspace/farm-iot/app.py:228] MQTT Loop Error: timed out
+2025-02-19 17:55:19,579 - INFO - [in /home/erpfarm/workspace/farm-iot/app.py:50] Start: GF-CICO
+2025-02-19 17:55:19,582 - INFO - [in /home/erpfarm/workspace/farm-iot/app.py:63] Danh sách các cơ sở dữ liệu:
+2025-02-19 17:55:19,609 - INFO - [in /home/erpfarm/workspace/farm-iot/app.py:64] [{'name': '_internal'}, {'name': 'cico_iot'}, {'name': 'farm_data'}]
+2025-02-19 17:56:19,703 - ERROR - [in /home/erpfarm/workspace/farm-iot/app.py:228] MQTT Loop Error: timed out
+2025-02-19 18:50:01,114 - INFO - [in /home/erpfarm/workspace/farm-iot/app.py:50] Start: GF-CICO
+2025-02-19 18:50:01,114 - INFO - [in /home/erpfarm/workspace/farm-iot/app.py:63] Danh sách các cơ sở dữ liệu:
+2025-02-19 18:50:01,123 - INFO - [in /home/erpfarm/workspace/farm-iot/app.py:64] [{'name': '_internal'}, {'name': 'cico_iot'}, {'name': 'farm_data'}]
+2025-02-19 18:51:01,182 - ERROR - [in /home/erpfarm/workspace/farm-iot/app.py:228] MQTT Loop Error: timed out
+2025-02-19 22:44:40,679 - INFO - [in /home/erpfarm/workspace/farm-iot/app.py:50] Start: GF-CICO
+2025-02-19 22:44:40,679 - INFO - [in /home/erpfarm/workspace/farm-iot/app.py:63] Danh sách các cơ sở dữ liệu:
+2025-02-19 22:44:40,687 - INFO - [in /home/erpfarm/workspace/farm-iot/app.py:64] [{'name': '_internal'}, {'name': 'cico_iot'}, {'name': 'farm_data'}]

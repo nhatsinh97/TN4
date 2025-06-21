@@ -1,0 +1,262 @@
+/* Thiết lập CSS */
+body {
+    background-image: url('/static/images/background_tn4.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .form-container {
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+  }
+  input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #3e8e41;
+  }
+  a {
+    color: #4CAF50;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #3e8e41;
+  }
+  .hidden {
+    display: none;
+  }
+/* /////////////////////////////////// */
+/* header css */
+header {
+    background-color: #4CAF50; /* Màu nền cho header */
+    color: white; /* Màu chữ */
+    padding: 20px; /* Khoảng cách bên trong */
+}
+
+.header-container {
+    display: flex; /* Sử dụng flexbox để căn giữa */
+    justify-content: space-between; /* Căn giữa nội dung, phân chia đều không gian */
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.logo {
+    font-size: 24px; /* Kích thước chữ cho logo */
+    font-weight: bold; /* Làm đậm chữ */
+}
+
+.navigation ul {
+    list-style-type: none; /* Xóa dấu chấm đầu dòng */
+    margin: 0; /* Xóa margin */
+    padding: 0; /* Xóa padding */
+    display: flex; /* Hiển thị các phần tử trong danh sách theo hàng ngang */
+}
+
+.navigation li {
+    margin: 0 15px; /* Khoảng cách giữa các liên kết */
+}
+
+.navigation a {
+    color: white; /* Màu chữ của các liên kết */
+    text-decoration: none; /* Xóa gạch chân */
+    transition: color 0.3s; /* Hiệu ứng chuyển màu */
+}
+
+.navigation a:hover {
+    color: #FFD700; /* Màu chữ khi hover */
+}
+/* end  */
+/* css trang chinh  */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #ffcc00;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    background-color: #66ccff;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between; /* Chia đều không gian giữa các phần tử */
+    margin: 20px;
+}
+
+.left-section, .right-section {
+    flex: 1; /* Mỗi phần tử chiếm không gian bằng nhau */
+    margin-right: 20px; /* Khoảng cách giữa hai phần */
+}
+
+.left-section:last-child, .right-section:last-child {
+    margin-right: 0; /* Loại bỏ khoảng cách bên phải của phần tử cuối */
+}
+
+article {
+    padding: 20px;
+    background-color: #e6e6e6;
+}
+
+aside {
+    padding: 20px;
+    background-color: #ff9999;
+    margin-top: 20px; /* Khoảng cách phía trên */
+}
+
+footer {
+    background-color: #99cc99;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+/* end trang chinh  */
+/* Thiết lập font chữ cho toàn bộ trang */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Định dạng cho tiêu đề */
+h1, h2, h3 {
+    color: #4CAF50; /* Màu xanh lá cây */
+}
+
+/* Định dạng cho các liên kết */
+a {
+    color: #2196F3; /* Màu xanh dương */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline; /* Gạch chân khi hover */
+}
+
+/* Định dạng cho các phần tử danh sách */
+ul {
+    list-style-type: none; /* Bỏ dấu chấm trước danh sách */
+    padding: 0;
+}
+
+/* Định dạng cho nút */
+button {
+    background-color: #4CAF50; /* Nền xanh lá cây */
+    color: white; /* Chữ trắng */
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px; /* Bo góc */
+}
+
+button:hover {
+    background-color: #45a049; /* Tối hơn khi hover */
+}
+
+/* Định dạng cho bảng */
+table {
+    border-collapse: collapse; /* Xóa khoảng cách giữa các ô */
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px; /* Khoảng cách trong ô */
+}
+
+th {
+    background-color: #f2f2f2; /* Nền xám nhạt cho tiêu đề bảng */
+    color: #333;
+}
+
+/* Định dạng cho hình ảnh */
+img {
+    max-width: 100%; /* Giữ cho hình ảnh không vượt quá chiều rộng */
+    height: auto; /* Giữ tỉ lệ hình ảnh */
+}
+
+/* Định dạng cho các phần tử khối */
+.container {
+    width: 80%;
+    margin: 0 auto; /* Căn giữa */
+    background-color: white; /* Nền trắng */
+    padding: 20px; /* Khoảng cách bên trong */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+    border-radius: 10px; /* Bo góc */
+}
+
+/* Định dạng cho form */
+form {
+    margin: 20px 0; /* Khoảng cách trên dưới */
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px; /* Khoảng cách bên trong */
+    margin: 8px 0; /* Khoảng cách trên dưới */
+    border: 1px solid #ccc; /* Đường viền xám */
+    border-radius: 5px; /* Bo góc */
+}
+
+/* Định dạng cho phần thông báo lỗi */
+.error {
+    color: red; /* Màu đỏ cho thông báo lỗi */
+}
+
+.success {
+    color: green; /* Màu xanh lá cây cho thông báo thành công */
+}

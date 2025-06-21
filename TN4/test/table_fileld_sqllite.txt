@@ -1,0 +1,31 @@
+"GF_BT": {
+        "reset": "False", 
+        "statusuv_1": "0",
+        "statusuv_2": "0",
+        "cb_cua1": "0",
+        "cb_cua2": "0"
+    }
+farm_name
+iot_signal    // trang thai cua bo thiet bi , neu qua 10 phut khong co tin hieu tu bo thiet bi thi tra ve False
+reset
+statusuv_1
+statusuv_2
+cb_cua1
+cb_cua2
+
+
+CREATE TABLE uv(
+   id INTEGER primary key,
+   farm_name TEXT NOT NULL, 
+   iot_signal BOOLEAN DEFAULT 1,
+   reset BOOLEAN,
+   statusuv_1 INTEGER,
+   statusuv_2 INTEGER,
+   cb_cua1 INTEGER,
+   cb_cua2 INTEGER
+);
+
+
+sudo apt install sqlite3 
+em remote vo server di em
+dang tren server do anh

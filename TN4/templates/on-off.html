@@ -1,0 +1,67 @@
+
+    
+    <script src="/static/css/login.js"></script>
+    <!-- Link đến thư viện Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- <script src="https://kit.fontawesome.com/c9f5871d83.js" crossorigin="anonymous"></script> -->
+
+
+    <div class="dashboard">
+        <header class="header">
+            <span>TRẠNG THÁI HOẠT ĐỘNG:</span>
+            <!-- <div id="clock"></div> -->
+            <span class="dashboard-clock">00 : 00 : 00</span>
+            <script>
+                
+            </script>
+        </header>
+        <div class="server-list">
+            <div class="server has-failed">
+                <i class="fa-solid fa-earth-americas"></i>
+                <ul class="details">
+                    <li>Vị Trí:<span class="data"> {{ data_object.NAME }} </span></li>
+                    <li>Status:<span class="data signal">{{ data_object.Status }}</span></li>
+                    <li>Address:<span class="data">{{ data_object.IP }}</span></li>
+                </ul>
+            </div>
+            <div class="server has-failed">
+                <i class="fa-solid fa-earth-americas"></i>
+                <ul class="details">
+                    <li>Vị Trí:<span class="data">GF_LV2</span></li>
+                    <li>Status:<span class="data signal">ONLINE</span></li>
+                    <li>Address:<span class="data">192.168.1.1</span></li>
+                </ul>
+            </div>
+            <div class="server has-failed">
+                <i class="fa-solid fa-server"></i>
+                <ul class="details">
+                    <li>Vị Trí:<span class="data">GF_LV4</span></li>
+                    <li>Status:<span class="data signal">OFFLINE</span></li>
+                    <li>Address:<span class="data">192.168.1.2</span></li>
+                </ul>
+            </div>
+            <div class="server">
+                <i class="fa-solid fa-server"></i>
+                <ul class="details">
+                    <li>Vị Trí:<span class="data">GF_LVN</span></li>
+                    <li>Status:<span class="data signal">OFFLINE</span></li>
+                    <li>Address:<span class="data">192.10.10.1</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="chart-test">
+        <h1>tesst</h1>
+        <!-- Địa điểm để vẽ biểu đồ -->
+        <canvas id="myChart"></canvas>
+    </div>
+    <div>
+        <!-- Các nút lọc thời gian -->
+        <button onclick="filterData('hour')">Theo Giờ</button>
+        <button onclick="filterData('day')">Theo Ngày</button>
+        <button onclick="filterData('month')">Theo Tháng</button>
+        <button onclick="filterData('year')">Theo Năm</button>
+    </div>
+    <!-- <script src="{{ url_for('static', filename='chart_script.js') }}"></script> -->
+    <script src="/static/chart_script.js"></script>
+

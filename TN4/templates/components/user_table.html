@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-md-12">
+      <h2>Quản lý người dùng</h2>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Tên đăng nhập</th>
+            <th>Vai trò</th>
+            <th>Hành động</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for user in users %}
+          <tr>
+            <td>{{ user.username }}</td>
+            <td>{{ user.role }}</td>
+            <td>
+              <a href="/edit_user_permissions/{{ user.username }}" class="btn btn-primary btn-sm ajax-link">Phân quyền</a>
+              <form action="/delete_user/{{ user.username }}" method="POST" style="display:inline;">
+                <button type="submit" class="btn btn-danger btn-sm">Xoá</button>
+              </form>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

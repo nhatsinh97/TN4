@@ -1,0 +1,10 @@
+{
+    "cam_1": "rtsp://admin:L2C05357@10.16.40.131/cam/realmonitor?channel=1&subtype=00&authbasic=YWRtaW46QWRtaW4xMjM=",
+    "cam_2": "rtsp://admin:L2C05357@10.16.40.131/cam/realmonitor?channel=1&subtype=00&authbasic=YWRtaW46QWRtaW4xMjM=",
+    "cam_3": "rtsp://admin:L2C05357@10.16.40.131/cam/realmonitor?channel=1&subtype=00&authbasic=YWRtaW46QWRtaW4xMjM=",
+    "cam_4": "rtsp://admin:L2C05357@10.16.40.131/cam/realmonitor?channel=1&subtype=00&authbasic=YWRtaW46QWRtaW4xMjM=",
+    "data_timer_1" : 90,
+    "data_timer_2" : 29,
+    "data_timer_3" : 90,
+    "data_timer_4" : 29
+}

@@ -1,0 +1,97 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+    .dashboard {
+        padding: 20px;
+    }
+    .server-list {
+        margin: 20px 0;
+    }
+    .server {
+        padding: 10px;
+        margin: 10px;
+        border: 2px solid transparent;
+        transition: border-color 0.3s ease;
+    }
+    .server.online {
+        border-color: green; /* Màu xanh cho online */
+    }
+    .server.offline {
+        border-color: red; /* Màu đỏ cho offline */
+        animation: blink 1s infinite; /* Thêm hiệu ứng nhấp nháy */
+    }
+    @keyframes blink {
+        0%, 100% { border-color: red; }
+        50% { border-color: transparent; }
+    }
+    .status-online {
+        color: green; /* Màu xanh cho ONLINE */
+    }
+    .status-offline {
+        color: red; /* Màu đỏ cho OFFLINE */
+    }
+</style>
+<div class="dashboard">
+    <header class="header">
+        <span>TRẠNG THÁI HOẠT ĐỘNG:</span>
+        <span class="dashboard-clock">00 : 00 : 00</span>
+    </header>
+    <div class="server-list">
+        <div class="server {{ 'online' if data_object.Status == 'ONLINE' else 'offline' }}">
+            <i class="fa-solid fa-earth-americas"></i>
+            <ul class="details">
+                <li>Hostname:<span class="data">{{ data_object.NAME }}</span></li>
+                <li>Status:<span class="data signal {{ 'status-online' if data_object.Status == 'ONLINE' else 'status-offline' }}">{{ data_object.Status }}</span></li>
+                <li>Address:<span class="data">{{ data_object.IP }}</span></li>
+            </ul>
+        </div>
+        <div class="server online">
+            <i class="fa-solid fa-earth-americas"></i>
+            <ul class="details">
+                <li>Vị Trí:<span class="data">GF_LV2</span></li>
+                <li>Status:<span class="data signal status-online">ONLINE</span></li>
+                <li>Address:<span class="data">192.168.1.1</span></li>
+            </ul>
+        </div>
+        <div class="server offline">
+            <i class="fa-solid fa-server"></i>
+            <ul class="details">
+                <li>Vị Trí:<span class="data">GF_LV4</span></li>
+                <li>Status:<span class="data signal status-offline">OFFLINE</span></li>
+                <li>Address:<span class="data">192.168.1.2</span></li>
+            </ul>
+        </div>
+        <div class="server offline">
+            <i class="fa-solid fa-server"></i>
+            <ul class="details">
+                <li>Vị Trí:<span class="data">GF_LVN</span></li>
+                <li>Status:<span class="data signal status-offline">OFFLINE</span></li>
+                <li>Address:<span class="data">192.10.10.1</span></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="chart-test">
+    <h1>Test</h1>
+    <canvas id="myChart"></canvas>
+</div>
+<div>
+    <button onclick="filterData('hour')">Theo Giờ</button>
+    <button onclick="filterData('day')">Theo Ngày</button>
+    <button onclick="filterData('month')">Theo Tháng</button>
+    <button onclick="filterData('year')">Theo Năm</button>
+</div>
+<script src="/static/css/login.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    document.querySelectorAll('.server').forEach(server => {
+        const statusElement = server.querySelector('.signal');
+        const status = statusElement.textContent.trim();
+        if (status === 'ONLINE') {
+            server.classList.add('online');
+            statusElement.classList.add('status-online');
+        } else if (status === 'OFFLINE') {
+            server.classList.add('offline');
+            statusElement.classList.add('status-offline');
+        }
+    });
+</script>

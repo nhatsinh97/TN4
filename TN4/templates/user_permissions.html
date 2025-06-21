@@ -1,0 +1,18 @@
+<div class="container">
+    <h2>Phân quyền cho {{ user.name }}</h2>
+    <form action="/assign_permissions" method="post">
+        <input type="hidden" name="user_id" value="{{ user.id }}">
+        <label>
+            <input type="checkbox" name="permissions" value="view_dashboard" 
+            {% if 'view_dashboard' in user.permissions %} checked {% endif %}>
+            Xem dashboard
+        </label>
+        <label>
+            <input type="checkbox" name="permissions" value="manage_users" 
+            {% if 'manage_users' in user.permissions %} checked {% endif %}>
+            Quản lý người dùng
+        </label>
+        <!-- Các quyền khác -->
+        <button type="submit">Cập nhật quyền</button>
+    </form>
+</div>

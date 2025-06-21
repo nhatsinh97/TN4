@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ seo.title if seo.title else 'Farm GreenFeed || giám sát phòng uv' }}</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/cico.css">
+    <!-- <link rel="stylesheet" href="style.css"> Đường dẫn đến file CSS của bạn -->
+</head>
+<body>
+<header>
+    {% include 'common/header.html' %}
+</header>
+<nav>
+    <!-- Nội dung sidebar -->
+    <button id="toggle-sidebar" onclick="toggleSidebar()">☰ Xin chào :  {{ user['username'] }} <span class="caret"></span></button>
+    {% include 'common/sidebar.html' %}
+    
+</nav>
+<section>
+    <article>
+        <h2>Tiêu Đề Bài Viết</h2>
+        {% include 'common/modal.html' %}
+        <p>Nội dung bài viết chính sẽ nằm ở đây.</p>
+    </article>
+    <aside>
+        <h3>Thông tin thêm</h3>
+        <p>Nội dung bên lề.</p>
+    </aside>
+</section>
+
+<section>
+    <article>
+        <h2>Tiêu Đề Bài Viết Khác</h2>
+        <a href="/check_iot" class="ajax-link">Nội dung mới</a>
+        <a href="/check_iot" class="ajax-link">Nội dung khác</a>
+        <p>Nội dung bài viết khác sẽ nằm ở đây.</p>
+    </article>
+    <aside>
+        <h3>Thông tin thêm</h3>
+        <p>Nội dung bên lề.</p>
+    </aside>
+</section>
+
+<footer>
+    <p>Bản quyền © 2024. Tất cả các quyền được bảo lưu.</p>
+</footer>
+<script>
+    $(document).on('click', '.ajax-link', function(e) {
+        e.preventDefault(); // Ngăn hành vi mặc định mở trang mới
+        var url = $(this).attr('href'); // Lấy URL của liên kết
+        // Gửi yêu cầu AJAX để tải nội dung mới
+        $.get(url, function(data) {
+            $('.container').html(data); // Cập nhật nội dung trong block .container
+        }).fail(function() {
+            alert('Không thể tải nội dung. Vui lòng thử lại sau.');
+        });
+    });
+
+    function toggleSidebar() {
+        const sidebar = document.querySelector('.sidebar');
+        const containerFluid = document.querySelector('.container-fluid');
+        const container = document.querySelector('.container');
+
+        // Thêm hoặc xóa lớp 'hidden' cho sidebar
+        sidebar.classList.toggle('hidden');
+
+        // Thêm hoặc xóa lớp 'sidebar-hidden' cho cả container-fluid và container
+        containerFluid.classList.toggle('sidebar-hidden');
+        container.classList.toggle('sidebar-hidden');
+    }
+</script>
+</body>
+</html>
+

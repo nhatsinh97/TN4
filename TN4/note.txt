@@ -1,0 +1,37 @@
+cd /home/erpfarm/workspace/farm-iot
+sudo systemctl edit --full atsh_uv_system.service
+sudo systemctl daemon-reload
+sudo systemctl status atsh_uv_system.service   
+sudo systemctl status farm-iot.service
+sudo systemctl start atsh_uv_system.service
+sudo systemctl stop atsh_uv_system.service
+sudo systemctl reload atsh_uv_system.service
+
+python3 check_cam.py
+python3 service.py
+xem cac service dang hoat dong
+systemctl list-units --type=service
+sudo nano /etc/systemd/system/atsh_uv_system.service 
+
+sevice cico
+sudo systemctl status cico.service
+sudo systemctl start cico.service
+sudo systemctl stop cico.service
+sudo systemctl reload cico.service
+kiem tra nhat ky
+journalctl -u cico.service -b
+Vô hiệu hóa service (từ khởi động tự động)
+sudo systemctl disable atsh_uv_system.service
+
+Xóa tệp cấu hình service
+sudo rm /etc/systemd/system/atsh_uv_system.service
+
+Xem logs của một service cụ thể:
+sudo journalctl -u cico_service
+
+Xem logs theo thời gian thực:
+sudo journalctl -u cico_service -f
+
+mosquitto_sub -h 172.17.128.24 -t PLC/LOGO -p 1883
+
+mosquitto_sub -h 172.17.128.24 -t PLC/LOGO/ESP32 -p 1883

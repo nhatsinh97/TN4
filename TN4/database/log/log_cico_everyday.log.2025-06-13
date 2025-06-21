@@ -1,0 +1,11 @@
+2025-06-13 16:31:15,319 - INFO - [in /home/jetson/project/TN4/app.py:104] Start: GF-CICO
+2025-06-13 16:31:19,484 - INFO - [in /home/jetson/project/TN4/app.py:104] Start: GF-CICO
+2025-06-13 16:31:28,347 - CRITICAL - [in /home/jetson/project/TN4/app.py:222] Giá trị của uv7 đã thay đổi từ 0 thành 1 với status: start
+2025-06-13 16:31:28,347 - CRITICAL - [in /home/jetson/project/TN4/app.py:232] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv7', 'status': 'start'}
+2025-06-13 16:31:28,353 - DEBUG - [in /home/jetson/project/TN4/data_processor.py:53] Dữ liệu cho uv7: {'mac_address': 'GF_TN4_CAMERA2', 'camera': 'rtsp://admin:admin@2024!@10.16.40.72/cam/realmonitor?channel=1&subtype=0', 'timer': '60', 'status': 'on', 'previous_status': 'off', 'previous_timer': '60'}
+2025-06-13 16:31:30,036 - CRITICAL - [in /home/jetson/project/TN4/app.py:222] Giá trị của uv7 đã thay đổi từ 0 thành 1 với status: start
+2025-06-13 16:31:30,037 - CRITICAL - [in /home/jetson/project/TN4/app.py:232] event_data = {'idchip': 'PLC_LOGO_1', 'ip': '10.16.40.151', 'version': '123', 'name': 'uv7', 'status': 'start'}
+2025-06-13 16:55:13,797 - ERROR - [in /home/jetson/project/TN4/app.py:199] Reported data is not in the expected format.
+2025-06-13 16:55:46,992 - ERROR - [in /home/jetson/project/TN4/data_processor.py:80] Lỗi khi gửi request đến server: HTTPConnectionPool(host='10.50.41.18', port=58185): Max retries exceeded with url: /api/Farm/postbiohistory (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f7cacb160>: Failed to establish a new connection: [Errno 110] ETIMEDOUT',))
+2025-06-13 16:55:47,002 - DEBUG - [in /home/jetson/project/TN4/data_processor.py:53] Dữ liệu cho uv7: {'mac_address': 'GF_TN4_CAMERA2', 'camera': 'rtsp://admin:admin@2024!@10.16.40.72/cam/realmonitor?channel=1&subtype=0', 'timer': '60', 'status': 'on', 'previous_status': 'on', 'previous_timer': '60'}
+2025-06-13 16:57:58,066 - ERROR - [in /home/jetson/project/TN4/data_processor.py:80] Lỗi khi gửi request đến server: HTTPConnectionPool(host='10.50.41.18', port=58185): Max retries exceeded with url: /api/Farm/postbiohistory (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f7c662ac8>: Failed to establish a new connection: [Errno 110] ETIMEDOUT',))

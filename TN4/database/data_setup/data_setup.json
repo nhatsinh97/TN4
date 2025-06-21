@@ -1,0 +1,122 @@
+{
+    "chipid": {
+        "PLC_LOGO_1": {
+            "about": {
+                "id": "GF_TN4",
+                "version": "123",
+                "ip": "10.16.40.151"
+            },
+            "uv7": {
+                "mac_address": "GF_TN4_CAMERA2",
+                "camera": "rtsp://admin:admin@2024!@10.16.40.72/cam/realmonitor?channel=1&subtype=0",
+                "timer": "60",
+                "status": "on",
+                "previous_status": "on",
+                "previous_timer": "60"
+            },
+            "uv2_": {
+                "mac_address": "GF_TN4_CAMERA1",
+                "camera": "rtsp://admin:admin@2024!@10.16.40.72/cam/realmonitor?channel=1&subtype=0",
+                "timer": "87",
+                "status": "off",
+                "previous_status": "off",
+                "previous_timer": "87"
+            },
+            "uv3": {
+                "mac_address": "GF_TN4_CAMERA1",
+                "camera": "rtsp://admin:admin@2024!@10.16.40.72/cam/realmonitor?channel=1&subtype=0",
+                "timer": "87",
+                "status": "off",
+                "previous_status": "off",
+                "previous_timer": "87"
+            },
+            "uv4": {
+                "mac_address": "GF_TN4_CAMERA3",
+                "camera": "rtsp://admin:admin@2024!@10.16.40.72/cam/realmonitor?channel=1&subtype=0",
+                "timer": "87",
+                "status": "off",
+                "previous_status": "off",
+                "previous_timer": "30"
+            },
+            "uv5": {
+                "mac_address": "GF_TN4_CAMERA5",
+                "camera": "rtsp://admin:admin@2024!@10.16.40.72/cam/realmonitor?channel=1&subtype=0",
+                "timer": "30",
+                "status": "off",
+                "previous_status": "off",
+                "previous_timer": "30"
+            },
+            "uv6": {
+                "mac_address": "GF_TN4_CAMERA6",
+                "camera": "rtsp://admin:admin@2024!@10.16.40.72/cam/realmonitor?channel=1&subtype=0",
+                "timer": "30",
+                "status": "off",
+                "previous_status": "off",
+                "previous_timer": "30"
+            },
+            "uv1": {
+                "mac_address": "GF_TN4_CAMERA7",
+                "camera": "rtsp://admin:admin@2024!@10.16.40.72/cam/realmonitor?channel=1&subtype=0",
+                "timer": "1",
+                "status": "off",
+                "previous_status": "off",
+                "previous_timer": "1"
+            },
+            "uv8": {
+                "mac_address": "GF_TN4_CAMERA8",
+                "camera": "rtsp://admin:admin@2024!@10.16.40.72/cam/realmonitor?channel=1&subtype=0",
+                "timer": "87",
+                "status": "off",
+                "previous_status": "off",
+                "previous_timer": "87"
+            },
+            "uv9": {
+                "mac_address": "GF_TN4_CAMERA9",
+                "camera": "rtsp://admin:admin@2024!@10.16.40.72/cam/realmonitor?channel=1&subtype=0",
+                "timer": "87",
+                "status": "off",
+                "previous_status": "off",
+                "previous_timer": "87"
+            }
+        },
+        "ESP32": {
+            "about": {
+                "id": "GF_TN4_2",
+                "version": "123",
+                "ip": "10.16.40.151"
+            },
+            "uv1": {
+                "mac_address": "GF_TN4_2_CAMERA1",
+                "camera": "rtsp://admin:admin@2024!@10.16.40.72/cam/realmonitor?channel=1&subtype=0",
+                "timer": "86",
+                "status": "off",
+                "previous_status": "off",
+                "previous_timer": "86"
+            },
+            "uv2": {
+                "mac_address": "GF_TN4_2_CAMERA3",
+                "camera": "rtsp://admin:admin@2024!@10.16.40.72/cam/realmonitor?channel=1&subtype=0",
+                "timer": "86",
+                "status": "off",
+                "previous_status": "off",
+                "previous_timer": "86"
+            },
+            "uv-3": {
+                "mac_address": "GF_TN4_2_CAMERA2",
+                "camera": "rtsp://admin:admin@2024!@10.16.40.72/cam/realmonitor?channel=1&subtype=0",
+                "timer": "57",
+                "status": "off",
+                "previous_status": "off",
+                "previous_timer": "57"
+            },
+            "uv-4": {
+                "mac_address": "GF_TN4_2_CAMERA4",
+                "camera": "rtsp://admin:admin@2024!@10.16.40.72/cam/realmonitor?channel=1&subtype=0",
+                "timer": "26",
+                "status": "off",
+                "previous_status": "off",
+                "previous_timer": "26"
+            }
+        }
+    }
+}

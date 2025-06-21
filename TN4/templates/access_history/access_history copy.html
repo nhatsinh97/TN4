@@ -1,0 +1,64 @@
+<h1>Lịch sử đăng nhập</h1>
+
+<!-- Form để lọc lịch sử đăng nhập -->
+<form method="POST" action="{{ url_for('access_history') }}">
+    <label for="start_date">Từ ngày:</label>
+    <input type="date" name="start_date" id="start_date">
+    <label for="end_date">Đến ngày:</label>
+    <input type="date" name="end_date" id="end_date">
+    <button type="submit">Lọc</button>
+    <!-- Các nút lọc theo khoảng thời gian -->
+    <button type="button" id="today-btn">Hôm nay</button>
+    <button type="button" id="this-week-btn">Tuần này</button>
+    <button type="button" id="this-month-btn">Tháng này</button>
+    <input type="hidden" name="filter" id="filter">
+</form>
+
+<h2>Kết quả lọc</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Thời gian</th>
+            <th>Người dùng</th>
+            <th>IP</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if history %}
+            {% for entry in history %}
+            <tr>
+                <td>{{ entry.timestamp }}</td>
+                <td>{{ entry.username }}</td>
+                <td>{{ entry.ip }}</td>
+            </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="3">Không có dữ liệu lịch sử</td>
+            </tr>
+        {% endif %}
+    </tbody>
+</table>
+
+<script>
+    document.getElementById('today-btn').addEventListener('click', function() {
+        document.getElementById('start_date').value = ''; // Vô hiệu hóa trường ngày
+        document.getElementById('end_date').value = '';   // Vô hiệu hóa trường ngày
+        document.getElementById('filter').value = 'today'; // Đặt giá trị cho bộ lọc
+        document.forms[0].submit(); // Tự động gửi form
+    });
+
+    document.getElementById('this-week-btn').addEventListener('click', function() {
+        document.getElementById('start_date').value = '';
+        document.getElementById('end_date').value = '';
+        document.getElementById('filter').value = 'this_week';
+        document.forms[0].submit();
+    });
+
+    document.getElementById('this-month-btn').addEventListener('click', function() {
+        document.getElementById('start_date').value = '';
+        document.getElementById('end_date').value = '';
+        document.getElementById('filter').value = 'this_month';
+        document.forms[0].submit();
+    });
+</script>
