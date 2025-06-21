@@ -30,3 +30,18 @@ templates/  # các tệp giao diện HTML
 static/     # tài nguyên tĩnh như CSS, JS, hình ảnh
 database/   # file cấu hình và dữ liệu mẫu
 ```
+## Kiểm thử
+
+Các bài test nằm trong thư mục `tests/`. Cài đặt `pytest` nếu muốn chạy kiểm thử:
+
+```bash
+pip install pytest
+```
+
+Sau đó chạy:
+
+```bash
+pytest
+```
+
+Các script thử nghiệm cũ đã được di chuyển vào thư mục `scripts/` để tránh ảnh hưởng tới quá trình thu thập test.
