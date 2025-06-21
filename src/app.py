@@ -393,13 +393,6 @@ def log_access(username, ip):
 def load_permission_menu():
     with open("/home/jetson/project/TN4/database/data_setup/permissions.json", "r", encoding="utf-8") as f:
         return json.load(f)
-def get_base_context(template_title="Trang"):
-    username = session.get("username")
-    users = load_users()
-    user = next((u for u in users['users'] if u['username'] == username), None)
-    permissions = get_user_permissions(username)
-    seo = {'title': f"Farm - {template_title}"}
-    return dict(user=user, permissions=permissions, seo=seo)
 
 # ✅ Thêm hàm context processor ngay sau load_permission_menu
 @app.context_processor
@@ -486,20 +479,6 @@ def manage_users():
     # Nếu là request bình thường (truy cập trang trực tiếp)
     return render_template('manage_users.html', users=users, permissions=permissions, seo=seo, user=user)
 
-def update_user_permissions(username, new_permissions):
-    # Tải danh sách người dùng
-    users = load_users()
-    
-    # Tìm người dùng cần cập nhật
-    for user in users['users']:
-        if user['username'] == username:
-            # Cập nhật quyền
-            user['permissions'] = new_permissions
-            break
-    
-    # Ghi lại danh sách người dùng vào file JSON
-    with open('path_to_your_users_file.json', 'w') as f:
-        json.dump(users, f, indent=4)
 def extract_all_permissions():
     data = load_permission_menu()
     all_permissions = []
