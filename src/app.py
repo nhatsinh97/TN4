@@ -29,14 +29,16 @@ from flask import Flask, make_response, render_template, redirect, send_from_dir
 from werkzeug.utils import secure_filename  # Thêm dòng này để xử lý tên file an toàn
 from flask import jsonify
 import os
-from datetime import datetime, timedelta
+from pathlib import Path
 from influxdb import InfluxDBClient
 from ats_socket import start_ats_socketio_listener
 from dotenv import load_dotenv
-import os
 
 # Tải các biến môi trường từ file .env
 load_dotenv()
+
+# Thiết lập thư mục gốc của dự án
+BASE_DIR = Path(os.getenv("TN4_BASE_DIR", Path(__file__).resolve().parent))
 
 # Khởi tạo Flask app
 app = Flask(__name__)
@@ -91,7 +93,7 @@ stream_handler.setFormatter(formatter)
 logger.addHandler(stream_handler)
 
 # File handler (log file, split at midnight everyday)
-file_handler = TimedRotatingFileHandler('/home/jetson/project/TN4/database/log/log_cico_everyday.log', when="midnight", interval=1)
+file_handler = TimedRotatingFileHandler(str(BASE_DIR / "database" / "log" / "log_cico_everyday.log"), when="midnight", interval=1)
 file_handler.setFormatter(formatter)
 file_handler.setLevel(logging.DEBUG)
 logger.addHandler(file_handler)
@@ -116,7 +118,7 @@ app.secret_key = '4s$eJ#8dLpRtYkMnCbV2gX1fA3h'
 
 
 # Đường dẫn tới tệp JSON
-FILE_PATH_SETUP = "/home/jetson/project/TN4/database/data_setup/data_setup.json"
+FILE_PATH_SETUP = str(BASE_DIR / "database" / "data_setup" / "data_setup.json")
 # Hàm để đọc dữ liệu từ tệp JSON
 def load_data_setup():
     with open(FILE_PATH_SETUP, "r") as file_setup:
@@ -158,12 +160,12 @@ device_requests = {}
 
 # Cơ sở dữ liệu người dùng lưu trong file JSON
 # Đường dẫn đến file JSON chứa thông tin server
-SERVER_FILE = '/home/jetson/project/TN4/database/data_setup/servers.json'
-DATA_FILE = '/home/jetson/project/TN4/database/data_setup/data_setup.json'
+SERVER_FILE = str(BASE_DIR / 'database' / 'data_setup' / 'servers.json')
+DATA_FILE = str(BASE_DIR / 'database' / 'data_setup' / 'data_setup.json')
 # Đường dẫn tới file JSON lưu lịch sử số lượng request của các thiết bị
-REQUEST_HISTORY_FILE = '/home/jetson/project/TN4/database/data_setup/request_history.json'
+REQUEST_HISTORY_FILE = str(BASE_DIR / 'database' / 'data_setup' / 'request_history.json')
 # Đường dẫn đến file users.json
-USER_FILE = os.path.join(os.getcwd(), '/home/jetson/project/TN4/database/data_setup/users.json')
+USER_FILE = str(BASE_DIR / 'database' / 'data_setup' / 'users.json')
 # Biến toàn cục lưu trữ kết quả số lượng thiết bị online, offline và tổng
 device_status = {
     "online": 0,
@@ -391,7 +393,7 @@ def log_access(username, ip):
 
 # Hàm đọc danh sách các menu và quyền từ file JSON
 def load_permission_menu():
-    with open("/home/jetson/project/TN4/database/data_setup/permissions.json", "r", encoding="utf-8") as f:
+    with open(BASE_DIR / "database" / "data_setup" / "permissions.json", "r", encoding="utf-8") as f:
         return json.load(f)
 
 # ✅ Thêm hàm context processor ngay sau load_permission_menu
@@ -407,7 +409,7 @@ def inject_menu():
         return {"menu_items": [], "camera_items": []}
 
 def update_user_permissions_in_file(users):
-    with open('/home/jetson/project/TN4/database/data_setup/users.json', 'w') as f:
+    with open(BASE_DIR / 'database' / 'data_setup' / 'users.json', 'w') as f:
         json.dump(users, f, indent=4)
 def update_user_permissions(username, new_permissions):
     users = load_users()
@@ -415,7 +417,7 @@ def update_user_permissions(username, new_permissions):
         if user['username'] == username:
             user['permissions'] = new_permissions
             break
-    with open('/home/jetson/project/TN4/database/data_setup/users.json', 'w') as f:
+    with open(BASE_DIR / 'database' / 'data_setup' / 'users.json', 'w') as f:
         json.dump(users, f)
 def save_to_file(data, filename= './database/data_setup/users.json'):
     # Mở file JSON và ghi lại danh sách người dùng đã được cập nhật

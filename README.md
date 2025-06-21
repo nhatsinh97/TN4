@@ -22,6 +22,19 @@ python TN4/app.py
 ```
 Ứng dụng sẽ khởi động tại địa chỉ `http://localhost:58888` ở chế độ mặc định.
 
+### Cấu hình đường dẫn cơ sở
+
+Ứng dụng lấy đường dẫn tới thư mục dữ liệu dựa trên biến môi trường
+`TN4_BASE_DIR`. Nếu biến này không được thiết lập, ứng dụng sẽ mặc định sử
+dụng thư mục chứa tệp `app.py`.
+
+Ví dụ:
+
+```bash
+export TN4_BASE_DIR=/opt/tn4/src
+python TN4/app.py
+```
+
 ## Cấu trúc thư mục chính
 
 ```
