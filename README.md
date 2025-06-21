@@ -1,1 +1,42 @@
-# TN4
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/README.md b/README.md
+index 1fdfc190544637532debf57bcfdde753396dac2f..ee9c9f49cf7b27d6ab6d45e7adf48aba7bb5275d 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1,32 @@
+-# TN4
++# TN4
++
++Dự án **TN4** được phát triển nhằm thu thập và xử lý dữ liệu IoT thông qua ứng dụng web. Mục tiêu chính là cung cấp giao diện giám sát và quản lý thiết bị một cách thuận tiện.
++
++## Thiết lập môi trường
++
++1. Tạo môi trường ảo:
++   ```bash
++   python3 -m venv venv
++   source venv/bin/activate
++   ```
++2. Cài đặt các thư viện cần thiết:
++   ```bash
++   pip install -r requirements.txt
++   ```
++
++## Chạy ứng dụng
++
++Kích hoạt môi trường ảo (nếu chưa), sau đó chạy:
++```bash
++python TN4/app.py
++```
++Ứng dụng sẽ khởi động tại địa chỉ `http://localhost:58888` ở chế độ mặc định.
++
++## Cấu trúc thư mục chính
++
++```
++src/        # mã nguồn của ứng dụng (thư mục TN4 hiện tại)
++templates/  # các tệp giao diện HTML
++static/     # tài nguyên tĩnh như CSS, JS, hình ảnh
++database/   # file cấu hình và dữ liệu mẫu
++```
+ 
+EOF
+)
