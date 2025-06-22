@@ -77,6 +77,9 @@ BROKER_ADDRESS = os.getenv("MQTT_BROKER_ADDRESS")
 PORT = int(os.getenv("MQTT_PORT"))
 TOPIC = os.getenv("MQTT_TOPIC")
 
+# Địa chỉ Socket.IO server dùng cho frontend ATS
+SOCKET_SERVER_URL = os.getenv("SOCKET_SERVER_URL", "http://localhost:58888")
+
 
 # Tạo logger
 logger = logging.getLogger('cico_log')
@@ -639,7 +642,7 @@ def dashboard():
     return render_template("common/dashboard.html", seo=seo, permissions=permissions, user=user)
 @app.route('/ats')
 def ats():
-    return render_template('ats/ats.html')
+    return render_template('ats/ats.html', SOCKET_SERVER_URL=SOCKET_SERVER_URL)
 @app.route("/ats_dashboard")
 def ats_dashboard():
     if not session.get('logged_in'):
@@ -654,8 +657,14 @@ def ats_dashboard():
 
     permissions = user.get("permissions", [])
     seo = {"title": "Dashboard ATS - Giám sát Realtime"}
-    
-    return render_template("ats/ats.html", seo=seo, permissions=permissions, user=user)
+
+    return render_template(
+        "ats/ats.html",
+        seo=seo,
+        permissions=permissions,
+        user=user,
+        SOCKET_SERVER_URL=SOCKET_SERVER_URL,
+    )
 
 
 
@@ -769,7 +778,14 @@ def index():
     menu_items = [item for item in menu_data["main_menu"] if item["permission"] in permissions]
     # Truyền danh sách quyền này vào template
     seo = {'title': 'Farm Tây Ninh 4 '}
-    return render_template('ats/ats.html', seo=seo, permissions=permissions, user=user, menu_items=menu_items) 
+    return render_template(
+        'ats/ats.html',
+        seo=seo,
+        permissions=permissions,
+        user=user,
+        menu_items=menu_items,
+        SOCKET_SERVER_URL=SOCKET_SERVER_URL,
+    )
 
 # Route để phục vụ nội dung mới qua AJAX
 @app.route('/check_iot')
