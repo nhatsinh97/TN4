@@ -99,7 +99,9 @@ stream_handler.setFormatter(formatter)
 logger.addHandler(stream_handler)
 
 # File handler (log file, split at midnight everyday)
-file_handler = TimedRotatingFileHandler(str(BASE_DIR / "database" / "log" / "log_cico_everyday.log"), when="midnight", interval=1)
+log_dir = BASE_DIR / "database" / "log"
+os.makedirs(log_dir, exist_ok=True)
+file_handler = TimedRotatingFileHandler(str(log_dir / "log_cico_everyday.log"), when="midnight", interval=1)
 file_handler.setFormatter(formatter)
 file_handler.setLevel(logging.DEBUG)
 logger.addHandler(file_handler)

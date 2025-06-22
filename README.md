@@ -56,6 +56,13 @@ templates/  # các tệp giao diện HTML
 static/     # tài nguyên tĩnh như CSS, JS, hình ảnh
 database/   # file cấu hình và dữ liệu mẫu
 ```
+
+## Quản lý thư viện
+
+Các thư viện phục vụ giao diện (ví dụ Bootstrap, Chart.js...) hiện có trong
+`src/static/dashboard/vendors/`. Để giảm kích thước repository, nên cân nhắc sử
+dụng CDN hoặc cài đặt thông qua trình quản lý gói (npm, yarn...) thay vì commit
+trực tiếp vào kho mã nguồn.
 ## Kiểm thử
 
 Các bài test nằm trong thư mục `tests/`. Cài đặt `pytest` nếu muốn chạy kiểm thử:
