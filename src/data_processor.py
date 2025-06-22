@@ -2,8 +2,7 @@ import logging
 import os
 import cv2
 import json
-import threading
-from urllib3.exceptions import *
+from urllib3.exceptions import InsecureRequestWarning
 import requests
 import base64
 # from app import logger, uv_data
