@@ -1,0 +1,3 @@
+2025-06-20 20:08:45,713 - INFO - [in /home/jetson/project/TN4/app.py:104] Start: GF-CICO
+2025-06-20 20:08:49,892 - INFO - [in /home/jetson/project/TN4/app.py:104] Start: GF-CICO
+2025-06-20 20:08:52,959 - ERROR - [in /home/jetson/project/TN4/app.py:288] MQTT Loop Error: [Errno 113] EHOSTUNREACH

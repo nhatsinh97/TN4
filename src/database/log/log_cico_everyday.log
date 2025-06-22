@@ -1,3 +1,5 @@
-2025-06-20 20:08:45,713 - INFO - [in /home/jetson/project/TN4/app.py:104] Start: GF-CICO
-2025-06-20 20:08:49,892 - INFO - [in /home/jetson/project/TN4/app.py:104] Start: GF-CICO
-2025-06-20 20:08:52,959 - ERROR - [in /home/jetson/project/TN4/app.py:288] MQTT Loop Error: [Errno 113] EHOSTUNREACH
+2025-06-22 11:01:48,427 - INFO - [in d:\vs code\TN4_old\TN4\src\app.py:106] Start: GF-CICO
+2025-06-22 11:01:50,825 - INFO - [in d:\vs code\TN4_old\TN4\src\app.py:106] Start: GF-CICO
+2025-06-22 11:01:55,840 - ERROR - [in d:\vs code\TN4_old\TN4\src\app.py:290] MQTT Loop Error: timed out
+2025-06-22 11:40:01,713 - INFO - [in d:\vs code\TN4_old\TN4\src\app.py:106] Start: GF-CICO
+2025-06-22 11:40:03,488 - INFO - [in d:\vs code\TN4_old\TN4\src\app.py:106] Start: GF-CICO
