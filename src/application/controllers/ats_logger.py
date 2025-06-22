@@ -2,16 +2,17 @@ from datetime import datetime, timezone, timedelta
 from influxdb import InfluxDBClient
 import os
 from dotenv import load_dotenv
+from pathlib import Path
 
 # Load environment variables from a .env file if present
-load_dotenv()
+load_dotenv(dotenv_path=Path(__file__).resolve().parents[1] / ".env")
 
 VN_TZ = timezone(timedelta(hours=7))  # Múi giờ Việt Nam
 
 def log_ats_data(data):
     try:
         client = InfluxDBClient(
-            host=os.getenv("INFLUXDB_HOST", "localhost"),
+            host=os.getenv("INFLUXDB_HOST"),
             port=int(os.getenv("INFLUXDB_PORT", 8086)),
             username=os.getenv("INFLUXDB_USERNAME"),
             password=os.getenv("INFLUXDB_PASSWORD"),
