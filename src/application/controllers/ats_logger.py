@@ -9,6 +9,37 @@ load_dotenv(dotenv_path=Path(__file__).resolve().parents[1] / ".env")
 
 VN_TZ = timezone(timedelta(hours=7))  # Múi giờ Việt Nam
 
+# Cùng bảng ánh xạ với ats_socket để đảm bảo ghi log đúng trường
+FIELD_MAP = {
+    'r0': 'uab1',
+    'r1': 'ubc1',
+    'r2': 'uca1',
+    'r3': 'ua1',
+    'r4': 'ub1',
+    'r5': 'uc1',
+    'r6': 'phaA1',
+    'r7': 'phaB1',
+    'r8': 'phaC1',
+    'r9': 'freq1',
+    'r10': 'uab2',
+    'r11': 'ubc2',
+    'r12': 'uca2',
+    'r13': 'ua2',
+    'r14': 'ub2',
+    'r15': 'uc2',
+    'r16': 'phaA2',
+    'r17': 'phaB2',
+    'r18': 'phaC2',
+    'r19': 'freq2',
+    'r20': 'ia',
+    'r21': 'ib',
+    'r22': 'ic',
+    'r23': 'status_close_a',
+    'r24': 'status_close_b',
+    'r25': 'status_open',
+    'r26': 'auto_mode'
+}
+
 def log_ats_data(data):
     try:
         client = InfluxDBClient(
@@ -27,6 +58,9 @@ def log_ats_data(data):
         gen = data.get(gen_key)
         if not gen:
             continue
+
+        # Chuyển đổi tên trường nếu dữ liệu vẫn dùng dạng r0, r1...
+        gen = {FIELD_MAP.get(k, k): v for k, v in gen.items()}
 
         fields = {}
         ia = float(gen.get("ia", -1))
