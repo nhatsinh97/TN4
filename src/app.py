@@ -34,6 +34,9 @@ from influxdb import InfluxDBClient
 from ats_socket import start_ats_socketio_listener
 from dotenv import load_dotenv
 
+# Các định dạng ảnh cho phép upload
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
+
 # Tải các biến môi trường từ file .env
 load_dotenv()
 
@@ -1057,7 +1060,6 @@ def access_history_partial():
     return render_template('access_history/access_history_partial.html', history=history)
 
 def allowed_file(filename):
-    ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 @app.route('/profile')
 def profile():
