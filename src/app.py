@@ -112,7 +112,6 @@ data_queue = queue.Queue()
 
 
 # Khóa bí mật để mã hóa session
-app.secret_key = '4s$eJ#8dLpRtYkMnCbV2gX1fA3h'
 # app.config.from_object(Config)
 # app.register_blueprint(main)
 
