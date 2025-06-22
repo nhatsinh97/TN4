@@ -1,6 +1,4 @@
 # from http import client
-import eventlet
-eventlet.monkey_patch()
 import sys
 import codecs
 sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
