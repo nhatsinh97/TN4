@@ -78,3 +78,7 @@ pytest
 ```
 
 Các script thử nghiệm cũ đã được di chuyển vào thư mục `scripts/` để tránh ảnh hưởng tới quá trình thu thập test.
+
+## Giấy phép
+
+Dự án được phát hành theo giấy phép MIT. Xem tệp [LICENSE](LICENSE) để biết thêm chi tiết.

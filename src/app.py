@@ -38,7 +38,7 @@ from dotenv import load_dotenv
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 # Tải các biến môi trường từ file .env
-load_dotenv()
+load_dotenv(dotenv_path=Path(__file__).resolve().parents[1] / ".env")
 
 # Thiết lập thư mục gốc của dự án
 BASE_DIR = Path(os.getenv("TN4_BASE_DIR", Path(__file__).resolve().parent))
@@ -733,8 +733,13 @@ def get_ats_history(gen_id):
     iso_time = start_time.isoformat() + "Z"
 
     # ✅ Khởi tạo InfluxDBClient tại đây
-    client = InfluxDBClient(host='localhost', port=8086)
-    client.switch_database('ats_data')
+    client = InfluxDBClient(
+        host=host,
+        port=port,
+        username=username,
+        password=password,
+        database=database,
+    )
 
     query = f"""
     SELECT time, ia, ib, ic FROM ats_status
@@ -1401,7 +1406,13 @@ def save_ticket_to_db(ticket_id, mac_address, action_name, timer, img):
 def get_device_events():
     try:
         # Kết nối với InfluxDB để lấy dữ liệu sự kiện của các thiết bị IoT
-        client = InfluxDBClient(host='localhost', port=8086, username='cico', password='your_password', database='cico_iot')
+        client = InfluxDBClient(
+            host=host,
+            port=port,
+            username=username,
+            password=password,
+            database=database,
+        )
         query = 'SELECT * FROM iot_tickets ORDER BY time DESC LIMIT 50'  # Lấy 50 sự kiện gần nhất
         result = client.query(query)
         events = list(result.get_points())

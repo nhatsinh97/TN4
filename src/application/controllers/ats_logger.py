@@ -1,12 +1,23 @@
 from datetime import datetime, timezone, timedelta
 from influxdb import InfluxDBClient
+import os
+from dotenv import load_dotenv
+from pathlib import Path
+
+# Load environment variables from a .env file if present
+load_dotenv(dotenv_path=Path(__file__).resolve().parents[1] / ".env")
 
 VN_TZ = timezone(timedelta(hours=7))  # Múi giờ Việt Nam
 
 def log_ats_data(data):
     try:
-        client = InfluxDBClient(host='localhost', port=8086)
-        client.switch_database('ats_data')
+        client = InfluxDBClient(
+            host=os.getenv("INFLUXDB_HOST"),
+            port=int(os.getenv("INFLUXDB_PORT", 8086)),
+            username=os.getenv("INFLUXDB_USERNAME"),
+            password=os.getenv("INFLUXDB_PASSWORD"),
+            database=os.getenv("INFLUXDB_DATABASE", "ats_data"),
+        )
     except Exception as conn_err:
         print("❌ Không thể kết nối InfluxDB:", conn_err)
         return
