@@ -35,6 +35,19 @@ export TN4_BASE_DIR=/opt/tn4/src
 python TN4/app.py
 ```
 
+### Cấu hình `SECRET_KEY`
+
+Biến môi trường `SECRET_KEY` dùng để thiết lập khóa phiên cho ứng dụng.
+Nếu biến này không được khai báo, ứng dụng sẽ tự tạo một khóa ngẫu nhiên
+mỗi lần khởi động.
+
+Ví dụ:
+
+```bash
+export SECRET_KEY=mysecretkey
+python TN4/app.py
+```
+
 ## Cấu trúc thư mục chính
 
 ```
