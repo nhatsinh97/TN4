@@ -497,7 +497,7 @@
   </div>
   <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
   <script>
-    const socket = io("http://10.16.40.138:58888"); // địa chỉ máy chủ Flask
+    const socket = io("{{ SOCKET_SERVER_URL }}");
   </script>
   <!-- Đoạn script socket.io để nhận client count -->
   <script>
