@@ -101,11 +101,7 @@ file_handler.setFormatter(formatter)
 file_handler.setLevel(logging.DEBUG)
 logger.addHandler(file_handler)
 
-# Đảm bảo không có nhiều file handlers (cách tối ưu)
-logger.handlers = [stream_handler, file_handler]
-if not logger.hasHandlers():
-    logger.addHandler(stream_handler)
-    logger.addHandler(file_handler)
+# Bắt đầu ghi log
 logger.info("Start: GF-CICO")
 
 
