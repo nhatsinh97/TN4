@@ -192,3 +192,16 @@
 2025-06-22 20:05:27,920 - INFO - [in d:\vs code\TN4_old\TN4\src\app.py:349] Checked device status: Online = 2, Offline = 0, Total = 2
 2025-06-22 20:10:28,004 - INFO - [in d:\vs code\TN4_old\TN4\src\app.py:349] Checked device status: Online = 2, Offline = 0, Total = 2
 2025-06-22 20:10:28,844 - INFO - [in d:\vs code\TN4_old\TN4\src\app.py:349] Checked device status: Online = 1, Offline = 1, Total = 2
+2025-06-22 20:11:18,069 - INFO - [in d:\vs code\TN4_old\TN4\src\app.py:108] Start: GF-CICO
+2025-06-22 20:11:18,244 - INFO - [in d:\vs code\TN4_old\TN4\src\app.py:349] Checked device status: Online = 2, Offline = 0, Total = 2
+2025-06-22 20:11:18,254 - INFO - [in d:\vs code\TN4_old\TN4\src\app.py:59] Client connected. Total: 1
+2025-06-22 20:15:28,862 - INFO - [in d:\vs code\TN4_old\TN4\src\app.py:349] Checked device status: Online = 2, Offline = 0, Total = 2
+2025-06-22 20:16:18,264 - INFO - [in d:\vs code\TN4_old\TN4\src\app.py:349] Checked device status: Online = 2, Offline = 0, Total = 2
+2025-06-22 20:20:28,868 - INFO - [in d:\vs code\TN4_old\TN4\src\app.py:349] Checked device status: Online = 2, Offline = 0, Total = 2
+2025-06-22 20:21:18,278 - INFO - [in d:\vs code\TN4_old\TN4\src\app.py:349] Checked device status: Online = 2, Offline = 0, Total = 2
+2025-06-22 20:25:28,877 - INFO - [in d:\vs code\TN4_old\TN4\src\app.py:349] Checked device status: Online = 2, Offline = 0, Total = 2
+2025-06-22 20:26:18,315 - INFO - [in d:\vs code\TN4_old\TN4\src\app.py:349] Checked device status: Online = 2, Offline = 0, Total = 2
+2025-06-22 20:30:28,885 - INFO - [in d:\vs code\TN4_old\TN4\src\app.py:349] Checked device status: Online = 2, Offline = 0, Total = 2
+2025-06-22 20:31:18,335 - INFO - [in d:\vs code\TN4_old\TN4\src\app.py:349] Checked device status: Online = 2, Offline = 0, Total = 2
+2025-06-22 20:35:28,887 - INFO - [in d:\vs code\TN4_old\TN4\src\app.py:349] Checked device status: Online = 2, Offline = 0, Total = 2
+2025-06-22 20:36:18,345 - INFO - [in d:\vs code\TN4_old\TN4\src\app.py:349] Checked device status: Online = 2, Offline = 0, Total = 2
