@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 from pathlib import Path
 
 # Load environment variables from a .env file if present
-load_dotenv(dotenv_path=Path(__file__).resolve().parents[1] / ".env")
+load_dotenv(dotenv_path=Path(__file__).resolve().parent / ".env")
 
 VN_TZ = timezone(timedelta(hours=7))  # Múi giờ Việt Nam
 

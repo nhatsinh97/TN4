@@ -38,7 +38,7 @@ from dotenv import load_dotenv
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 # Tải các biến môi trường từ file .env
-load_dotenv(dotenv_path=Path(__file__).resolve().parents[1] / ".env")
+load_dotenv(dotenv_path=Path(__file__).resolve().parent / ".env")
 
 # Thiết lập thư mục gốc của dự án
 BASE_DIR = Path(os.getenv("TN4_BASE_DIR", Path(__file__).resolve().parent))
