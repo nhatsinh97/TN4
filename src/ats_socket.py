@@ -10,6 +10,41 @@ import time
 from datetime import datetime
 from application.controllers.ats_logger import log_ats_data
 
+# Mapping từ các khóa dữ liệu nhận được sang id trong giao diện ATS
+FIELD_MAP = {
+    'r0': 'uab1',
+    'r1': 'ubc1',
+    'r2': 'uca1',
+    'r3': 'ua1',
+    'r4': 'ub1',
+    'r5': 'uc1',
+    'r6': 'phaA1',
+    'r7': 'phaB1',
+    'r8': 'phaC1',
+    'r9': 'freq1',
+    'r10': 'uab2',
+    'r11': 'ubc2',
+    'r12': 'uca2',
+    'r13': 'ua2',
+    'r14': 'ub2',
+    'r15': 'uc2',
+    'r16': 'phaA2',
+    'r17': 'phaB2',
+    'r18': 'phaC2',
+    'r19': 'freq2',
+    'r20': 'ia',
+    'r21': 'ib',
+    'r22': 'ic',
+    'r23': 'status_close_a',
+    'r24': 'status_close_b',
+    'r25': 'status_open',
+    'r26': 'auto_mode'
+}
+
+def map_generator_fields(gen_data: dict) -> dict:
+    """Convert raw generator data using FIELD_MAP."""
+    return {FIELD_MAP.get(k, k): v for k, v in gen_data.items()}
+
 
 # Khởi tạo biến socketio, sẽ được truyền từ file chính (app.py)
 socketio = None
@@ -29,13 +64,19 @@ def on_message(client, userdata, msg):
         print(f"[MQTT] Nhận từ {topic}: {data}")
 
         if topic == "ats/data":
+            # Chuyển đổi tên trường theo bảng ánh xạ
+            mapped = {}
+            for gen_key in ["gen1", "gen2"]:
+                if gen_key in data:
+                    mapped[gen_key] = map_generator_fields(data[gen_key])
+
             # 🔴 Ghi dữ liệu điện năng vào InfluxDB
-            log_ats_data(data)
+            log_ats_data(mapped)
 
             # Gửi dữ liệu đến client qua Socket.IO
             if socketio:
                 print("[SOCKET.IO] Gửi dữ liệu ATS qua Socket.IO")
-                socketio.emit("ats_data", data)
+                socketio.emit("ats_data", mapped)
 
         elif topic == "ats/water":
             # 👉 Gửi dữ liệu nước tới frontend
