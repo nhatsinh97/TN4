@@ -2,11 +2,12 @@
 from influxdb import InfluxDBClient
 import os
 from dotenv import load_dotenv
+from pathlib import Path
 
-load_dotenv()
+load_dotenv(dotenv_path=Path(__file__).resolve().parents[1] / ".env")
 
 client = InfluxDBClient(
-    host=os.getenv("INFLUXDB_HOST", "localhost"),
+    host=os.getenv("INFLUXDB_HOST"),
     port=int(os.getenv("INFLUXDB_PORT", 8086)),
     username=os.getenv("INFLUXDB_USERNAME"),
     password=os.getenv("INFLUXDB_PASSWORD"),
