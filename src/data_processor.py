@@ -1,4 +1,5 @@
 import logging
+import os
 import cv2
 import json
 import threading
@@ -11,8 +12,8 @@ import base64
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 # API chính
-url        = 'http://10.50.41.18:58185/api/Farm/postbiohistory' 
-url_cico   = 'https://10.50.41.18:58187/api/Farm/postbiohistory'
+url = os.getenv("API_URL")
+url_cico = os.getenv("API_URL_CICO")
 link = "./database/data_setup/"
 file = "data_setup.json"
 
@@ -71,9 +72,11 @@ def process_data(data):
             }
 
             try:
-                r = requests.post("http://10.50.41.18:58185/api/Farm/postbiohistory",
-                                  json.dumps(data),
-                                  headers={'Content-type': 'application/json', 'Accept': 'text/plain'})
+                r = requests.post(
+                    url,
+                    json.dumps(data),
+                    headers={"Content-type": "application/json", "Accept": "text/plain"},
+                )
                 code = r.status_code
                 response_text = r.text
             except requests.RequestException as e:
