@@ -57,8 +57,10 @@ def process_data(data):
             retval, img = cap.read()
             if retval:
                 strImg64 = base64.b64encode(cv2.imencode('.jpg', img)[1]).decode()
+                cap.release()
             else:
                 logger.warning(f"Không thể đọc frame từ camera: {camera}, sử dụng ảnh mặc định.")
+                cap.release()
                 with open('./database/json/abc.jpg', "rb") as f:
                     strImg64 = base64.b64encode(f.read()).decode()
 
@@ -73,7 +75,7 @@ def process_data(data):
             try:
                 r = requests.post(
                     url,
-                    json.dumps(data),
+                    json=data,
                     headers={"Content-type": "application/json", "Accept": "text/plain"},
                 )
                 code = r.status_code
