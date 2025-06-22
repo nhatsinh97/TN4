@@ -1,5 +1,6 @@
 # ats_socket.py
 import json
+import os
 import paho.mqtt.client as mqtt
 from threading import Thread
 from pymodbus.client.sync import ModbusTcpClient
@@ -14,8 +15,9 @@ from application.controllers.ats_logger import log_ats_data
 socketio = None
 
 # Cấu hình MQTT
-MQTT_BROKER = "localhost"  # hoặc IP như "10.50.41.15"
-MQTT_PORT = 1883
+# Broker và cổng có thể cấu hình qua biến môi trường
+MQTT_BROKER = os.getenv("MQTT_BROKER_ADDRESS_ATS", "localhost")  # hoặc IP như "10.50.41.15"
+MQTT_PORT = int(os.getenv("MQTT_PORT_ATS", 1883))
 MQTT_TOPIC = "ats/data"
 
 # Hàm callback khi nhận dữ liệu từ MQTT
@@ -59,7 +61,9 @@ def read_real_from_offset(client, offset_byte):
 
 def read_modbus_water_loop():
     global socketio  # ✅ THÊM DÒNG NÀY
-    client = ModbusTcpClient('10.16.40.160', port=502)
+    # Địa chỉ PLC nước được cấu hình qua biến môi trường
+    water_ip = os.getenv("PLC_WATER_IP", "10.16.40.160")
+    client = ModbusTcpClient(water_ip, port=502)
     variables = {
         "DifferentialTotalFlow": 0,
         "ReverseTotalFlow": 4,

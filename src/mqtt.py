@@ -1,9 +1,11 @@
 import json
+import os
 import paho.mqtt.client as mqtt
 
 # Thông tin MQTT
-BROKER_ADDRESS = "172.17.128.24"
-PORT = 1883
+# Có thể thiết lập broker và port thông qua biến môi trường
+BROKER_ADDRESS = os.getenv("MQTT_BROKER_ADDRESS_MQTT", "172.17.128.24")
+PORT = int(os.getenv("MQTT_PORT_MQTT", 1883))
 TOPIC = "PLC/LOGO"
 
 # Hàm callback khi nhận được tin nhắn từ MQTT
