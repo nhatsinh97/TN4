@@ -396,7 +396,7 @@ def load_permission_menu():
     with open(BASE_DIR / "database" / "data_setup" / "permissions.json", "r", encoding="utf-8") as f:
         return json.load(f)
 
-# ✅ Thêm hàm context processor ngay sau load_permission_menu
+# Hàm context processor cung cấp dữ liệu menu cho các template
 @app.context_processor
 def inject_menu():
     try:
@@ -417,8 +417,10 @@ def update_user_permissions(username, new_permissions):
         if user['username'] == username:
             user['permissions'] = new_permissions
             break
-    with open(BASE_DIR / 'database' / 'data_setup' / 'users.json', 'w') as f:
-        json.dump(users, f)
+
+    # Ghi lại thay đổi vào file người dùng
+    with open(USER_FILE, 'w', encoding='utf-8') as f:
+        json.dump(users, f, indent=4)
 def save_to_file(data, filename= './database/data_setup/users.json'):
     # Mở file JSON và ghi lại danh sách người dùng đã được cập nhật
     with open(filename, 'w', encoding='utf-8') as f:
