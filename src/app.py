@@ -34,6 +34,9 @@ from influxdb import InfluxDBClient
 from ats_socket import start_ats_socketio_listener
 from dotenv import load_dotenv
 
+# Các định dạng ảnh cho phép upload
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
+
 # Tải các biến môi trường từ file .env
 load_dotenv()
 
@@ -53,14 +56,14 @@ def handle_connect():
     global connected_clients
     connected_clients += 1
     socketio.emit('client_count', connected_clients)
-    print(f"Client connected. Total: {connected_clients}")
+    logger.info(f"Client connected. Total: {connected_clients}")
 
 @socketio.on('disconnect')
 def handle_disconnect():
     global connected_clients
     connected_clients = max(0, connected_clients - 1)
     socketio.emit('client_count', connected_clients)
-    print(f"Client disconnected. Total: {connected_clients}")
+    logger.info(f"Client disconnected. Total: {connected_clients}")
 
 # Sử dụng các biến từ .env
 app.secret_key = os.getenv("SECRET_KEY")
@@ -101,11 +104,7 @@ file_handler.setFormatter(formatter)
 file_handler.setLevel(logging.DEBUG)
 logger.addHandler(file_handler)
 
-# Đảm bảo không có nhiều file handlers (cách tối ưu)
-logger.handlers = [stream_handler, file_handler]
-if not logger.hasHandlers():
-    logger.addHandler(stream_handler)
-    logger.addHandler(file_handler)
+# Bắt đầu ghi log
 logger.info("Start: GF-CICO")
 
 
@@ -178,10 +177,10 @@ device_status = {
 # Hàm callback khi kết nối thành công
 def on_connect(client, userdata, flags, rc):
     if rc == 0:
-        print("Đã kết nối với MQTT Broker! app.py")
+        logger.info("Đã kết nối với MQTT Broker! app.py")
         client.subscribe(TOPIC)  # Đăng ký topic với ký tự đại diện
     else:
-        print(f"Failed to connect, return code {rc}")
+        logger.warning(f"Failed to connect, return code {rc}")
 
 # Hàm callback khi nhận được tin nhắn từ MQTT
 # Hàm callback khi nhận được tin nhắn từ MQTT
@@ -285,7 +284,7 @@ mqtt_client.on_message = on_message
 # Hàm khởi động vòng lặp MQTT trong một luồng riêng
 def start_mqtt_loop():
     try:
-        print("Đang kết nối đến MQTT broker...")
+        logger.info("Đang kết nối đến MQTT broker...")
         mqtt_client.connect(BROKER_ADDRESS, PORT)
         mqtt_client.loop_forever()  # Sử dụng loop_forever để giữ kết nối liên tục
     except Exception as e:
@@ -298,7 +297,7 @@ def start_mqtt_loop():
 # mqtt_thread.start()
 
 if os.environ.get("WERKZEUG_RUN_MAIN") == "true":
-    print("[INIT] Khởi tạo MQTT thread 1 lần duy nhất.")
+    logger.info("[INIT] Khởi tạo MQTT thread 1 lần duy nhất.")
     mqtt_thread = Thread(target=start_mqtt_loop)
     mqtt_thread.daemon = True
     mqtt_thread.start()
@@ -347,7 +346,9 @@ def check_device_status_periodically():
         device_status["online"] = online
         device_status["offline"] = offline
         device_status["total"] = total  # Cập nhật tổng số thiết bị
-        print(f"Checked device status: Online = {online}, Offline = {offline}, Total = {total}")
+        logger.info(
+            f"Checked device status: Online = {online}, Offline = {offline}, Total = {total}"
+        )
         
         # Thực hiện kiểm tra mỗi 60 giây
         time.sleep(300)
@@ -432,7 +433,7 @@ def save_to_file(data, filename= './database/data_setup/users.json'):
 def save_users(users):
     with open(USER_FILE, 'w') as f:
         json.dump(users, f, indent=4)
-    print(f"Đã lưu dữ liệu: {users}")  # In ra log để kiểm tra dữ liệu đã lưu
+    logger.info(f"Đã lưu dữ liệu: {users}")  # In ra log để kiểm tra dữ liệu đã lưu
 def get_base_context(template_title="Trang"):
     username = session.get("username")
     users = load_users()
@@ -977,7 +978,7 @@ def process_data_from_queue():
                     raise ValueError(f"Expected dict, got {type(processed_data)}: {processed_data}")
                 
                 # In dữ liệu sau khi xử lý
-                print("Dữ liệu sau khi xử lý:", processed_data)
+                logger.info("Dữ liệu sau khi xử lý: %s", processed_data)
 
             except Exception as e:
                 # Ghi log lỗi nếu có ngoại lệ
@@ -996,7 +997,7 @@ def update_status_in_json(idchip, event_data):
         # Tìm thiết bị tương ứng trong JSON
         device = data_setup["chipid"].get(idchip)
         if not device:
-            print(f"Không tìm thấy idchip {idchip} trong JSON.")
+            logger.warning(f"Không tìm thấy idchip {idchip} trong JSON.")
             return
 
         # Cập nhật trạng thái
@@ -1007,9 +1008,9 @@ def update_status_in_json(idchip, event_data):
 
         # Lưu lại vào file JSON
         save_data_setup(data_setup)
-        print(f"Trạng thái của idchip {idchip} đã được cập nhật trong JSON.")
+        logger.info(f"Trạng thái của idchip {idchip} đã được cập nhật trong JSON.")
     except Exception as e:
-        print(f"Lỗi khi cập nhật JSON cho idchip {idchip}: {e}")
+        logger.error(f"Lỗi khi cập nhật JSON cho idchip {idchip}: {e}")
 
 @app.route('/access_history_partial', methods=['GET', 'POST'])
 def access_history_partial():
@@ -1059,7 +1060,6 @@ def access_history_partial():
     return render_template('access_history/access_history_partial.html', history=history)
 
 def allowed_file(filename):
-    ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 @app.route('/profile')
 def profile():
@@ -1277,10 +1277,10 @@ def save_image(base64_img, mac_address, action_name):
         with open(file_path, 'wb') as f:
             f.write(img_data)
 
-        print(f"Image saved successfully: {file_path}")
+        logger.info(f"Image saved successfully: {file_path}")
         return file_path  # Trả về đường dẫn file để lưu vào cơ sở dữ liệu
     except Exception as e:
-        print(f"Error saving image: {e}")
+        logger.error(f"Error saving image: {e}")
         return None
     
 def find_in_progress_ticket(mac_address):
@@ -1300,7 +1300,7 @@ def find_in_progress_ticket(mac_address):
         else:
             return None
     except Exception as e:
-        print(f"Error querying in_progress ticket: {e}")
+        logger.error(f"Error querying in_progress ticket: {e}")
         return None
     finally:
         client.close()
@@ -1360,9 +1360,9 @@ def update_ticket_in_db(data):
     try:
         # Ghi dữ liệu vào InfluxDB
         client.write_points(json_body)
-        print("Ticket updated successfully.")
+        logger.info("Ticket updated successfully.")
     except Exception as e:
-        print(f"Error updating ticket in InfluxDB: {e}")
+        logger.error(f"Error updating ticket in InfluxDB: {e}")
     finally:
         client.close()
     
@@ -1390,9 +1390,9 @@ def save_ticket_to_db(ticket_id, mac_address, action_name, timer, img):
     # Ghi dữ liệu vào InfluxDB
     try:
         client.write_points(json_body)
-        print(f"Ticket {ticket_id} saved successfully.")
+        logger.info(f"Ticket {ticket_id} saved successfully.")
     except Exception as e:
-        print(f"Error saving ticket {ticket_id}: {e}")
+        logger.error(f"Error saving ticket {ticket_id}: {e}")
     finally:
         client.close()  # Đảm bảo kết nối được đóng sau khi lưu xong
 @app.route('/api/get_device_events', methods=['GET'])
@@ -1428,7 +1428,7 @@ def clean_old_ts_files(directory, max_files=20):
     if len(ts_files) > max_files:
         for file in ts_files[:-max_files]:
             os.remove(os.path.join(directory, file))
-            print(f"Đã xóa tệp: {file}")
+            logger.info(f"Đã xóa tệp: {file}")
 
 
 if __name__ == '__main__':
