@@ -19,3 +19,6 @@ scripts/
 tmp/
 temp/
 
+# Ignore environment files
+src/.env
+
