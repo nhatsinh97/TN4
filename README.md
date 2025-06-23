@@ -48,6 +48,20 @@ export SECRET_KEY=mysecretkey
 python src/app.py
 ```
 
+### Tạo file `.env`
+
+Trước khi chạy bằng Docker, hãy tạo tệp `src/.env` chứa các biến môi
+trường cần thiết cho ứng dụng. Nội dung tệp tương tự:
+
+```ini
+SECRET_KEY=mysecretkey
+INFLUXDB_HOST=127.0.0.1
+INFLUXDB_PORT=8086
+# ...các biến khác...
+```
+
+Tệp này chỉ dùng cho môi trường cục bộ và đã được bỏ qua khỏi kho mã nguồn.
+
 ### Chạy bằng Docker
 
 Bạn có thể chạy ứng dụng mà không cần cài đặt Python thủ công bằng cách sử dụng Docker:

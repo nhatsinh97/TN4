@@ -10,23 +10,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY src ./src
 COPY database ./database
 
-# Default environment variables
-ENV SECRET_KEY="4s\$eJ#8dLpRtYkMnCbV2gX1fA3h" \
-    INFLUXDB_HOST=10.16.40.138 \
-    INFLUXDB_PORT=8086 \
-    INFLUXDB_USERNAME=cico \
-    INFLUXDB_PASSWORD=2020@GreenFeed \
-    INFLUXDB_DATABASE=ats_data \
-    MQTT_BROKER_ADDRESS=10.16.40.138 \
-    MQTT_PORT=1883 \
-    MQTT_TOPIC=PLC/LOGO/+ \
-    API_URL=http://10.50.41.18:58185/api/Farm/postbiohistory \
-    API_URL_CICO=https://10.50.41.18:58187/api/Farm/postbiohistory \
-    MQTT_BROKER_ADDRESS_MQTT=10.16.40.138 \
-    MQTT_PORT_MQTT=1883 \
-    MQTT_BROKER_ADDRESS_ATS=10.16.40.138 \
-    MQTT_PORT_ATS=1883 \
-    PLC_WATER_IP=10.16.40.160
+
+# Environment variables are provided via an external .env file
+# passed with `docker run --env-file`. This keeps sensitive
+# configuration out of the image.
 
 EXPOSE 58888
 
