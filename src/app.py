@@ -42,7 +42,7 @@ load_dotenv(dotenv_path=Path(__file__).resolve().parent / ".env")
 BASE_DIR = Path(os.getenv("TN4_BASE_DIR", Path(__file__).resolve().parent))
 
 
-def get_env_port(name: str, default: int | None = None) -> int:
+def get_env_port(name: str, default: "int | None" = None) -> int:
     """Return integer port from environment or default."""
     value = os.getenv(name)
     if value is None:
