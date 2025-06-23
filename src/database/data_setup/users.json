@@ -1,8 +1,8 @@
 {
     "users": [
         {
-            "username": "admin",
-            "password": "21232f297a57a5a743894a0e4a801fc3",
+            "username": "{USER}",
+            "password": "{PASS}",
             "role": "admin",
             "permissions": [
                 "view_dashboard",
@@ -11,11 +11,11 @@
                 "manage_users",
                 "access_history"
             ],
-            "avatar": "/static/avatar/admin.jpg"
+            "avatar": "/static/avatar/{USER}.jpg"
         },
         {
-            "username": "s",
-            "password": "03c7c0ace395d80182db07ae2c30f034",
+            "username": "{USER}",
+            "password": "{PASS}",
             "role": "user",
             "permissions": [
                 "view_dashboard",
@@ -25,11 +25,11 @@
                 "access_history",
                 "control_ats"
             ],
-            "avatar": "/static/avatar/s.jpg"
+            "avatar": "/static/avatar/{USER}.jpg"
         },
         {
-            "username": "Son123",
-            "password": "8d8c78f2615b9ec61a06abe8b9201a8e",
+            "username": "{USER}",
+            "password": "{PASS}",
             "role": "user",
             "permissions": [
                 "view_dashboard",

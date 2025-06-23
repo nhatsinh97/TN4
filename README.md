@@ -50,24 +50,40 @@ python src/app.py
 
 ### Tạo file `.env`
 
-Trước khi chạy bằng Docker, hãy sao chép tệp `src/.env.example` thành
-`src/.env` và chỉnh sửa các giá trị phù hợp. Tệp mẫu bao gồm:
+Sao chép `src/.env.example` thành `src/.env` và thay đổi các giá trị phù hợp.
+Tệp mẫu chứa các biến môi trường cần thiết, ví dụ:
 
 ```ini
 SECRET_KEY=your-secret
 INFLUXDB_HOST=127.0.0.1
 INFLUXDB_PORT=8086
+INFLUXDB_USERNAME={USER}
+INFLUXDB_PASSWORD={PASS}
 MQTT_BROKER_ADDRESS=127.0.0.1
 MQTT_PORT=1883
 MQTT_TOPIC=tn4/data
 MQTT_BROKER_ADDRESS_ATS=127.0.0.1
 MQTT_PORT_ATS=1883
+USER_FILE=./database/data_setup/users.json
 # ...các biến khác...
+```
+
+Các giá trị thật (như tên đăng nhập và mật khẩu) nên được thiết lập qua biến
+môi trường hoặc tệp cấu hình nằm ngoài Git. Ví dụ khi chạy Docker:
+
+```bash
+docker run --env-file src/.env tn4-app
 ```
 
 Bạn cần đảm bảo một MQTT broker đang chạy và có thể truy cập tại các địa chỉ trên trước khi khởi động container.
 
 Tệp này chỉ dùng cho môi trường cục bộ và đã được bỏ qua khỏi kho mã nguồn.
+
+### Tệp người dùng
+
+File `src/database/data_setup/users.json` trong repository chỉ chứa các giá trị
+giả ở trường `username` và `password`. Hãy tạo một bản sao bên ngoài Git và đặt
+đường dẫn của file thật qua biến môi trường `USER_FILE` (khai báo trong `.env`).
 
 ### Chạy bằng Docker
 
