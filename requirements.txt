@@ -3,7 +3,6 @@ certifi==2025.4.26
 charset-normalizer==2.0.12
 click==8.0.4
 Cython==3.0.12
-dataclasses==0.8
 distro==1.9.0
 dnspython==2.2.1
 eventlet==0.33.3
