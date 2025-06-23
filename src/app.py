@@ -41,6 +41,16 @@ load_dotenv(dotenv_path=Path(__file__).resolve().parent / ".env")
 # Thiết lập thư mục gốc của dự án
 BASE_DIR = Path(os.getenv("TN4_BASE_DIR", Path(__file__).resolve().parent))
 
+
+def get_env_port(name: str, default: int | None = None) -> int:
+    """Return integer port from environment or default."""
+    value = os.getenv(name)
+    if value is None:
+        if default is not None:
+            return default
+        raise RuntimeError(f"{name} not set")
+    return int(value)
+
 # Khởi tạo Flask app
 app = Flask(__name__)
 # socketio = SocketIO(app, cors_allowed_origins="*")
@@ -68,14 +78,14 @@ app.secret_key = os.getenv("SECRET_KEY")
 
 # Thông tin kết nối InfluxDB
 host = os.getenv("INFLUXDB_HOST")
-port = int(os.getenv("INFLUXDB_PORT"))
+port = get_env_port("INFLUXDB_PORT", default=8086)
 username = os.getenv("INFLUXDB_USERNAME")
 password = os.getenv("INFLUXDB_PASSWORD")
 database = os.getenv("INFLUXDB_DATABASE")
 
 # Thông tin MQTT
 BROKER_ADDRESS = os.getenv("MQTT_BROKER_ADDRESS")
-PORT = int(os.getenv("MQTT_PORT"))
+PORT = get_env_port("MQTT_PORT", default=1883)
 TOPIC = os.getenv("MQTT_TOPIC")
 
 # Địa chỉ Socket.IO server dùng cho frontend ATS
