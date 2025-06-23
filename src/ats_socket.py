@@ -145,11 +145,23 @@ def start_ats_socketio_listener(socketio_instance):
 
     mqtt_client = mqtt.Client()
     mqtt_client.on_message = on_message
-    mqtt_client.connect(MQTT_BROKER, MQTT_PORT)
-    mqtt_client.subscribe("ats/data")
-    mqtt_client.subscribe("ats/water")  # 👈 Thêm dòng này
+
+    def connect_and_loop():
+        while True:
+            try:
+                mqtt_client.connect(MQTT_BROKER, MQTT_PORT)
+                break
+            except Exception as e:
+                print(f"[MQTT] Cannot connect to {MQTT_BROKER}:{MQTT_PORT}: {e}")
+                print("[MQTT] retrying in 5 seconds...")
+                time.sleep(5)
+
+        mqtt_client.subscribe("ats/data")
+        mqtt_client.subscribe("ats/water")  # 👈 Thêm dòng này
+        mqtt_client.loop_forever()
+
     socketio.sleep(0)  # Giúp Socket.IO không bị nghẽn khi dùng eventlet/gevent
-    thread = Thread(target=mqtt_client.loop_forever)
+    thread = Thread(target=connect_and_loop)
     thread.daemon = True
     thread.start()
     # 👉 Bắt đầu luồng đọc dữ liệu nước từ PLC (Modbus TCP)
