@@ -50,11 +50,11 @@ python src/app.py
 
 ### Tạo file `.env`
 
-Trước khi chạy bằng Docker, hãy tạo tệp `src/.env` chứa các biến môi
-trường cần thiết cho ứng dụng. Nội dung tệp tương tự:
+Trước khi chạy bằng Docker, hãy sao chép tệp `src/.env.example` thành
+`src/.env` và chỉnh sửa các giá trị phù hợp. Tệp mẫu bao gồm:
 
 ```ini
-SECRET_KEY=mysecretkey
+SECRET_KEY=your-secret
 INFLUXDB_HOST=127.0.0.1
 INFLUXDB_PORT=8086
 MQTT_BROKER_ADDRESS=127.0.0.1
