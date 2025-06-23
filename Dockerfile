@@ -11,7 +11,7 @@ COPY src ./src
 COPY database ./database
 
 # Default environment variables
-ENV SECRET_KEY=4s$eJ#8dLpRtYkMnCbV2gX1fA3h \
+ENV SECRET_KEY="4s\$eJ#8dLpRtYkMnCbV2gX1fA3h" \
     INFLUXDB_HOST=10.16.40.138 \
     INFLUXDB_PORT=8086 \
     INFLUXDB_USERNAME=cico \
