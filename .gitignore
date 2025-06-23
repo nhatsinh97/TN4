@@ -1,6 +1,7 @@
 # Bỏ qua thư mục môi trường ảo
 venv/
 .env/
+src/.env
 __pycache__/
 *.pyc
 *.pyo
