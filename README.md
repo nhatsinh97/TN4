@@ -18,7 +18,7 @@ Dự án **TN4** được phát triển nhằm thu thập và xử lý dữ li�
 
 Kích hoạt môi trường ảo (nếu chưa), sau đó chạy:
 ```bash
-python TN4/app.py
+python src/app.py
 ```
 Ứng dụng sẽ khởi động tại địa chỉ `http://localhost:58888` ở chế độ mặc định.
 
@@ -32,7 +32,7 @@ Ví dụ:
 
 ```bash
 export TN4_BASE_DIR=/opt/tn4/src
-python TN4/app.py
+python src/app.py
 ```
 
 ### Cấu hình `SECRET_KEY`
@@ -45,7 +45,16 @@ Ví dụ:
 
 ```bash
 export SECRET_KEY=mysecretkey
-python TN4/app.py
+python src/app.py
+```
+
+### Chạy bằng Docker
+
+Bạn có thể chạy ứng dụng mà không cần cài đặt Python thủ công bằng cách sử dụng Docker:
+
+```bash
+docker build -t tn4-app .
+docker run -p 58888:58888 --env-file src/.env tn4-app
 ```
 
 ## Cấu trúc thư mục chính
