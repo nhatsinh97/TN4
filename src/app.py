@@ -177,7 +177,11 @@ DATA_FILE = str(BASE_DIR / 'database' / 'data_setup' / 'data_setup.json')
 # Đường dẫn tới file JSON lưu lịch sử số lượng request của các thiết bị
 REQUEST_HISTORY_FILE = str(BASE_DIR / 'database' / 'data_setup' / 'request_history.json')
 # Đường dẫn đến file users.json
-USER_FILE = str(BASE_DIR / 'database' / 'data_setup' / 'users.json')
+# Có thể chỉ định thông qua biến môi trường USER_FILE
+USER_FILE = os.getenv(
+    "USER_FILE",
+    str(BASE_DIR / 'database' / 'data_setup' / 'users.json')
+)
 # Biến toàn cục lưu trữ kết quả số lượng thiết bị online, offline và tổng
 device_status = {
     "online": 0,
