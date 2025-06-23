@@ -57,8 +57,15 @@ trường cần thiết cho ứng dụng. Nội dung tệp tương tự:
 SECRET_KEY=mysecretkey
 INFLUXDB_HOST=127.0.0.1
 INFLUXDB_PORT=8086
+MQTT_BROKER_ADDRESS=127.0.0.1
+MQTT_PORT=1883
+MQTT_TOPIC=tn4/data
+MQTT_BROKER_ADDRESS_ATS=127.0.0.1
+MQTT_PORT_ATS=1883
 # ...các biến khác...
 ```
+
+Bạn cần đảm bảo một MQTT broker đang chạy và có thể truy cập tại các địa chỉ trên trước khi khởi động container.
 
 Tệp này chỉ dùng cho môi trường cục bộ và đã được bỏ qua khỏi kho mã nguồn.
 
