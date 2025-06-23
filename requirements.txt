@@ -40,3 +40,4 @@ uuid==1.30
 Werkzeug==2.0.3
 wsproto==1.0.0
 zipp==3.6.0
+opencv-python-headless==4.9.0.80
