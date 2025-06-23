@@ -4,6 +4,7 @@ import json
 import socket
 import types
 import codecs
+import pytest
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
@@ -84,7 +85,7 @@ def load_app_utils():
             for target in node.targets:
                 if getattr(target, 'id', '') == 'DATA_FILE':
                     exec(compile(ast.Module([node], []), 'app', 'exec'), ns)
-        elif isinstance(node, ast.FunctionDef) and node.name in ('ping_device', 'count_online_offline_devices'):
+        elif isinstance(node, ast.FunctionDef) and node.name in ('ping_device', 'count_online_offline_devices', 'get_env_port'):
             exec(compile(ast.Module([node], []), 'app', 'exec'), ns)
     sys.modules['app_utils'] = mod
     return mod
@@ -92,6 +93,7 @@ def load_app_utils():
 app_utils = load_app_utils()
 ping_device = app_utils.ping_device
 count_online_offline_devices = app_utils.count_online_offline_devices
+get_env_port = app_utils.get_env_port
 
 class DummySocket:
     def close(self):
@@ -122,3 +124,19 @@ def test_count_online_offline_devices(monkeypatch, tmp_path):
     online, offline = count_online_offline_devices()
     assert online == 1
     assert offline == 1
+
+
+def test_get_env_port_default(monkeypatch):
+    monkeypatch.delenv('MQTT_PORT', raising=False)
+    assert get_env_port('MQTT_PORT', default=1883) == 1883
+
+
+def test_get_env_port_custom(monkeypatch):
+    monkeypatch.setenv('MQTT_PORT', '1999')
+    assert get_env_port('MQTT_PORT', default=1883) == 1999
+
+
+def test_get_env_port_raises(monkeypatch):
+    monkeypatch.delenv('MISSING_PORT', raising=False)
+    with pytest.raises(RuntimeError):
+        get_env_port('MISSING_PORT')
