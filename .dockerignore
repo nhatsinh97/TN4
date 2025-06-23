@@ -22,3 +22,5 @@ temp/
 # Ignore environment files
 src/.env
 
+src/static/dashboard/vendors/
+.cache/
