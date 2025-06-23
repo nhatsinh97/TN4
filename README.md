@@ -92,6 +92,11 @@ Bạn có thể chạy ứng dụng mà không cần cài đặt Python thủ c�
 ```bash
 docker build -t tn4-app .
 docker run -p 58888:58888 --env-file src/.env tn4-app
+sudo docker run -d --restart unless-stopped \
+  -p 58888:58888 \
+  --env-file /home/jetson/project/TN4/src/.env \
+  --name tn4 tn4-app
+
 ```
 Hình ảnh Docker đã bao gồm thư viện **OpenCV** thông qua gói
 `opencv-python-headless`, vì vậy bạn không cần cài đặt thủ công.
