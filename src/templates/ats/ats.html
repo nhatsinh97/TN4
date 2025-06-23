@@ -588,6 +588,11 @@
           }
         }
 
+        // Thêm hiệu ứng nhấp nháy nếu có hàm hỗ trợ
+        if (typeof setBlinkingStyle === 'function') {
+          setBlinkingStyle(el, newValue, current, key);
+        }
+
         el.textContent = newValue;
       }
 
