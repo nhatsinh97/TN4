@@ -12,9 +12,11 @@
 
   <style>
     body {
-      background-color: #f1f5f9;
+      background-color: #000;
+      color: #ffeb3b;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       padding: 10px;
+      font-size: 1.3rem;
     }
 
     .align-reading p {
@@ -23,10 +25,11 @@
     }
 
     .phase-col {
-      background: #f8f9fa;
+      background: #111;
+      color: #ffeb3b;
       border-radius: 0.5rem;
       padding: 0.5rem;
-      font-size: 13px;
+      font-size: 1.2rem;
     }
 
     .align-reading p {
@@ -48,20 +51,15 @@
 
     .card {
       border-radius: 0.75rem;
-      box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+      box-shadow: 0 0.125rem 0.25rem rgba(255, 255, 0, 0.3);
       padding: 1rem;
-    }
-
-    .phase-col {
-      background: #f8f9fa;
-      border-radius: 0.5rem;
-      padding: 0.5rem;
-      font-size: 13px;
+      background-color: #000;
+      color: #ffeb3b;
     }
 
     .phase-col p {
       margin: 0;
-      font-size: 13px;
+      font-size: 1.2rem;
       line-height: 1.3;
     }
 
@@ -69,18 +67,27 @@
     h5,
     h6 {
       margin-bottom: 0.5rem;
-      font-size: 1.1rem;
+      font-size: 1.4rem;
+      color: #ffeb3b;
     }
 
     p {
       margin-bottom: 0.3rem;
-      font-size: 14px;
+      font-size: 1.2rem;
     }
 
     .control-buttons .btn {
       margin: 0.2rem;
       padding: 0.3rem 0.7rem;
       font-size: 0.85rem;
+    }
+
+    .ats-card {
+      display: none;
+    }
+
+    .ats-card.active {
+      display: block;
     }
 
     .small {
@@ -132,59 +139,37 @@
 
     <div class="row g-3">
       <!-- ATS 1 -->
-      <div class="col-md-6">
+      <div class="col-md-6 ats-card">
         <div class="card">
           <!-- <h5 class="text-primary">NGUỒN 1</h5> -->
           <h5 class="text-center bg-success text-white py-2 rounded">NGUỒN 1</h5>
 
 
-          <h6 class="text-primary">Thông số điện lưới ATS 1</h6>
-          <div class="row mb-2">
-            <div class="col phase-col align-reading border border-secondary rounded p-2 me-2">
-              <strong>Pha A</strong>
-              <p>UAB: <span id="gen1-uab1">-</span></p>
-              <p>UA: <span id="gen1-ua1">-</span></p>
-              <p>Góc pha: <span id="gen1-phaA1">-</span></p>
+          <h6 id="data-title-gen1" class="text-primary">Thông số</h6>
+          <div id="data-container-gen1">
+            <div class="row mb-2">
+              <div class="col phase-col align-reading border border-secondary rounded p-2 me-2">
+                <strong>Pha A</strong>
+                <p>UAB: <span id="gen1-uab">-</span></p>
+                <p>UA: <span id="gen1-ua">-</span></p>
+                <p>Góc pha: <span id="gen1-phaA">-</span></p>
+              </div>
+              <div class="col phase-col align-reading border border-secondary rounded p-2 me-2">
+                <strong>Pha B</strong>
+                <p>UBC: <span id="gen1-ubc">-</span></p>
+                <p>UB: <span id="gen1-ub">-</span></p>
+                <p>Góc pha: <span id="gen1-phaB">-</span></p>
+              </div>
+              <div class="col phase-col align-reading border border-secondary rounded p-2">
+                <strong>Pha C</strong>
+                <p>UCA: <span id="gen1-uca">-</span></p>
+                <p>UC: <span id="gen1-uc">-</span></p>
+                <p>Góc pha: <span id="gen1-phaC">-</span></p>
+              </div>
             </div>
-            <div class="col phase-col align-reading border border-secondary rounded p-2 me-2">
-              <strong>Pha B</strong>
-              <p>UBC: <span id="gen1-ubc1">-</span></p>
-              <p>UB: <span id="gen1-ub1">-</span></p>
-              <p>Góc pha: <span id="gen1-phaB1">-</span></p>
-            </div>
-            <div class="col phase-col align-reading border border-secondary rounded p-2">
-              <strong>Pha C</strong>
-              <p>UCA: <span id="gen1-uca1">-</span></p>
-              <p>UC: <span id="gen1-uc1">-</span></p>
-              <p>Góc pha: <span id="gen1-phaC1">-</span></p>
-            </div>
+
+            <p>Tần số: <span id="gen1-freq">-</span> Hz</p>
           </div>
-
-          <p>Tần số điện lưới: <span id="gen1-freq1">-</span> Hz</p>
-
-          <h6 class="text-primary">Thông số máy phát 1</h6>
-          <div class="row mb-2">
-            <div class="col phase-col align-reading border border-secondary rounded p-2 me-2">
-              <strong>Pha A</strong>
-              <p>UAB: <span id="gen1-uab2">-</span></p>
-              <p>UA: <span id="gen1-ua2">-</span></p>
-              <p>Góc pha: <span id="gen1-phaA2">-</span></p>
-            </div>
-            <div class="col phase-col align-reading border border-secondary rounded p-2 me-2">
-              <strong>Pha B</strong>
-              <p>UBC: <span id="gen1-ubc2">-</span></p>
-              <p>UB: <span id="gen1-ub2">-</span></p>
-              <p>Góc pha: <span id="gen1-phaB2">-</span></p>
-            </div>
-            <div class="col phase-col align-reading border border-secondary rounded p-2">
-              <strong>Pha C</strong>
-              <p>UCA: <span id="gen1-uca2">-</span></p>
-              <p>UC: <span id="gen1-uc2">-</span></p>
-              <p>Góc pha: <span id="gen1-phaC2">-</span></p>
-            </div>
-          </div>
-
-          <p>Tần số máy phát: <span id="gen1-freq2">-</span> Hz</p>
 
           <h6 class="text-primary">Thông số dòng điện tổng ATS 1</h6>
           <div class="row mb-2">
@@ -226,60 +211,36 @@
 
 
       <!-- ATS 2 -->
-      <div class="col-md-6">
+      <div class="col-md-6 ats-card">
         <div class="card">
           <!-- <h5 class="text-primary">NGUỒN 2</h5> -->
           <h5 class="text-center bg-success text-white py-2 rounded">NGUỒN 2</h5>
 
-          <h6 class="text-primary">Thông số điện lưới ATS 2</h6>
-          <div class="row mb-2">
-            <div class="col phase-col align-reading border border-secondary rounded p-2 me-2">
-              <strong>Pha A</strong>
-              <p>UAB: <span id="gen2-uab1">-</span></p>
-              <p>UA: <span id="gen2-ua1">-</span></p>
-              <p>Góc pha: <span id="gen2-phaA1">-</span></p>
+          <h6 id="data-title-gen2" class="text-primary">Thông số</h6>
+          <div id="data-container-gen2">
+            <div class="row mb-2">
+              <div class="col phase-col align-reading border border-secondary rounded p-2 me-2">
+                <strong>Pha A</strong>
+                <p>UAB: <span id="gen2-uab">-</span></p>
+                <p>UA: <span id="gen2-ua">-</span></p>
+                <p>Góc pha: <span id="gen2-phaA">-</span></p>
+              </div>
+              <div class="col phase-col align-reading border border-secondary rounded p-2 me-2">
+                <strong>Pha B</strong>
+                <p>UBC: <span id="gen2-ubc">-</span></p>
+                <p>UB: <span id="gen2-ub">-</span></p>
+                <p>Góc pha: <span id="gen2-phaB">-</span></p>
+              </div>
+              <div class="col phase-col align-reading border border-secondary rounded p-2">
+                <strong>Pha C</strong>
+                <p>UCA: <span id="gen2-uca">-</span></p>
+                <p>UC: <span id="gen2-uc">-</span></p>
+                <p>Góc pha: <span id="gen2-phaC">-</span></p>
+              </div>
             </div>
-            <div class="col phase-col align-reading border border-secondary rounded p-2 me-2">
-              <strong>Pha B</strong>
-              <p>UBC: <span id="gen2-ubc1">-</span></p>
-              <p>UB: <span id="gen2-ub1">-</span></p>
-              <p>Góc pha: <span id="gen2-phaB1">-</span></p>
-            </div>
-            <div class="col phase-col align-reading border border-secondary rounded p-2">
-              <strong>Pha C</strong>
-              <p>UCA: <span id="gen2-uca1">-</span></p>
-              <p>UC: <span id="gen2-uc1">-</span></p>
-              <p>Góc pha: <span id="gen2-phaC1">-</span></p>
-            </div>
+
+            <p>Tần số: <span id="gen2-freq">-</span> Hz</p>
           </div>
-
-
-          <p>Tần số điện lưới: <span id="gen2-freq1">-</span> Hz</p>
-
-          <h6 class="text-primary">Thông số máy phát 2</h6>
-          <div class="row mb-2">
-            <div class="col phase-col align-reading border border-secondary rounded p-2 me-2">
-              <strong>Pha A</strong>
-              <p>UAB: <span id="gen2-uab2">-</span></p>
-              <p>UA: <span id="gen2-ua2">-</span></p>
-              <p>Góc pha: <span id="gen2-phaA2">-</span></p>
-            </div>
-            <div class="col phase-col align-reading border border-secondary rounded p-2 me-2">
-              <strong>Pha B</strong>
-              <p>UBC: <span id="gen2-ubc2">-</span></p>
-              <p>UB: <span id="gen2-ub2">-</span></p>
-              <p>Góc pha: <span id="gen2-phaB2">-</span></p>
-            </div>
-            <div class="col phase-col align-reading border border-secondary rounded p-2">
-              <strong>Pha C</strong>
-              <p>UCA: <span id="gen2-uca2">-</span></p>
-              <p>UC: <span id="gen2-uc2">-</span></p>
-              <p>Góc pha: <span id="gen2-phaC2">-</span></p>
-            </div>
-          </div>
-
-
-          <p>Tần số máy phát: <span id="gen2-freq2">-</span> Hz</p>
           <h6 class="text-primary">Thông số dòng điện tổng ATS 2</h6>
           <div class="row mb-2">
             <div class="col phase-col align-reading border border-secondary rounded p-2 me-2">
@@ -557,6 +518,19 @@
     const chartGen1 = createCurrentChart("chart-gen1");
     const chartGen2 = createCurrentChart("chart-gen2");
 
+    const cards = document.querySelectorAll('.ats-card');
+    let cardIndex = 0;
+    function showCard(idx) {
+      cards.forEach((c, i) => c.classList.toggle('active', i === idx));
+    }
+    if (cards.length) {
+      showCard(0);
+      setInterval(() => {
+        cardIndex = (cardIndex + 1) % cards.length;
+        showCard(cardIndex);
+      }, 5000);
+    }
+
 
 
     function displayPhase(val) {
@@ -568,33 +542,45 @@
     }
 
     function updateData(prefix, data) {
-      for (const [key, val] of Object.entries(data)) {
+      const useGrid = displayFreq(data.freq1) !== "-";
+      const idx = prefix === 'gen1' ? '1' : '2';
+      const suffix = useGrid ? '1' : '2';
+      const title = document.getElementById(`data-title-${prefix}`);
+      if (title) {
+        title.textContent = useGrid ? `Thông số điện lưới ATS ${idx}` : `Thông số máy phát ${idx}`;
+      }
+      const fields = ['uab', 'ua', 'ubc', 'ub', 'uca', 'uc', 'phaA', 'phaB', 'phaC', 'freq'];
+      fields.forEach(key => {
         const el = document.getElementById(`${prefix}-${key}`);
-        if (!el) continue;
-
+        if (!el) return;
+        const val = data[`${key}${suffix}`];
         const current = parseFloat(el.textContent);
-        const newValue = (key.startsWith("pha")) ? displayPhase(val) :
-          (key.startsWith("freq")) ? displayFreq(val) :
-            parseFloat(val).toFixed(1);
+        const newValue = key.startsWith('pha') ? displayPhase(val) :
+          (key === 'freq') ? displayFreq(val) : parseFloat(val).toFixed(1);
 
-        // So sánh nếu là số
         if (!isNaN(current) && !isNaN(parseFloat(newValue))) {
           if (parseFloat(newValue) > current) {
-            el.style.color = "red";
+            el.style.color = 'red';
           } else if (parseFloat(newValue) < current) {
-            el.style.color = "green";
+            el.style.color = 'green';
           } else {
-            el.style.color = "black";
+            el.style.color = '#ffeb3b';
           }
         }
 
-        // Thêm hiệu ứng nhấp nháy nếu có hàm hỗ trợ
         if (typeof setBlinkingStyle === 'function') {
           setBlinkingStyle(el, newValue, current, key);
         }
 
         el.textContent = newValue;
-      }
+      });
+
+      ['ia', 'ib', 'ic'].forEach(key => {
+        const el = document.getElementById(`${prefix}-${key}`);
+        if (el && typeof data[key] !== 'undefined') {
+          el.textContent = parseFloat(data[key]).toFixed(1);
+        }
+      });
 
       // ✅ Cập nhật chế độ AUTO/MAN nếu có
       const modeEl = document.getElementById(`mode-status-${prefix === 'gen1' ? '1' : '2'}`);
