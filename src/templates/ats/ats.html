@@ -220,7 +220,6 @@
 
           </div>
           <!-- <div class="text-center text-danger fw-bold mt-1" id="status1"></div> -->
-          <div class="text-center fw-bold mt-2" id="flash-message-1" style="display:none;"></div>
 
         </div>
       </div>
@@ -318,7 +317,6 @@
 
           </div>
           <!-- <div class="text-center text-danger fw-bold mt-1" id="status2"></div> -->
-          <div class="text-center fw-bold mt-2" id="flash-message-2" style="display:none;"></div>
         </div>
       </div>
     </div>
@@ -482,6 +480,15 @@
       </div>
     </div>
 
+    <!-- Vùng hiển thị chỉ số SELEC -->
+    <div class="card mt-3">
+      <div class="card-header">Chỉ số SELEC</div>
+      <div class="card-body">
+        <p><strong>SELEC 1:</strong> <span id="selec1">--</span></p>
+        <p><strong>SELEC 2:</strong> <span id="selec2">--</span></p>
+      </div>
+    </div>
+
     <div class="row mb-3">
       <a href="{{ url_for('Home') }}" class="btn btn-secondary">Back to Dashboard</a>
       <!-- Bổ sung HTML hiển thị số lượng client trong thẻ tiêu đề -->
@@ -520,6 +527,10 @@
       console.log("📦 Nhận từ socket:", data);
       updateData("gen1", data.gen1);
       updateData("gen2", data.gen2);
+      const sel1El = document.getElementById("selec1");
+      const sel2El = document.getElementById("selec2");
+      if (sel1El && typeof data.selec1 !== "undefined") sel1El.textContent = data.selec1;
+      if (sel2El && typeof data.selec2 !== "undefined") sel2El.textContent = data.selec2;
       updateChart(chartGen1, data.gen1.ia, data.gen1.ib, data.gen1.ic);
       updateChart(chartGen2, data.gen2.ia, data.gen2.ib, data.gen2.ic);
       const now = new Date().toLocaleTimeString('vi-VN', { hour12: false });
@@ -575,6 +586,11 @@
           } else {
             el.style.color = "black";
           }
+        }
+
+        // Thêm hiệu ứng nhấp nháy nếu có hàm hỗ trợ
+        if (typeof setBlinkingStyle === 'function') {
+          setBlinkingStyle(el, newValue, current, key);
         }
 
         el.textContent = newValue;

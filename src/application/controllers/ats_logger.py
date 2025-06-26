@@ -37,7 +37,9 @@ FIELD_MAP = {
     'r23': 'status_close_a',
     'r24': 'status_close_b',
     'r25': 'status_open',
-    'r26': 'auto_mode'
+    'r26': 'auto_mode',
+    'r27': 'selec1',
+    'r28': 'selec2'
 }
 
 def log_ats_data(data):

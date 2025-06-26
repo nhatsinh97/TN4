@@ -18,7 +18,6 @@ import logging
 import data_processor
 import paho.mqtt.client as mqtt
 from config import Config
-from typing import Optional
 from application.controllers.ats_logger import log_ats_data
 from logging import Formatter, StreamHandler
 from logging.handlers import TimedRotatingFileHandler
@@ -43,7 +42,7 @@ load_dotenv(dotenv_path=Path(__file__).resolve().parent / ".env")
 BASE_DIR = Path(os.getenv("TN4_BASE_DIR", Path(__file__).resolve().parent))
 
 
-def get_env_port(name: str, default: Optional[int] = None) -> int:
+def get_env_port(name: str, default: "int | None" = None) -> int:
     """Return integer port from environment or default."""
     value = os.getenv(name)
     if value is None:
@@ -110,7 +109,9 @@ logger.addHandler(stream_handler)
 # File handler (log file, split at midnight everyday)
 log_dir = BASE_DIR / "database" / "log"
 os.makedirs(log_dir, exist_ok=True)
-file_handler = TimedRotatingFileHandler(str(log_dir / "log_cico_everyday.log"), when="midnight", interval=1)
+file_handler = TimedRotatingFileHandler(
+    str(log_dir / "log_cico_everyday.log"), when="midnight", interval=1, encoding="utf-8"
+)
 file_handler.setFormatter(formatter)
 file_handler.setLevel(logging.DEBUG)
 logger.addHandler(file_handler)

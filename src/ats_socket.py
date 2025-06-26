@@ -38,7 +38,9 @@ FIELD_MAP = {
     'r23': 'status_close_a',
     'r24': 'status_close_b',
     'r25': 'status_open',
-    'r26': 'auto_mode'
+    'r26': 'auto_mode',
+    'r27': 'selec1',
+    'r28': 'selec2'
 }
 
 def map_generator_fields(gen_data: dict) -> dict:
@@ -69,6 +71,11 @@ def on_message(client, userdata, msg):
             for gen_key in ["gen1", "gen2"]:
                 if gen_key in data:
                     mapped[gen_key] = map_generator_fields(data[gen_key])
+
+            # Lấy thêm các giá trị SELEC nếu có
+            for field in ["selec1", "selec2"]:
+                if field in data:
+                    mapped[field] = data[field]
 
             # 🔴 Ghi dữ liệu điện năng vào InfluxDB
             log_ats_data(mapped)
