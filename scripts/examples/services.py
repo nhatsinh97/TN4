@@ -36,7 +36,9 @@ stream_handler.setFormatter(formatter)
 logger.addHandler(stream_handler)
 
 # Split log at 0h everyday
-file_handler = TimedRotatingFileHandler('./database/log/log_cico_everyday.log', when="midnight", interval=1)
+file_handler = TimedRotatingFileHandler(
+    './database/log/log_cico_everyday.log', when="midnight", interval=1, encoding="utf-8"
+)
 file_handler.setFormatter(formatter)
 file_handler.setLevel(logging.DEBUG)
 logger.addHandler(file_handler)
