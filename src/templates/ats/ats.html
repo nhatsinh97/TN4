@@ -322,6 +322,15 @@
     </div>
 
     <!-- HTML -->
+    <div class="card mt-3">
+      <h5 class="text-primary">Biểu đồ năng lượng</h5>
+      <canvas id="energyChart" style="max-width:800px;"></canvas>
+    </div>
+    <script>
+      fetch('/energy/kwh')
+        .then(r => r.json())
+        .then(data => { /* xử lý dữ liệu như mẫu chart.html */ });
+    </script>
     <div class="row mt-4">
       <div class="col-md-12">
         <div class="card">
