@@ -81,7 +81,7 @@ host = os.getenv("INFLUXDB_HOST")
 port = get_env_port("INFLUXDB_PORT", default=8086)
 username = os.getenv("INFLUXDB_USERNAME")
 password = os.getenv("INFLUXDB_PASSWORD")
-database = os.getenv("INFLUXDB_DATABASE")
+database = os.getenv("INFLUXDB_DATABASE", "ats_data")
 
 # Thông tin MQTT
 BROKER_ADDRESS = os.getenv("MQTT_BROKER_ADDRESS")
