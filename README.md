@@ -101,6 +101,15 @@ sudo docker run -d --restart unless-stopped \
 Hình ảnh Docker đã bao gồm thư viện **OpenCV** thông qua gói
 `opencv-python-headless`, vì vậy bạn không cần cài đặt thủ công.
 
+### Dừng container Docker
+
+Khi không cần sử dụng nữa, bạn có thể dừng và xóa container chạy ở nền:
+
+```bash
+docker stop tn4
+docker rm tn4
+```
+
 ## Cấu trúc thư mục chính
 
 ```

@@ -81,7 +81,7 @@ host = os.getenv("INFLUXDB_HOST")
 port = get_env_port("INFLUXDB_PORT", default=8086)
 username = os.getenv("INFLUXDB_USERNAME")
 password = os.getenv("INFLUXDB_PASSWORD")
-database = os.getenv("INFLUXDB_DATABASE")
+database = os.getenv("INFLUXDB_DATABASE", "ats_data")
 
 # Thông tin MQTT
 BROKER_ADDRESS = os.getenv("MQTT_BROKER_ADDRESS")
@@ -109,7 +109,9 @@ logger.addHandler(stream_handler)
 # File handler (log file, split at midnight everyday)
 log_dir = BASE_DIR / "database" / "log"
 os.makedirs(log_dir, exist_ok=True)
-file_handler = TimedRotatingFileHandler(str(log_dir / "log_cico_everyday.log"), when="midnight", interval=1)
+file_handler = TimedRotatingFileHandler(
+    str(log_dir / "log_cico_everyday.log"), when="midnight", interval=1, encoding="utf-8"
+)
 file_handler.setFormatter(formatter)
 file_handler.setLevel(logging.DEBUG)
 logger.addHandler(file_handler)
