@@ -732,21 +732,39 @@ def control_ats():
     
 @app.route("/api/ats/history/<int:gen_id>")
 def get_ats_history(gen_id):
-    range_param = request.args.get("range", "1d")
+    start_param = request.args.get("start")
+    end_param = request.args.get("end")
     now = datetime.utcnow()
+    vn_tz = timezone(timedelta(hours=7))
 
-    ranges = {
-        "1h": now - timedelta(hours=1),
-        "6h": now - timedelta(hours=6),
-        "1d": now - timedelta(days=1),
-        "1w": now - timedelta(weeks=1),
-        "1M": now - timedelta(days=30),
-        "1y": now - timedelta(days=365)
-    }
-    start_time = ranges.get(range_param, now - timedelta(days=1))
-    iso_time = start_time.isoformat() + "Z"
+    if start_param and end_param:
+        try:
+            start_dt = parser.parse(start_param)
+            end_dt = parser.parse(end_param)
+            if start_dt.tzinfo is None:
+                start_dt = start_dt.replace(tzinfo=vn_tz)
+            if end_dt.tzinfo is None:
+                end_dt = end_dt.replace(tzinfo=vn_tz)
+            start_time = start_dt.astimezone(timezone.utc)
+            end_time = end_dt.astimezone(timezone.utc)
+        except Exception as e:
+            return jsonify({"error": str(e)}), 400
+    else:
+        range_param = request.args.get("range", "1d")
+        ranges = {
+            "1h": now - timedelta(hours=1),
+            "6h": now - timedelta(hours=6),
+            "1d": now - timedelta(days=1),
+            "1w": now - timedelta(weeks=1),
+            "1M": now - timedelta(days=30),
+            "1y": now - timedelta(days=365)
+        }
+        start_time = ranges.get(range_param, now - timedelta(days=1))
+        end_time = now
 
-    # ✅ Khởi tạo InfluxDBClient tại đây
+    iso_start = start_time.astimezone(timezone.utc).isoformat().replace("+00:00", "Z")
+    iso_end = end_time.astimezone(timezone.utc).isoformat().replace("+00:00", "Z")
+
     client = InfluxDBClient(
         host=host,
         port=port,
@@ -757,7 +775,7 @@ def get_ats_history(gen_id):
 
     query = f"""
     SELECT time, ia, ib, ic FROM ats_status
-    WHERE generator='gen{gen_id}' AND time > '{iso_time}'
+    WHERE generator='gen{gen_id}' AND time >= '{iso_start}' AND time <= '{iso_end}'
     ORDER BY time ASC
     """
     result = client.query(query)
