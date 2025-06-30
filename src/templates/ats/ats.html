@@ -328,23 +328,23 @@
           <h5 class="text-primary">Biểu đồ dòng điện</h5>
 
           <div class="row mb-3">
-            <div class="col-md-4">
+            <div class="col-md-3">
               <label for="genSelect" class="form-label">Chọn nguồn:</label>
               <select id="genSelect" class="form-select">
                 <option value="1" selected>NGUỒN 1</option>
                 <option value="2">NGUỒN 2</option>
               </select>
             </div>
-            <div class="col-md-4">
-              <label for="rangeSelect" class="form-label">Khoảng thời gian:</label>
-              <select id="rangeSelect" class="form-select">
-                <option value="1h">1 Giờ</option>
-                <option value="3h">3 Giờ</option>
-                <option value="6h">6 Giờ</option>
-                <option value="9h">9 Giờ</option>
-                <option value="12h">12 Giờ</option>
-                <option value="24h" selected>24 Giờ</option>
-              </select>
+            <div class="col-md-3">
+              <label for="startTime" class="form-label">Từ:</label>
+              <input type="datetime-local" id="startTime" class="form-control">
+            </div>
+            <div class="col-md-3">
+              <label for="endTime" class="form-label">Đến:</label>
+              <input type="datetime-local" id="endTime" class="form-control">
+            </div>
+            <div class="col-md-3 d-flex align-items-end">
+              <button id="loadHistoryBtn" class="btn btn-primary w-100">Tải dữ liệu</button>
             </div>
 
           </div>
@@ -439,11 +439,10 @@
       });
 
 
-      function loadHistoryRange(genId = 1, range = "1d") {
-        fetch(`/api/ats/history/${genId}?range=${range}`)
+      function loadHistory(genId = 1, start, end) {
+        fetch(`/api/ats/history/${genId}?start=${encodeURIComponent(start)}&end=${encodeURIComponent(end)}`)
           .then(res => res.json())
           .then(data => {
-            // Chuyển UTC sang giờ VN (+7) và định dạng
             historyChart.data.labels = data.map(d => new Date(d.time));
             historyChart.data.datasets[0].data = data.map(d => d.ia);
             historyChart.data.datasets[1].data = data.map(d => d.ib);
@@ -453,20 +452,31 @@
           .catch(err => console.error("Lỗi khi tải dữ liệu lịch sử:", err));
       }
 
-      // Mặc định tải ATS 1 trong 1 ngày
-      loadHistoryRange(1, "1d");
+      function toDatetimeLocal(date) {
+        const offset = date.getTimezoneOffset();
+        const local = new Date(date.getTime() - offset * 60000);
+        return local.toISOString().slice(0, 16);
+      }
 
-      document.getElementById("rangeSelect").addEventListener("change", () => {
-        const genId = document.getElementById("genSelect").value;
-        const range = document.getElementById("rangeSelect").value;
-        loadHistoryRange(genId, range);
-      });
+      const startInput = document.getElementById("startTime");
+      const endInput = document.getElementById("endTime");
+      const genSelect = document.getElementById("genSelect");
+      const loadBtn = document.getElementById("loadHistoryBtn");
 
-      document.getElementById("genSelect").addEventListener("change", () => {
-        const genId = document.getElementById("genSelect").value;
-        const range = document.getElementById("rangeSelect").value;
-        loadHistoryRange(genId, range);
-      });
+      const now = new Date();
+      endInput.value = toDatetimeLocal(now);
+      startInput.value = toDatetimeLocal(new Date(now.getTime() - 24 * 60 * 60 * 1000));
+      loadHistory(1, startInput.value, endInput.value);
+
+      function triggerLoad() {
+        const genId = genSelect.value;
+        loadHistory(genId, startInput.value, endInput.value);
+      }
+
+      loadBtn.addEventListener("click", triggerLoad);
+      genSelect.addEventListener("change", triggerLoad);
+      startInput.addEventListener("change", triggerLoad);
+      endInput.addEventListener("change", triggerLoad);
     </script>
     <!-- end test -->
 
