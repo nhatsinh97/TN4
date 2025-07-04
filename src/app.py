@@ -752,6 +752,8 @@ def get_ats_history(gen_id):
     else:
         range_param = request.args.get("range", "1d")
         ranges = {
+            "15m": now - timedelta(minutes=15),
+            "30m": now - timedelta(minutes=30),
             "1h": now - timedelta(hours=1),
             "6h": now - timedelta(hours=6),
             "1d": now - timedelta(days=1),
