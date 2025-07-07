@@ -57,3 +57,16 @@ def test_get_history_start_end(monkeypatch):
     assert 'time >=' in q and 'time <=' in q
     assert result[0]['ia'] == 1
     assert result[0]['time'].endswith('+07:00')
+
+
+def test_get_history_range(monkeypatch):
+    dummy = DummyClient()
+    monkeypatch.setattr(app, 'InfluxDBClient', lambda *a, **k: dummy)
+    monkeypatch.setattr(app, 'parser', types.SimpleNamespace(parse=lambda s: datetime.fromisoformat(s)))
+    monkeypatch.setattr(app, 'jsonify', lambda x: x)
+    app.request = types.SimpleNamespace(args={'range': '15m'})
+    result = app.get_ats_history(1)
+    assert dummy.queries
+    q = dummy.queries[0]
+    assert 'time >=' in q and 'time <=' in q
+    assert result[0]['ia'] == 1

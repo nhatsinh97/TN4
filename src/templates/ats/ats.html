@@ -133,7 +133,7 @@
     <div class="row g-3">
       <!-- ATS 1 -->
       <div class="col-md-6">
-        <div class="card">
+        <div class="card" id="historyCard">
           <!-- <h5 class="text-primary">NGUỒN 1</h5> -->
           <h5 class="text-center bg-success text-white py-2 rounded">NGUỒN 1</h5>
 
@@ -328,7 +328,7 @@
           <h5 class="text-primary">Biểu đồ dòng điện</h5>
 
           <div class="row mb-3">
-            <div class="col-md-3">
+            <div class="col-md-2">
               <label for="genSelect" class="form-label">Chọn nguồn:</label>
               <select id="genSelect" class="form-select">
                 <option value="1" selected>NGUỒN 1</option>
@@ -343,7 +343,16 @@
               <label for="endTime" class="form-label">Đến:</label>
               <input type="datetime-local" id="endTime" class="form-control">
             </div>
-            <div class="col-md-3 d-flex align-items-end">
+            <div class="col-md-2">
+              <label for="rangeSelect" class="form-label">Khoảng:</label>
+              <select id="rangeSelect" class="form-select">
+                <option value="live">Live</option>
+                <option value="15m">15 phút</option>
+                <option value="30m">30 phút</option>
+                <option value="1h" selected>1 giờ</option>
+              </select>
+            </div>
+            <div class="col-md-2 d-flex align-items-end">
               <button id="loadHistoryBtn" class="btn btn-primary w-100">Tải dữ liệu</button>
             </div>
 
@@ -452,6 +461,19 @@
           .catch(err => console.error("Lỗi khi tải dữ liệu lịch sử:", err));
       }
 
+      function loadHistoryRange(genId = 1, range = "1h") {
+        fetch(`/api/ats/history/${genId}?range=${range}`)
+          .then(res => res.json())
+          .then(data => {
+            historyChart.data.labels = data.map(d => new Date(d.time));
+            historyChart.data.datasets[0].data = data.map(d => d.ia);
+            historyChart.data.datasets[1].data = data.map(d => d.ib);
+            historyChart.data.datasets[2].data = data.map(d => d.ic);
+            historyChart.update();
+          })
+          .catch(err => console.error("Lỗi khi tải dữ liệu lịch sử:", err));
+      }
+
       function toDatetimeLocal(date) {
         const offset = date.getTimezoneOffset();
         const local = new Date(date.getTime() - offset * 60000);
@@ -461,22 +483,35 @@
       const startInput = document.getElementById("startTime");
       const endInput = document.getElementById("endTime");
       const genSelect = document.getElementById("genSelect");
+      const rangeSelect = document.getElementById("rangeSelect");
       const loadBtn = document.getElementById("loadHistoryBtn");
+      const historyCard = document.getElementById("historyCard");
 
       const now = new Date();
       endInput.value = toDatetimeLocal(now);
       startInput.value = toDatetimeLocal(new Date(now.getTime() - 24 * 60 * 60 * 1000));
-      loadHistory(1, startInput.value, endInput.value);
+      triggerLoad();
 
       function triggerLoad() {
         const genId = genSelect.value;
-        loadHistory(genId, startInput.value, endInput.value);
+        const range = rangeSelect.value;
+        if (range === "live") {
+          historyCard.style.display = "none";
+          return;
+        }
+        historyCard.style.display = "";
+        if (range === "15m" || range === "30m" || range === "1h") {
+          loadHistoryRange(genId, range);
+        } else {
+          loadHistory(genId, startInput.value, endInput.value);
+        }
       }
 
       loadBtn.addEventListener("click", triggerLoad);
       genSelect.addEventListener("change", triggerLoad);
       startInput.addEventListener("change", triggerLoad);
       endInput.addEventListener("change", triggerLoad);
+      rangeSelect.addEventListener("change", triggerLoad);
     </script>
     <!-- end test -->
 
