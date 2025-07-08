@@ -93,6 +93,6 @@ def log_ats_data(data):
     if points:
         try:
             client.write_points(points)
-            print(f"✅ Đã ghi {len(points)} điểm vào InfluxDB.controllers")
+            # print(f"✅ Đã ghi {len(points)} điểm vào InfluxDB.controllers")
         except Exception as e:
             print("❌ Lỗi khi ghi dữ liệu vào InfluxDB:", e)
