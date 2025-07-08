@@ -88,6 +88,9 @@ BROKER_ADDRESS = os.getenv("MQTT_BROKER_ADDRESS")
 PORT = get_env_port("MQTT_PORT", default=1883)
 TOPIC = os.getenv("MQTT_TOPIC")
 
+# Track MQTT connection state so we only log successful connection once
+mqtt_connected = False
+
 # Địa chỉ Socket.IO server dùng cho frontend ATS
 SOCKET_SERVER_URL = os.getenv("SOCKET_SERVER_URL", "http://localhost:58888")
 
@@ -192,11 +195,22 @@ device_status = {
 
 # Hàm callback khi kết nối thành công
 def on_connect(client, userdata, flags, rc):
+    """MQTT on_connect callback."""
+    global mqtt_connected
     if rc == 0:
-        logger.info("Đã kết nối với MQTT Broker! app.py")
+        # Only log the connected message the first time after a disconnect
+        if not mqtt_connected:
+            logger.info("Đã kết nối với MQTT Broker! app.py")
+        mqtt_connected = True
         client.subscribe(TOPIC)  # Đăng ký topic với ký tự đại diện
     else:
         logger.warning(f"Failed to connect, return code {rc}")
+
+# Hàm callback khi mất kết nối MQTT
+def on_disconnect(client, userdata, rc):
+    global mqtt_connected
+    mqtt_connected = False
+    logger.warning(f"MQTT disconnected with reason code {rc}")
 
 # Hàm callback khi nhận được tin nhắn từ MQTT
 # Hàm callback khi nhận được tin nhắn từ MQTT
@@ -296,12 +310,15 @@ def on_message(client, userdata, message):
 mqtt_client = mqtt.Client(client_id="Server_app", protocol=mqtt.MQTTv311, transport="tcp")
 mqtt_client.on_connect = on_connect
 mqtt_client.on_message = on_message
+mqtt_client.on_disconnect = on_disconnect
 
 # Hàm khởi động vòng lặp MQTT trong một luồng riêng
 def start_mqtt_loop():
     try:
         logger.info("Đang kết nối đến MQTT broker...")
         mqtt_client.connect(BROKER_ADDRESS, PORT)
+        # Slow down reconnection attempts
+        mqtt_client.reconnect_delay_set(min_delay=5, max_delay=60)
         mqtt_client.loop_forever()  # Sử dụng loop_forever để giữ kết nối liên tục
     except Exception as e:
         logger.error(f"MQTT Loop Error: {e}")
