@@ -208,6 +208,11 @@ def on_connect(client, userdata, flags, rc):
             logger.info("Đã kết nối với MQTT Broker! app.py")
         mqtt_connected = True
         client.subscribe(TOPIC)  # Đăng ký topic với ký tự đại diện
+    elif rc == 7:
+        logger.error(
+            "MQTT connection refused: bad credentials "
+            "(check MQTT_USERNAME/MQTT_PASSWORD)"
+        )
     else:
         logger.warning(f"Failed to connect, return code {rc}")
 
@@ -215,7 +220,13 @@ def on_connect(client, userdata, flags, rc):
 def on_disconnect(client, userdata, rc):
     global mqtt_connected
     mqtt_connected = False
-    logger.warning(f"MQTT disconnected with reason code {rc}")
+    if rc == 7:
+        logger.error(
+            "MQTT disconnected: bad credentials "
+            "(check MQTT_USERNAME/MQTT_PASSWORD)"
+        )
+    else:
+        logger.warning(f"MQTT disconnected with reason code {rc}")
 
 # Hàm callback khi nhận được tin nhắn từ MQTT
 # Hàm callback khi nhận được tin nhắn từ MQTT
