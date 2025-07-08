@@ -47,14 +47,15 @@ def setup_tmp_json(tmp_path):
             }
         }
     }
-    path = tmp_path / "data_setup.json"
-    path.write_text(json.dumps(data))
-    return path
+    dir_path = tmp_path / "database" / "data_setup"
+    dir_path.mkdir(parents=True, exist_ok=True)
+    file_path = dir_path / "data_setup.json"
+    file_path.write_text(json.dumps(data))
+    return file_path
 
 def test_process_data_success(monkeypatch, tmp_path):
     json_path = setup_tmp_json(tmp_path)
-    monkeypatch.setattr(data_processor, "link", str(tmp_path) + "/")
-    monkeypatch.setattr(data_processor, "file", "data_setup.json")
+    monkeypatch.setattr(data_processor, "BASE_DIR", tmp_path)
     monkeypatch.setattr(data_processor.cv2, "VideoCapture", lambda cam: DummyCap())
     monkeypatch.setattr(data_processor.cv2, "imencode", lambda ext, img: (True, b"img"))
     monkeypatch.setattr(data_processor.requests, "post", lambda *a, **kw: DummyResponse())
@@ -69,8 +70,7 @@ def test_process_data_success(monkeypatch, tmp_path):
 
 def test_process_data_invalid_id(monkeypatch, tmp_path):
     setup_tmp_json(tmp_path)
-    monkeypatch.setattr(data_processor, "link", str(tmp_path) + "/")
-    monkeypatch.setattr(data_processor, "file", "data_setup.json")
+    monkeypatch.setattr(data_processor, "BASE_DIR", tmp_path)
 
     data = {"idchip": "unknown", "name": "uv1", "status": "start", "ip": "1", "version": "v"}
     result = data_processor.process_data(data)
