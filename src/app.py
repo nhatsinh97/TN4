@@ -87,6 +87,8 @@ database = os.getenv("INFLUXDB_DATABASE", "ats_data")
 BROKER_ADDRESS = os.getenv("MQTT_BROKER_ADDRESS")
 PORT = get_env_port("MQTT_PORT", default=1883)
 TOPIC = os.getenv("MQTT_TOPIC")
+MQTT_USERNAME = os.getenv("MQTT_USERNAME")
+MQTT_PASSWORD = os.getenv("MQTT_PASSWORD")
 
 # Track MQTT connection state so we only log successful connection once
 mqtt_connected = False
@@ -316,6 +318,8 @@ mqtt_client.on_disconnect = on_disconnect
 def start_mqtt_loop():
     try:
         logger.info("Đang kết nối đến MQTT broker...")
+        if MQTT_USERNAME and MQTT_PASSWORD:
+            mqtt_client.username_pw_set(MQTT_USERNAME, MQTT_PASSWORD)
         mqtt_client.connect(BROKER_ADDRESS, PORT)
         # Slow down reconnection attempts
         mqtt_client.reconnect_delay_set(min_delay=5, max_delay=60)
