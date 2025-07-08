@@ -321,6 +321,13 @@
       </div>
     </div>
 
+    <div class="card mt-3">
+      <div class="card-header">Điện năng tiêu thụ (kWh)</div>
+      <div class="card-body">
+        <p><strong>SELEC 1:</strong> <span id="kwh1">--</span> kWh</p>
+        <p><strong>SELEC 2:</strong> <span id="kwh2">--</span> kWh</p>
+      </div>
+    </div>
     <!-- HTML -->
     <div class="row mt-4">
       <div class="col-md-12">
@@ -525,12 +532,21 @@
 
     socket.on("ats_data", (data) => {
       console.log("📦 Nhận từ socket:", data);
+      console.log("SELEC 1 kWh:", data.selec1_kwh);
+      console.log("SELEC 2 kWh:", data.selec2_kwh);
       updateData("gen1", data.gen1);
       updateData("gen2", data.gen2);
       const sel1El = document.getElementById("selec1");
       const sel2El = document.getElementById("selec2");
-      if (sel1El && typeof data.selec1 !== "undefined") sel1El.textContent = data.selec1;
-      if (sel2El && typeof data.selec2 !== "undefined") sel2El.textContent = data.selec2;
+      if (sel1El && typeof data.selec1_kwh !== "undefined") sel1El.textContent = data.selec1_kwh.toFixed(2) + " kWh";
+      if (sel2El && typeof data.selec2_kwh !== "undefined") sel2El.textContent = data.selec2_kwh.toFixed(2) + " kWh";
+
+      // ✅ Cập nhật số điện năng tiêu thụ (kWh)
+      const kwh1El = document.getElementById("kwh1");
+      const kwh2El = document.getElementById("kwh2");
+      if (kwh1El && typeof data.selec1_kwh !== "undefined") kwh1El.textContent = data.selec1_kwh.toFixed(2);
+      if (kwh2El && typeof data.selec2_kwh !== "undefined") kwh2El.textContent = data.selec2_kwh.toFixed(2);
+
       updateChart(chartGen1, data.gen1.ia, data.gen1.ib, data.gen1.ic);
       updateChart(chartGen2, data.gen2.ia, data.gen2.ib, data.gen2.ic);
       const now = new Date().toLocaleTimeString('vi-VN', { hour12: false });

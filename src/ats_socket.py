@@ -1,5 +1,6 @@
 # ats_socket.py
 import json
+import struct
 import os
 import paho.mqtt.client as mqtt
 from threading import Thread
@@ -57,6 +58,19 @@ MQTT_BROKER = os.getenv("MQTT_BROKER_ADDRESS_ATS", "localhost")  # hoặc IP nh�
 MQTT_PORT = int(os.getenv("MQTT_PORT_ATS", 1883))
 MQTT_TOPIC = "ats/data"
 
+def decode_ieee754(registers, index):
+    """Chuyển 2 thanh ghi từ vị trí index thành float IEEE 754, theo Modbus thường gặp"""
+    if index + 1 >= len(registers):
+        return None
+    # Swap thứ tự từ little-endian word
+    low = registers[index]
+    high = registers[index + 1]
+    raw = (high << 16) | low
+    try:
+        return struct.unpack('>f', raw.to_bytes(4, byteorder='big'))[0]
+    except:
+        return None
+
 # Hàm callback khi nhận dữ liệu từ MQTT
 def on_message(client, userdata, msg):
     try:
@@ -76,6 +90,18 @@ def on_message(client, userdata, msg):
             for field in ["selec1", "selec2"]:
                 if field in data:
                     mapped[field] = data[field]
+            # ✅ Giải mã kWh từ selec1 và selec2 nếu có
+            try:
+                if "selec1" in data and "regs" in data["selec1"]:
+                    kwh1 = decode_ieee754(data["selec1"]["regs"], 0)  # 0 là index cho kWh
+                    mapped["selec1_kwh"] = round(kwh1, 2) if kwh1 is not None else None
+            
+                if "selec2" in data and "regs" in data["selec2"]:
+                    kwh2 = decode_ieee754(data["selec2"]["regs"], 0)
+                    mapped["selec2_kwh"] = round(kwh2, 2) if kwh2 is not None else None
+            except Exception as e:
+                print("[MQTT] Lỗi giải mã kWh:", e)
+
 
             # 🔴 Ghi dữ liệu điện năng vào InfluxDB
             log_ats_data(mapped)
@@ -83,6 +109,7 @@ def on_message(client, userdata, msg):
             # Gửi dữ liệu đến client qua Socket.IO
             if socketio:
                 print("[SOCKET.IO] Gửi dữ liệu ATS qua Socket.IO")
+                print("✅ mapped trước khi emit:", json.dumps(mapped, indent=2))
                 socketio.emit("ats_data", mapped)
 
         elif topic == "ats/water":
