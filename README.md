@@ -22,6 +22,10 @@ python src/app.py
 ```
 Ứng dụng sẽ khởi động tại địa chỉ `http://localhost:58888` ở chế độ mặc định.
 
+Khi tệp `app.py` được import, ứng dụng sẽ tự khởi chạy các luồng nền để kiểm
+tra trạng thái thiết bị và xử lý dữ liệu hàng đợi. Điều này giúp các luồng hoạt
+động ngay cả khi `app` được sử dụng như một module trong chương trình khác.
+
 ### Cấu hình đường dẫn cơ sở
 
 Ứng dụng lấy đường dẫn tới thư mục dữ liệu dựa trên biến môi trường

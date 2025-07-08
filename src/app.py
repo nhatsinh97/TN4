@@ -128,6 +128,9 @@ logger.info("Start: GF-CICO")
 # Tạo một hàng đợi để truyền dữ liệu giữa các luồng
 data_queue = queue.Queue()
 
+# Flag to ensure background threads are started only once
+background_workers_started = False
+
 
 
 # Khóa bí mật để mã hóa session
@@ -1050,6 +1053,29 @@ def process_data_from_queue():
                 # Đánh dấu hoàn thành xử lý dữ liệu trong hàng đợi
                 data_queue.task_done()
 
+# Start background worker threads
+def start_background_workers():
+    """Launch periodic status check and queue processing threads."""
+    global background_workers_started
+    if background_workers_started:
+        return
+    background_workers_started = True
+
+    device_check_thread = Thread(
+        target=check_device_status_periodically,
+        daemon=True,
+    )
+    device_check_thread.start()
+
+    processing_thread = Thread(
+        target=process_data_from_queue,
+        daemon=True,
+    )
+    processing_thread.start()
+
+# Automatically start background workers when the module is imported
+start_background_workers()
+
 # Hàm cập nhật trạng thái vào file JSON
 def update_status_in_json(idchip, event_data):
     try:
@@ -1501,15 +1527,8 @@ def clean_old_ts_files(directory, max_files=20):
 
 if __name__ == '__main__':
     try:
-        # Tạo và khởi động luồng để kiểm tra trạng thái thiết bị định kỳ
-        device_check_thread = Thread(target=check_device_status_periodically)
-        device_check_thread.daemon = True
-        device_check_thread.start()
-
-        # Tạo và khởi động luồng để xử lý dữ liệu từ hàng đợi
-        processing_thread = Thread(target=process_data_from_queue)
-        processing_thread.daemon = True
-        processing_thread.start()
+        # Ensure background workers are running when executed directly
+        start_background_workers()
 
         # Khởi động Flask trong luồng chính
         # app.run(host="0.0.0.0", port=58888, debug=False)
