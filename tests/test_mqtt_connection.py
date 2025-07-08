@@ -34,3 +34,27 @@ def test_on_connect_logs_once(caplog):
     app.on_connect(client, None, None, 0)
     logs = [r.message for r in caplog.records if "Đã kết nối" in r.message]
     assert len(logs) == 1
+
+
+def test_on_connect_bad_credentials(caplog):
+    client = DummyClient()
+    caplog.set_level(logging.ERROR)
+
+    app.on_connect(client, None, None, 7)
+
+    msgs = [r.message for r in caplog.records]
+    joined = "\n".join(msgs)
+    assert "bad credentials" in joined
+    assert "MQTT_USERNAME" in joined
+    assert "MQTT_PASSWORD" in joined
+
+
+def test_on_disconnect_bad_credentials(caplog):
+    client = DummyClient()
+    caplog.set_level(logging.ERROR)
+
+    app.on_disconnect(client, None, 7)
+
+    msgs = [r.message for r in caplog.records]
+    joined = "\n".join(msgs)
+    assert "bad credentials" in joined
