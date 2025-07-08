@@ -1033,6 +1033,7 @@ def get_device_requests():
 def process_data_from_queue():
     while True:
         data = data_queue.get()  # Lấy dữ liệu từ hàng đợi
+        print(data)
         if data:
             try:
                 # Gọi hàm xử lý dữ liệu

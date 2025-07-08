@@ -10,8 +10,8 @@
                 "mac_address": "GF_TN4_CAMERA2",
                 "camera": "rtsp://admin:admin@2024!@10.16.40.72/cam/realmonitor?channel=1&subtype=0",
                 "timer": "60",
-                "status": "on",
-                "previous_status": "on",
+                "status": "off",
+                "previous_status": "off",
                 "previous_timer": "60"
             },
             "uv2_": {

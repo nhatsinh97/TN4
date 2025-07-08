@@ -21,6 +21,7 @@ BASE_DIR = Path(os.getenv("TN4_BASE_DIR", Path(__file__).resolve().parent))
 
 
 def process_data(data):
+    print(data)
     logger = logging.getLogger('cico_log')
 
     # Danh sách các chipid không cần cập nhật

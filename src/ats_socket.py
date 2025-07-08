@@ -77,7 +77,7 @@ def on_message(client, userdata, msg):
         topic = msg.topic
         payload = msg.payload.decode('utf-8')
         data = json.loads(payload)
-        print(f"[MQTT] Nhận từ {topic}: {data}")
+        # print(f"[MQTT] Nhận từ {topic}: {data}")
 
         if topic == "ats/data":
             # Chuyển đổi tên trường theo bảng ánh xạ
@@ -108,8 +108,8 @@ def on_message(client, userdata, msg):
 
             # Gửi dữ liệu đến client qua Socket.IO
             if socketio:
-                print("[SOCKET.IO] Gửi dữ liệu ATS qua Socket.IO")
-                print("✅ mapped trước khi emit:", json.dumps(mapped, indent=2))
+                # print("[SOCKET.IO] Gửi dữ liệu ATS qua Socket.IO")
+                # print("✅ mapped trước khi emit:", json.dumps(mapped, indent=2))
                 socketio.emit("ats_data", mapped)
 
         elif topic == "ats/water":
