@@ -48,6 +48,19 @@ export SECRET_KEY=mysecretkey
 python src/app.py
 ```
 
+### Cấu hình MQTT Username và Password
+
+Khi broker yêu cầu xác thực, bạn có thể cung cấp thông tin đăng nhập qua
+hai biến môi trường `MQTT_USERNAME` và `MQTT_PASSWORD`.
+
+Ví dụ:
+
+```bash
+export MQTT_USERNAME=user
+export MQTT_PASSWORD=pass
+python src/app.py
+```
+
 ### Tạo file `.env`
 
 Sao chép `src/.env.example` thành `src/.env` và thay đổi các giá trị phù hợp.
@@ -62,6 +75,8 @@ INFLUXDB_PASSWORD={PASS}
 MQTT_BROKER_ADDRESS=127.0.0.1
 MQTT_PORT=1883
 MQTT_TOPIC=tn4/data
+MQTT_USERNAME=youruser
+MQTT_PASSWORD=yourpass
 MQTT_BROKER_ADDRESS_ATS=127.0.0.1
 MQTT_PORT_ATS=1883
 USER_FILE=./database/data_setup/users.json
