@@ -5,6 +5,7 @@ import json
 from urllib3.exceptions import InsecureRequestWarning
 import requests
 import base64
+from pathlib import Path
 # from app import logger, uv_data
 # Tắt cảnh báo liên quan đến SSL
 # http = urllib3.PoolManager()
@@ -13,8 +14,9 @@ requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 # API chính
 url = os.getenv("API_URL")
 url_cico = os.getenv("API_URL_CICO")
-link = "./database/data_setup/"
-file = "data_setup.json"
+
+# Thiết lập thư mục gốc của dự án tương tự như app.py
+BASE_DIR = Path(os.getenv("TN4_BASE_DIR", Path(__file__).resolve().parent))
 
 
 
@@ -28,7 +30,8 @@ def process_data(data):
     api_data = json.dumps(data, ensure_ascii=False, indent=4)
 
     # Đọc dữ liệu từ file JSON
-    with open(link + file, "r", encoding='utf-8') as fin:
+    data_setup_path = BASE_DIR / "database" / "data_setup" / "data_setup.json"
+    with open(data_setup_path, "r", encoding="utf-8") as fin:
         data_json = json.load(fin)
 
     # Chuyển chuỗi JSON thành từ điển
@@ -93,7 +96,7 @@ def process_data(data):
                 if 'ip' in about_data and 'version' in about_data:
                     about_data['ip'] = ip
                     about_data['version'] = version
-                    with open(link + file, 'w', encoding='utf-8') as fout:
+                    with open(data_setup_path, "w", encoding="utf-8") as fout:
                         json.dump(data_json, fout, ensure_ascii=False, indent=4)
                     logger.critical('Đã cập nhật dữ liệu about: %s', api_value)
                 else:
