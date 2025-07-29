@@ -80,7 +80,7 @@
     <button onclick="filterData('month')">Theo Tháng</button>
     <button onclick="filterData('year')">Theo Năm</button>
 </div>
-<script src="/static/css/login.js"></script>
+<script src="{{ url_for('static', filename='css/login.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
     document.querySelectorAll('.server').forEach(server => {
