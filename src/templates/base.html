@@ -7,28 +7,28 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="../static/images/logo-greenfeed.png" type="image/ico" />
+  <link rel="icon" href="{{ url_for('static', filename='images/logo-greenfeed.png') }}" type="image/ico" />
   <title>{{ seo.title if seo.title else 'Farm GreenFeed || giám sát phòng uv' }}</title>
   <!-- Bootstrap -->
-  <link href="../static/dashboard/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{ url_for('static', filename='dashboard/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
   <!-- Font Awesome -->
-  <link href="../static/dashboard/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="{{ url_for('static', filename='dashboard/vendors/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
   <!-- NProgress -->
-  <link href="../static/dashboard/vendors/nprogress/nprogress.css" rel="stylesheet">
+  <link href="{{ url_for('static', filename='dashboard/vendors/nprogress/nprogress.css') }}" rel="stylesheet">
   <!-- iCheck -->
-  <link href="../static/dashboard/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+  <link href="{{ url_for('static', filename='dashboard/vendors/iCheck/skins/flat/green.css') }}" rel="stylesheet">
   <!-- bootstrap-progressbar -->
-  <link href="../static/dashboard/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css"
+  <link href="{{ url_for('static', filename='dashboard/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css') }}"
     rel="stylesheet">
   <!-- JQVMap -->
-  <link href="../static/dashboard/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='dashboard/vendors/jqvmap/dist/jqvmap.min.css') }}" rel="stylesheet" />
   <!-- bootstrap-daterangepicker -->
-  <link href="../static/dashboard/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+  <link href="{{ url_for('static', filename='dashboard/vendors/bootstrap-daterangepicker/daterangepicker.css') }}" rel="stylesheet">
   <!-- Custom Theme Style -->
-  <link href="../static/dashboard/build/css/custom.min.css" rel="stylesheet">
+  <link href="{{ url_for('static', filename='dashboard/build/css/custom.min.css') }}" rel="stylesheet">
   <!-- biểu đồ char  -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <link href="../static/dashboard/char.css" rel="stylesheet">
+  <link href="{{ url_for('static', filename='dashboard/char.css') }}" rel="stylesheet">
   <!-- {% block extra_css %}{% endblock %} -->
 
 </head>
@@ -103,47 +103,47 @@
   </div>
 
   <!-- jQuery -->
-  <script src="../static/dashboard/vendors/jquery/dist/jquery.min.js"></script>
+  <script src="{{ url_for('static', filename='dashboard/vendors/jquery/dist/jquery.min.js') }}"></script>
   <!-- Bootstrap -->
-  <script src="../static/dashboard/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="{{ url_for('static', filename='dashboard/vendors/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
   <!-- FastClick -->
-  <script src="../static/dashboard/vendors/fastclick/lib/fastclick.js"></script>
+  <script src="{{ url_for('static', filename='dashboard/vendors/fastclick/lib/fastclick.js') }}"></script>
   <!-- NProgress -->
-  <script src="../static/dashboard/vendors/nprogress/nprogress.js"></script>
+  <script src="{{ url_for('static', filename='dashboard/vendors/nprogress/nprogress.js') }}"></script>
   <!-- Chart.js -->
-  <script src="../static/dashboard/vendors/Chart.js/dist/Chart.min.js"></script>
+  <script src="{{ url_for('static', filename='dashboard/vendors/Chart.js/dist/Chart.min.js') }}"></script>
   <!-- gauge.js -->
-  <script src="../static/dashboard/vendors/gauge.js/dist/gauge.min.js"></script>
+  <script src="{{ url_for('static', filename='dashboard/vendors/gauge.js/dist/gauge.min.js') }}"></script>
   <!-- bootstrap-progressbar -->
-  <script src="../static/dashboard/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+  <script src="{{ url_for('static', filename='dashboard/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js') }}"></script>
   <!-- iCheck -->
-  <script src="../static/dashboard/vendors/iCheck/icheck.min.js"></script>
+  <script src="{{ url_for('static', filename='dashboard/vendors/iCheck/icheck.min.js') }}"></script>
   <!-- Skycons -->
-  <script src="../static/dashboard/vendors/skycons/skycons.js"></script>
+  <script src="{{ url_for('static', filename='dashboard/vendors/skycons/skycons.js') }}"></script>
   <!-- Flot -->
-  <script src="../static/dashboard/vendors/Flot/jquery.flot.js"></script>
-  <script src="../static/dashboard/vendors/Flot/jquery.flot.pie.js"></script>
-  <script src="../static/dashboard/vendors/Flot/jquery.flot.time.js"></script>
-  <script src="../static/dashboard/vendors/Flot/jquery.flot.stack.js"></script>
-  <script src="../static/dashboard/vendors/Flot/jquery.flot.resize.js"></script>
+  <script src="{{ url_for('static', filename='dashboard/vendors/Flot/jquery.flot.js') }}"></script>
+  <script src="{{ url_for('static', filename='dashboard/vendors/Flot/jquery.flot.pie.js') }}"></script>
+  <script src="{{ url_for('static', filename='dashboard/vendors/Flot/jquery.flot.time.js') }}"></script>
+  <script src="{{ url_for('static', filename='dashboard/vendors/Flot/jquery.flot.stack.js') }}"></script>
+  <script src="{{ url_for('static', filename='dashboard/vendors/Flot/jquery.flot.resize.js') }}"></script>
   <!-- Flot plugins -->
-  <script src="../static/dashboard/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
-  <script src="../static/dashboard/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
-  <script src="../static/dashboard/vendors/flot.curvedlines/curvedLines.js"></script>
+  <script src="{{ url_for('static', filename='dashboard/vendors/flot.orderbars/js/jquery.flot.orderBars.js') }}"></script>
+  <script src="{{ url_for('static', filename='dashboard/vendors/flot-spline/js/jquery.flot.spline.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='dashboard/vendors/flot.curvedlines/curvedLines.js') }}"></script>
   <!-- DateJS -->
-  <script src="../static/dashboard/vendors/DateJS/build/date.js"></script>
+  <script src="{{ url_for('static', filename='dashboard/vendors/DateJS/build/date.js') }}"></script>
   <!-- JQVMap -->
-  <script src="../static/dashboard/vendors/jqvmap/dist/jquery.vmap.js"></script>
-  <script src="../static/dashboard/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-  <script src="../static/dashboard/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+  <script src="{{ url_for('static', filename='dashboard/vendors/jqvmap/dist/jquery.vmap.js') }}"></script>
+  <script src="{{ url_for('static', filename='dashboard/vendors/jqvmap/dist/maps/jquery.vmap.world.js') }}"></script>
+  <script src="{{ url_for('static', filename='dashboard/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js') }}"></script>
   <!-- bootstrap-daterangepicker -->
-  <script src="../static/dashboard/vendors/moment/min/moment.min.js"></script>
-  <script src="../static/dashboard/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+  <script src="{{ url_for('static', filename='dashboard/vendors/moment/min/moment.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='dashboard/vendors/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
 
   <!-- Custom Theme Scripts -->
-  <script src="../static/dashboard/build/js/custom.min.js"></script>
+  <script src="{{ url_for('static', filename='dashboard/build/js/custom.min.js') }}"></script>
   <!-- sinh js -->
-  <script src="../static/js/index.js"></script>
+  <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 
 
   <script>
