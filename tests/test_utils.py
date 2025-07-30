@@ -83,9 +83,11 @@ def load_app_utils():
     for node in tree.body:
         if isinstance(node, ast.Assign):
             for target in node.targets:
-                if getattr(target, 'id', '') == 'DATA_FILE':
+                if getattr(target, 'id', '') in (
+                    'DATA_FILE', 'ALLOWED_FIRMWARE_EXTENSIONS', 'FIRMWARE_DIR'):
                     exec(compile(ast.Module([node], []), 'app', 'exec'), ns)
-        elif isinstance(node, ast.FunctionDef) and node.name in ('ping_device', 'count_online_offline_devices', 'get_env_port'):
+        elif isinstance(node, ast.FunctionDef) and node.name in (
+            'ping_device', 'count_online_offline_devices', 'get_env_port', 'allowed_firmware_file'):
             exec(compile(ast.Module([node], []), 'app', 'exec'), ns)
     sys.modules['app_utils'] = mod
     return mod
@@ -94,6 +96,7 @@ app_utils = load_app_utils()
 ping_device = app_utils.ping_device
 count_online_offline_devices = app_utils.count_online_offline_devices
 get_env_port = app_utils.get_env_port
+allowed_firmware_file = app_utils.allowed_firmware_file
 
 class DummySocket:
     def close(self):
@@ -140,3 +143,8 @@ def test_get_env_port_raises(monkeypatch):
     monkeypatch.delenv('MISSING_PORT', raising=False)
     with pytest.raises(RuntimeError):
         get_env_port('MISSING_PORT')
+
+
+def test_allowed_firmware_file():
+    assert allowed_firmware_file('fw.bin') is True
+    assert allowed_firmware_file('fw.txt') is False
