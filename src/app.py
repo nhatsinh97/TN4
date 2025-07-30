@@ -35,11 +35,16 @@ from dotenv import load_dotenv
 # Các định dạng ảnh cho phép upload
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
+
 # Tải các biến môi trường từ file .env
 load_dotenv(dotenv_path=Path(__file__).resolve().parent / ".env")
 
 # Thiết lập thư mục gốc của dự án
 BASE_DIR = Path(os.getenv("TN4_BASE_DIR", Path(__file__).resolve().parent))
+
+# Thư mục và định dạng firmware cho tính năng OTA
+FIRMWARE_DIR = BASE_DIR / "firmware"
+ALLOWED_FIRMWARE_EXTENSIONS = {'bin'}
 
 
 def get_env_port(name: str, default: "int | None" = None) -> int:
@@ -1161,6 +1166,11 @@ def access_history_partial():
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+
+def allowed_firmware_file(filename: str) -> bool:
+    """Kiểm tra phần mở rộng tệp firmware hợp lệ."""
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_FIRMWARE_EXTENSIONS
 @app.route('/profile')
 def profile():
     if not session.get('logged_in'):
@@ -1230,6 +1240,37 @@ def change_password():
         flash('Mật khẩu cũ không đúng.')
 
     return redirect(url_for('profile'))
+
+
+@app.route('/firmware/upload', methods=['GET', 'POST'])
+def upload_firmware():
+    """Trang tải lên firmware cho thiết bị ESP."""
+    if not session.get('logged_in'):
+        return redirect(url_for('login'))
+
+    if request.method == 'POST':
+        file = request.files.get('firmware')
+        if not file or file.filename == '':
+            flash('Chưa chọn file firmware.', 'danger')
+            return redirect(request.url)
+
+        if not allowed_firmware_file(file.filename):
+            flash('Định dạng firmware không hợp lệ.', 'danger')
+            return redirect(request.url)
+
+        os.makedirs(FIRMWARE_DIR, exist_ok=True)
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(FIRMWARE_DIR, filename))
+        flash('Tải firmware thành công.', 'success')
+        return redirect(url_for('upload_firmware'))
+
+    return render_template('firmware_upload.html')
+
+
+@app.route('/firmware/files/<path:filename>')
+def firmware_files(filename):
+    """Phục vụ tệp firmware cho thiết bị."""
+    return send_from_directory(FIRMWARE_DIR, filename)
 @app.route('/api/get_device_realtime_data')
 def get_device_realtime_data():
     # Giả lập dữ liệu real-time cho các thiết bị

@@ -35,6 +35,12 @@
         "label": "Lịch sử đăng nhập",
         "url": "/access_history",
         "icon": "fa fa-edit"
+      },
+      {
+        "permission": "firmware_update",
+        "label": "Cập nhật Firmware",
+        "url": "/firmware/upload",
+        "icon": "fa fa-upload"
       }
     ],
     "camera_menu": [
