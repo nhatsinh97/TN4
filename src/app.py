@@ -1264,7 +1264,7 @@ def upload_firmware():
         flash('Tải firmware thành công.', 'success')
         return redirect(url_for('upload_firmware'))
 
-    return render_template('firmware_upload.html')
+    return render_template('firmware/firmware_upload.html')
 
 
 @app.route('/firmware/files/<path:filename>')
