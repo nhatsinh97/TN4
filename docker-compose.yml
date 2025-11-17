@@ -1,8 +1,7 @@
-version: "3.9"
-
 services:
   app:
     build: .
+    image: tn4-app
     container_name: tn4-app
     env_file:
       - ./src/.env
