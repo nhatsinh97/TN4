@@ -106,7 +106,27 @@ giả ở trường `username` và `password`. Hãy tạo một bản sao bên n
 
 ### Chạy bằng Docker
 
-Bạn có thể chạy ứng dụng mà không cần cài đặt Python thủ công bằng cách sử dụng Docker:
+Bạn có thể chạy ứng dụng mà không cần cài đặt Python thủ công bằng cách sử dụng Docker.
+Hình ảnh Docker đã bao gồm thư viện **OpenCV** thông qua gói
+`opencv-python-headless`, vì vậy bạn không cần cài đặt thủ công.
+
+#### Dùng Docker Compose (gồm MQTT và InfluxDB)
+
+Tệp `docker-compose.yml` cung cấp đầy đủ các dịch vụ cần thiết:
+
+```bash
+docker compose up --build
+```
+
+Dịch vụ `app` sẽ sử dụng các giá trị trong `src/.env`. Các host của MQTT và
+InfluxDB đã được cấu hình sẵn trỏ tới tên dịch vụ nội bộ (`mqtt`, `influxdb`).
+Bạn có thể tùy chỉnh user/password của InfluxDB và broker qua các biến trong
+`src/.env` trước khi chạy.
+
+#### Chạy một container đơn lẻ
+
+Nếu đã có sẵn MQTT broker và InfluxDB bên ngoài, bạn vẫn có thể build và chạy
+container ứng dụng đơn lẻ:
 
 ```bash
 docker build -t tn4-app .
@@ -117,8 +137,6 @@ sudo docker run -d --restart unless-stopped \
   --name tn4 tn4-app
 
 ```
-Hình ảnh Docker đã bao gồm thư viện **OpenCV** thông qua gói
-`opencv-python-headless`, vì vậy bạn không cần cài đặt thủ công.
 
 ### Dừng container Docker
 
