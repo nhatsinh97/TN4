@@ -4,9 +4,9 @@ import paho.mqtt.client as mqtt
 
 # Thông tin MQTT
 # Có thể thiết lập broker và port thông qua biến môi trường
-BROKER_ADDRESS = os.getenv("MQTT_BROKER_ADDRESS_MQTT", "172.17.128.24")
-PORT = int(os.getenv("MQTT_PORT_MQTT", 1883))
-TOPIC = "PLC/LOGO"
+BROKER_ADDRESS = os.getenv("MQTT_BROKER_ADDRESS", "mqtt")
+PORT = int(os.getenv("MQTT_PORT", 1883))
+TOPIC = os.getenv("MQTT_TOPIC", "tn4/data")
 
 # Hàm callback khi nhận được tin nhắn từ MQTT
 def on_message(client, userdata, message):

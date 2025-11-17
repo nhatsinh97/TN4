@@ -82,16 +82,16 @@ def handle_disconnect():
 app.secret_key = os.getenv("SECRET_KEY")
 
 # Thông tin kết nối InfluxDB
-host = os.getenv("INFLUXDB_HOST")
+host = os.getenv("INFLUXDB_HOST", "influxdb")
 port = get_env_port("INFLUXDB_PORT", default=8086)
-username = os.getenv("INFLUXDB_USERNAME")
-password = os.getenv("INFLUXDB_PASSWORD")
+username = os.getenv("INFLUXDB_USERNAME", "admin")
+password = os.getenv("INFLUXDB_PASSWORD", "admin123")
 database = os.getenv("INFLUXDB_DATABASE", "ats_data")
 
 # Thông tin MQTT
-BROKER_ADDRESS = os.getenv("MQTT_BROKER_ADDRESS")
+BROKER_ADDRESS = os.getenv("MQTT_BROKER_ADDRESS", "mqtt")
 PORT = get_env_port("MQTT_PORT", default=1883)
-TOPIC = os.getenv("MQTT_TOPIC")
+TOPIC = os.getenv("MQTT_TOPIC", "tn4/data")
 MQTT_USERNAME = os.getenv("MQTT_USERNAME")
 MQTT_PASSWORD = os.getenv("MQTT_PASSWORD")
 
