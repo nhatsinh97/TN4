@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    container_name: tn4-all-in-one
+    env_file:
+      - ./src/.env
+    ports:
+      - "58888:58888"
+      - "1883:1883"
+      - "8086:8086"
+    restart: unless-stopped
+    volumes:
+      - mosquitto-data:/var/lib/mosquitto
+      - mosquitto-logs:/var/log/mosquitto
+      - influxdb-data:/var/lib/influxdb
+
+volumes:
+  mosquitto-data:
+  mosquitto-logs:
+  influxdb-data:

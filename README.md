@@ -106,19 +106,42 @@ giả ở trường `username` và `password`. Hãy tạo một bản sao bên n
 
 ### Chạy bằng Docker
 
-Bạn có thể chạy ứng dụng mà không cần cài đặt Python thủ công bằng cách sử dụng Docker:
-
-```bash
-docker build -t tn4-app .
-docker run -p 58888:58888 --env-file src/.env tn4-app
-sudo docker run -d --restart unless-stopped \
-  -p 58888:58888 \
-  --env-file /home/jetson/project/TN4/src/.env \
-  --name tn4 tn4-app
-
-```
+Bạn có thể chạy ứng dụng mà không cần cài đặt Python thủ công bằng cách sử dụng Docker.
 Hình ảnh Docker đã bao gồm thư viện **OpenCV** thông qua gói
 `opencv-python-headless`, vì vậy bạn không cần cài đặt thủ công.
+
+#### Chạy một container all-in-one (ứng dụng + MQTT + InfluxDB)
+
+Image được build từ `Dockerfile` chứa luôn Mosquitto và InfluxDB. Image hiện
+dùng InfluxDB **1.8.10** (tải trực tiếp thay vì repo apt) để bảo đảm tương
+thích với cú pháp khởi tạo database qua CLI `influx`. Khi khởi động, script
+entrypoint sẽ chạy InfluxDB, chờ sẵn sàng, tạo database và user theo biến môi
+trường, sau đó chạy Mosquitto và ứng dụng Python dưới quyền người dùng dịch
+vụ tương ứng. Bạn chỉ cần một container:
+
+```bash
+docker build -t tn4-all-in-one .
+docker run -d --restart unless-stopped \
+  -p 58888:58888 \  # ứng dụng
+  -p 1883:1883 \    # MQTT
+  -p 8086:8086 \    # InfluxDB
+  --env-file src/.env \
+  --name tn4 tn4-all-in-one
+```
+
+Các giá trị mặc định trong `.env` hướng tới môi trường all-in-one, sử dụng
+`localhost` cho MQTT và InfluxDB. Nếu muốn đổi tên database, user hoặc mật
+khẩu, hãy cập nhật `INFLUXDB_*` trong `src/.env` trước khi build hoặc chạy.
+Mosquitto được cấu hình dev ở `docker/mosquitto.conf`; chỉnh sửa file này nếu
+muốn bật xác thực hoặc giới hạn quyền truy cập.
+
+Bạn vẫn có thể dùng `docker-compose.yml` để quản lý container kèm volume lưu
+trữ dữ liệu InfluxDB/Mosquitto, nhưng compose giờ cũng chỉ dựng một service
+all-in-one tương tự lệnh trên:
+
+```bash
+docker compose up --build
+```
 
 ### Dừng container Docker
 
