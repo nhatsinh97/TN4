@@ -8,7 +8,7 @@
           <li class="nav-item dropdown open" style="padding-left: 15px;">
             <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
               <img src="{{ user.avatar }}" alt="Avatar" class="profile-avatar">{{ user['username'] }}
-              <!-- <img src="../static/images/img.jpg" alt="">{{ user['username'] }} -->
+              <!-- <img src="{{ url_for('static', filename='images/img.jpg') }}" alt="">{{ user['username'] }} -->
             </a>
             <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                 <a href="/profile" class="dropdown-item" href="javascript:;" > Profile</a>

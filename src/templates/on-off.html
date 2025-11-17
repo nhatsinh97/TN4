@@ -1,6 +1,6 @@
 
     
-    <script src="/static/css/login.js"></script>
+    <script src="{{ url_for('static', filename='css/login.js') }}"></script>
     <!-- Link đến thư viện Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- <script src="https://kit.fontawesome.com/c9f5871d83.js" crossorigin="anonymous"></script> -->
@@ -63,5 +63,5 @@
         <button onclick="filterData('year')">Theo Năm</button>
     </div>
     <!-- <script src="{{ url_for('static', filename='chart_script.js') }}"></script> -->
-    <script src="/static/chart_script.js"></script>
+    <script src="{{ url_for('static', filename='chart_script.js') }}"></script>
 

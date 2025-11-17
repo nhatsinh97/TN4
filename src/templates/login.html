@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang đăng nhập và đăng ký</title>
-    <link rel="stylesheet" type="text/css" href="/static/login/login.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login/login.css') }}">
     <style>
         /* Cải thiện giao diện */
         body {
             font-family: Arial, sans-serif;
-            background: url('/static/images/background_tn4.png') no-repeat center center fixed;
+            background: url('{{ url_for('static', filename='images/background_tn4.png') }}') no-repeat center center fixed;
             background-size: cover;
             color: #fff;
             margin: 0;

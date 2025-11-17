@@ -357,6 +357,7 @@
                 <option value="15m">15 phút</option>
                 <option value="30m">30 phút</option>
                 <option value="1h" selected>1 giờ</option>
+                <option value="custom">Tuỳ chọn</option>
               </select>
             </div>
             <div class="col-md-2 d-flex align-items-end">
@@ -504,11 +505,18 @@
         const range = rangeSelect.value;
         if (range === "live") {
           historyCard.style.display = "none";
+          startInput.parentElement.style.display = "none";
+          endInput.parentElement.style.display = "none";
           return;
         }
         historyCard.style.display = "";
+        const isCustom = range === "custom";
+        startInput.parentElement.style.display = isCustom ? "" : "none";
+        endInput.parentElement.style.display = isCustom ? "" : "none";
         if (range === "15m" || range === "30m" || range === "1h") {
           loadHistoryRange(genId, range);
+        } else if (isCustom) {
+          loadHistory(genId, startInput.value, endInput.value);
         } else {
           loadHistory(genId, startInput.value, endInput.value);
         }
