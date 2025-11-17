@@ -110,13 +110,22 @@ Bạn có thể chạy ứng dụng mà không cần cài đặt Python thủ c�
 Hình ảnh Docker đã bao gồm thư viện **OpenCV** thông qua gói
 `opencv-python-headless`, vì vậy bạn không cần cài đặt thủ công.
 
-#### Dùng Docker Compose (gồm MQTT và InfluxDB)
+#### Chạy Docker Compose (gồm MQTT và InfluxDB)
 
 Tệp `docker-compose.yml` cung cấp đầy đủ các dịch vụ cần thiết:
 
 ```bash
 docker compose up --build
 ```
+
+Lưu ý:
+
+- Hãy chắc chắn Docker Desktop/Docker Engine đang chạy trước khi thực thi lệnh
+  trên; lỗi kiểu `open //./pipe/dockerDesktopLinuxEngine` thường xuất hiện khi
+  daemon chưa được khởi động.
+- Tệp `docker-compose.yml` đã dùng cú pháp Compose V2 (không còn trường
+  `version`), vì vậy bạn có thể dùng `docker compose ...` trên các bản Docker
+  mới mà không cần tùy chỉnh thêm.
 
 Dịch vụ `app` sẽ sử dụng các giá trị trong `src/.env`. Các host của MQTT và
 InfluxDB đã được cấu hình sẵn trỏ tới tên dịch vụ nội bộ (`mqtt`, `influxdb`).
