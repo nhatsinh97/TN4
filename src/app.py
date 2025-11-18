@@ -59,7 +59,8 @@ def get_env_port(name: str, default: "int | None" = None) -> int:
 # Khởi tạo Flask app
 app = Flask(__name__)
 # socketio = SocketIO(app, cors_allowed_origins="*")
-socketio = SocketIO(app, cors_allowed_origins="*", async_mode="threading")
+# socketio = SocketIO(app, cors_allowed_origins="*", async_mode="threading")
+socketio = SocketIO(app, cors_allowed_origins="*", async_mode="eventlet")
 start_ats_socketio_listener(socketio)
 
 connected_clients = 0
@@ -1586,6 +1587,7 @@ if __name__ == '__main__':
         # Khởi động Flask trong luồng chính
         # app.run(host="0.0.0.0", port=58888, debug=False)
         # socketio.run(host="0.0.0.0", port=58888, debug=False)
+        # socketio.run(app, host="0.0.0.0", port=58888)
         socketio.run(app, host="0.0.0.0", port=58888, debug=True, allow_unsafe_werkzeug=True)
     except Exception as e:
         # Ghi mã lỗi vào logging

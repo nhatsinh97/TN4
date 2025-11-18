@@ -562,19 +562,22 @@
 
 
   </div>
-  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
-  <script>
-    const socket = io("{{ SOCKET_SERVER_URL }}");
-  </script>
   <!-- Đoạn script socket.io để nhận client count -->
-  <script>
-    socket.on("connect", () => {
-      console.log("✅ Socket.IO connected:", socket.id);
-    });
+   <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+<script>
+  const socket = io({
+    transports: ["websocket", "polling"],
+  });
 
-    socket.on("connect_error", (err) => {
-      console.error("❌ Socket.IO connection error:", err);
-    });
+  socket.on("connect", () => {
+    console.log("✅ Socket.IO connected:", socket.id);
+  });
+
+  socket.on("connect_error", (err) => {
+    console.error("❌ Socket.IO connection error:", err);
+  });
+</script>
+  <script>
     // ✅ Cập nhật số lượng client
     socket.on("client_count", (count) => {
       const el = document.getElementById("client-count");
