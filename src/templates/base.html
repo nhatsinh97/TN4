@@ -9,6 +9,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="{{ url_for('static', filename='images/logo-greenfeed.png') }}" type="image/ico" />
   <title>{{ seo.title if seo.title else 'Farm GreenFeed || giám sát phòng uv' }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <!-- Bootstrap -->
   <link href="{{ url_for('static', filename='dashboard/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
   <!-- Font Awesome -->
@@ -30,11 +33,12 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link href="{{ url_for('static', filename='dashboard/char.css') }}" rel="stylesheet">
   <link href="{{ url_for('static', filename='css/toolbar.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/ui-refresh.css') }}" rel="stylesheet">
   <!-- {% block extra_css %}{% endblock %} -->
 
 </head>
 
-<body class="nav-md">
+<body class="nav-md modern-theme">
   <div class="container body">
     <div class="main_container">
       <div class="col-md-3 left_col">
