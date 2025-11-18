@@ -1,180 +1,354 @@
-/* Reset mặc định */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+:root {
+    --bg: #f7f9fb;
+    --card: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --accent: #4f46e5;
+    --success: #16a34a;
+    --warning: #f59e0b;
+    --danger: #dc2626;
+    --neutral: #0ea5e9;
 }
 
-/* Layout chung */
-body, html {
-    height: 100%;
-    width: 100%;
-    font-family: Arial, sans-serif;
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
 }
 
-/* Header */
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 15px;
+.dashboard-wrapper {
+    padding: 10px;
+}
+
+.page-header {
+    background: linear-gradient(135deg, #e0e7ff 0%, #f5f3ff 100%);
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(79, 70, 229, 0.08);
+}
+
+.page-title {
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.page-subtitle {
+    color: var(--muted);
+    margin-bottom: 12px;
+}
+
+.status-badges .badge {
+    margin-right: 8px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+.badge-soft-success {
+    background: #ecfdf3;
+    color: #22c55e;
+}
+
+.badge-soft-warning {
+    background: #fffbeb;
+    color: #d97706;
+}
+
+.badge-soft-info {
+    background: #e0f2fe;
+    color: #0284c7;
+}
+
+.refresh-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--card);
+    padding: 10px 14px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    color: var(--text);
+    font-weight: 600;
+    border: 1px solid #e5e7eb;
+}
+
+.metrics-row .metric-card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 18px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 12px;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e5e7eb;
+    height: 100%;
 }
 
-.header-left {
+.metric-card .label {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 4px;
+}
+
+.metric-card .value {
+    font-size: 32px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.metric-card .help-text {
+    color: var(--muted);
+    margin: 0;
+}
+
+.metric-card .metric-icon {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.metric-card.online .metric-icon {
+    background: rgba(34, 197, 94, 0.15);
+    color: #15803d;
+}
+
+.metric-card.offline .metric-icon {
+    background: rgba(220, 38, 38, 0.12);
+    color: #b91c1c;
+}
+
+.metric-card.neutral .metric-icon {
+    background: rgba(14, 165, 233, 0.12);
+    color: #0ea5e9;
+}
+
+.metric-card.accent .metric-icon {
+    background: rgba(79, 70, 229, 0.12);
+    color: #4338ca;
+}
+
+.card {
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+}
+
+.card-header {
+    background: var(--card);
+    border-bottom: 1px solid #e5e7eb;
+    border-radius: 16px 16px 0 0 !important;
+}
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.chip-success {
+    background: #ecfdf3;
+    color: #16a34a;
+}
+
+.chip-info {
+    background: #e0f2fe;
+    color: #0369a1;
+}
+
+.chip-neutral {
+    background: #eef2ff;
+    color: #4338ca;
+}
+
+.progress-wrapper {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.health-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+}
+
+.health-item {
+    background: #f8fafc;
+    border: 1px dashed #e5e7eb;
+    border-radius: 12px;
+    padding: 12px;
     display: flex;
     align-items: center;
+    gap: 10px;
 }
 
-header .logo {
-    font-size: 1.5em;
-    font-weight: bold;
-    margin-left: 15px;
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
 }
 
-.main-container {
+.dot.online {
+    background: #22c55e;
+}
+
+.dot.offline {
+    background: #ef4444;
+}
+
+.dot.neutral {
+    background: #0ea5e9;
+}
+
+.dot.accent {
+    background: #4338ca;
+}
+
+.quick-actions {
     display: flex;
-    height: calc(100% - 50px); /* Trừ chiều cao của header */
-    width: 100%;
-    overflow: hidden; /* Loại bỏ mọi khoảng trống có thể xuất hiện ngoài viewport */
-}
-.view-container {
-    display: flex;
-    height: calc(100% - 50px); /* Trừ chiều cao của header */
-    width: 100%;
-    overflow: hidden; /* Loại bỏ mọi khoảng trống có thể xuất hiện ngoài viewport */
+    flex-direction: column;
+    gap: 10px;
 }
 
-
-nav {
-    background-color: #f8f9fa;
-    width: 250px;
-    max-width: 250px;
-    transition: width 0.3s ease-in-out;
-    overflow: hidden;
-    flex-shrink: 0; /* Đảm bảo sidebar không chiếm thêm không gian */
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li {
-    padding: 8px 20px;
-    margin: 0;
-    background-color: #ddd;
-    cursor: pointer;
+.quick-action {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Căn chỉnh biểu tượng và văn bản */
-}
-
-nav ul li i {
-    font-size: 1.5em;
-    margin-right: 15px; /* Khoảng cách giữa biểu tượng và văn bản */
-    color: #000;
-}
-
-nav ul li p {
-    margin: 0;
-    flex-grow: 1;
-    color: #000;
-}
-
-nav ul li:hover {
-    background-color: #ccc;
-}
-
-/* Nút toggle */
-.toggle-btn {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-}
-
-/* Khi sidebar thu nhỏ */
-.sidebar-collapsed nav {
-    width: 50px;
-    max-width: 50px;
-}
-
-.sidebar-collapsed nav ul {
-    padding: 0;
-    margin: 0;
-}
-
-.sidebar-collapsed nav ul li {
-    padding: 8px;
-    margin: 0;
-    justify-content: center;
-}
-
-.sidebar-collapsed nav ul li i {
-    font-size: 1.5em;
-}
-
-.sidebar-collapsed nav ul li .nav-text {
-    display: none !important;
-}
-
-/* Ẩn logo khi sidebar thu nhỏ */
-.sidebar-collapsed header .logo {
-    display: none;
-}
-
-/* Nội dung chính */
-section {
-    flex: 1;
-    padding: 20px;
-    background-color: #f0f0f0;
-    transition: margin-left 0.3s ease-in-out;
-    width: 100%;
-    overflow: auto;
-}
-
-.chart {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-}
-
-/* Style khi sidebar được thu nhỏ */
-.sidebar-collapsed section {
-    margin-left: 50px;
-}
-
-/* Media queries for responsive design */
-@media only screen and (max-width: 768px) {
-    nav {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .sidebar-collapsed nav {
-        width: 0;
-        max-width: 0;
-    }
-
-    .sidebar-collapsed section {
-        margin-left: 0;
-    }
-}
-
-/* Căn chỉnh biểu tượng và văn bản theo chiều dọc */
-nav ul li i, nav ul li p {
-    margin-left: 15px; /* Điều chỉnh khoảng cách bên trái để căn chỉnh theo vạch đỏ */
-}
-nav ul li a {
+    gap: 12px;
+    padding: 12px;
+    border-radius: 12px;
     text-decoration: none;
-    color: inherit; /* Đảm bảo giữ màu sắc của văn bản */
+    color: var(--text);
+    border: 1px solid #e5e7eb;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
 
-nav ul li a:hover {
-    text-decoration: none; /* Đảm bảo rằng ngay cả khi hover, gạch dưới vẫn không xuất hiện */
+.quick-action:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.quick-action .icon {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: #eef2ff;
+    color: #4338ca;
+}
+
+.quick-action .title {
+    margin: 0;
+    font-weight: 700;
+}
+
+.quick-action .chevron {
+    margin-left: auto;
+    color: #a1a1aa;
+}
+
+.activity-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.activity-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 12px;
+    background: #f8fafc;
+}
+
+.activity-list .icon {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.activity-list .icon.success {
+    background: #16a34a;
+}
+
+.activity-list .icon.warning {
+    background: #d97706;
+}
+
+.activity-list .icon.info {
+    background: #0ea5e9;
+}
+
+.activity-list .time {
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.maintenance-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.maintenance-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 12px;
+    background: #f8fafc;
+}
+
+.maintenance-item .tag {
+    margin-left: auto;
+    background: #eef2ff;
+    color: #4338ca;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-weight: 700;
+}
+
+@media (max-width: 991px) {
+    .metric-card {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 767px) {
+    .page-header {
+        text-align: left;
+    }
+
+    .metric-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .quick-action {
+        align-items: flex-start;
+    }
 }
