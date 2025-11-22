@@ -198,17 +198,21 @@
       top: 15px;
       left: 15px;
       z-index: 1100;
-      /* Đặt z-index thấp hơn sidebar */
       display: flex;
       align-items: center;
       background-color: #fff;
       border: 1px solid #ddd;
       border-radius: 25px;
-      /* Bo tròn các cạnh */
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
       padding: 5px 10px;
-      width: 400px;
-      /* Kéo dài thanh tìm kiếm */
+      width: 380px;
+      transition: width 0.25s ease, padding 0.25s ease;
+      overflow: hidden;
+    }
+
+    #searchBar:not(:hover):not(:focus-within) {
+      width: 70px;
+      padding: 5px;
     }
 
     #searchBar input {
@@ -218,7 +222,15 @@
       padding: 5px;
       font-size: 14px;
       border-radius: 25px;
-      /* Bo tròn các cạnh */
+      transition: width 0.2s ease, opacity 0.2s ease, margin 0.2s ease;
+    }
+
+    #searchBar:not(:hover):not(:focus-within) #searchInput {
+      width: 0;
+      opacity: 0;
+      margin: 0;
+      padding: 0;
+      pointer-events: none;
     }
 
     #searchBar button {
@@ -228,12 +240,19 @@
       padding: 5px 10px;
       cursor: pointer;
       border-radius: 25px;
-      /* Bo tròn các cạnh */
       font-size: 14px;
+      transition: opacity 0.2s ease, margin 0.2s ease, padding 0.2s ease;
     }
 
     #searchBar button:hover {
       background-color: #357ae8;
+    }
+
+    #searchBar:not(:hover):not(:focus-within) #searchButton {
+      opacity: 0;
+      margin: 0;
+      padding: 0;
+      pointer-events: none;
     }
 
     #toggleSidebar {
@@ -242,10 +261,8 @@
       padding: 5px 10px;
       cursor: pointer;
       border-radius: 25px;
-      /* Bo tròn các cạnh */
       font-size: 14px;
       margin-right: 10px;
-      /* Khoảng cách giữa nút và ô tìm kiếm */
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     }
 
@@ -331,6 +348,223 @@
     #userInfoPanel ul li:last-child {
       border-bottom: none;
     }
+
+    .sidebar-menu-list {
+      margin-top: 18px;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 12px;
+    }
+
+    .sidebar-menu-list h6 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #475569;
+      margin-bottom: 8px;
+    }
+
+    .sidebar-menu-list ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .sidebar-menu-list li a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      color: #0f172a;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .sidebar-menu-list li a i {
+      width: 18px;
+      color: #94a3b8;
+      text-align: center;
+    }
+
+    .sidebar-menu-list li a:hover {
+      background-color: #eef2ff;
+      color: #1e3a8a;
+    }
+
+    .sidebar-menu-list li a:hover i {
+      color: #1e3a8a;
+    }
+
+    .dashboard-overview {
+      margin: 30px auto;
+      max-width: 1400px;
+    }
+
+    .stats-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+      border: 1px solid #e2e8f0;
+      height: 100%;
+    }
+
+    .stats-card .label {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #94a3b8;
+      margin-bottom: 4px;
+    }
+
+    .stats-card h3 {
+      font-size: 32px;
+      margin: 0;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .stats-card .trend {
+      margin-top: 8px;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .stats-card .trend.positive {
+      color: #16a34a;
+    }
+
+    .stats-card .trend.negative {
+      color: #dc2626;
+    }
+
+    .section-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+      border: 1px solid #e2e8f0;
+      height: 100%;
+    }
+
+    .section-card header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .quick-actions-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .quick-action-card {
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #0f172a;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .quick-action-card i {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: #eef2ff;
+      display: grid;
+      place-items: center;
+      color: #4338ca;
+    }
+
+    .quick-action-card:hover {
+      border-color: #c7d2fe;
+      box-shadow: 0 10px 25px rgba(79, 70, 229, 0.15);
+    }
+
+    .device-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .device-table thead th {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #94a3b8;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 10px;
+    }
+
+    .device-table tbody td {
+      padding: 12px 0;
+      border-bottom: 1px solid #f1f5f9;
+      font-size: 14px;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .status-pill.online {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .status-pill.offline {
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+
+    .add-device-form {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .add-device-form input,
+    .add-device-form select {
+      flex: 1;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 6px 10px;
+      font-size: 14px;
+      min-width: 150px;
+    }
+
+    .add-device-form button {
+      border: none;
+      background: #4338ca;
+      color: #fff;
+      padding: 7px 14px;
+      border-radius: 10px;
+      font-weight: 600;
+      box-shadow: 0 10px 20px rgba(67, 56, 202, 0.2);
+      transition: filter 0.15s ease;
+      flex: none;
+    }
+
+    .add-device-form button:hover {
+      filter: brightness(1.05);
+    }
   </style>
 </head>
 
@@ -344,6 +578,36 @@
     <ul id="deviceList">
       <!-- Device list will be populated dynamically -->
     </ul>
+    <div class="sidebar-menu-list">
+      <h6>Menu điều hướng</h6>
+      <ul>
+        {% for item in menu_items %}
+        {% if not item.permission or item.permission in permissions %}
+        <li>
+          <a href="{{ item.url }}">
+            <i class="{{ item.icon }}"></i>
+            <span>{{ item.label }}</span>
+          </a>
+        </li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+    {% if camera_items %}
+    <div class="sidebar-menu-list">
+      <h6>Camera quan sát</h6>
+      <ul>
+        {% for cam in camera_items %}
+        <li>
+          <a href="{{ cam.url }}">
+            <i class="fa fa-video-camera"></i>
+            <span>{{ cam.label }}</span>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
   </div>
 
   <!-- Search Bar -->
@@ -354,7 +618,8 @@
   </div>
 
   <!-- User Avatar Button -->
-  <div id="userAvatar"></div>
+  {% set avatar_url = user.avatar if user and user.avatar else url_for('static', filename='images/logotn4.png') %}
+  <div id="userAvatar" style="background-image: url('{{ avatar_url }}');"></div>
 
   <!-- User Info Panel -->
   <div id="userInfoPanel">
@@ -368,198 +633,133 @@
     </ul>
   </div>
 
+  <!-- Overview -->
+  <section class="dashboard-overview">
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="stats-card">
+          <p class="label">Thiết bị đang online</p>
+          <h3 id="onlineDeviceCount">0</h3>
+          <p class="trend positive"><i class="fa fa-arrow-up"></i>Hoạt động ổn định</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="stats-card">
+          <p class="label">Thiết bị đang offline</p>
+          <h3 id="offlineDeviceCount">0</h3>
+          <p class="trend negative"><i class="fa fa-exclamation-triangle"></i>Cần kiểm tra</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="stats-card">
+          <p class="label">Tổng thiết bị quản lý</p>
+          <h3 id="totalDeviceCount">0</h3>
+          <p class="trend"><i class="fa fa-microchip"></i>Kết nối qua MQTT/Modbus</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-3 mt-2">
+      <div class="col-lg-8">
+        <div class="section-card">
+          <header>
+            <div>
+              <h5 class="mb-1">Thiết bị ưu tiên</h5>
+              <small class="text-muted">Cập nhật từ dữ liệu realtime</small>
+            </div>
+            <span class="badge text-bg-light">Live</span>
+          </header>
+          <div class="table-responsive">
+            <table class="device-table">
+              <thead>
+                <tr>
+                  <th>Tên thiết bị</th>
+                  <th>Trạng thái</th>
+                  <th>Kết nối</th>
+                  <th>Địa chỉ IP</th>
+                  <th>Điện áp (V)</th>
+                  <th>Dòng (A)</th>
+                </tr>
+              </thead>
+              <tbody id="deviceTableBody">
+                <!-- populated by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="section-card">
+          <header>
+            <div>
+              <h5 class="mb-1">Tác vụ nhanh</h5>
+              <small class="text-muted">Quản lý cấu hình IoT</small>
+            </div>
+          </header>
+          <div class="quick-actions-grid">
+            <a class="quick-action-card" href="/ats_dashboard">
+              <i class="fa fa-bolt"></i>
+              <div>
+                <p class="mb-0 fw-semibold">Giám sát ATS</p>
+                <small>Kết nối socket realtime</small>
+              </div>
+            </a>
+            <a class="quick-action-card" href="/manage_users">
+              <i class="fa fa-user-shield"></i>
+              <div>
+                <p class="mb-0 fw-semibold">Quản lý người dùng</p>
+                <small>Phân quyền vận hành</small>
+              </div>
+            </a>
+            <a class="quick-action-card" href="/firmware/upload">
+              <i class="fa fa-upload"></i>
+              <div>
+                <p class="mb-0 fw-semibold">Cập nhật firmware</p>
+                <small>Triển khai OTA cho gateway</small>
+              </div>
+            </a>
+            <a class="quick-action-card" href="/check_iot">
+              <i class="fa fa-server"></i>
+              <div>
+                <p class="mb-0 fw-semibold">Kiểm tra MQTT / Modbus</p>
+                <small>Đảm bảo kết nối an toàn</small>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 mt-3">
+        <div class="section-card">
+          <header>
+            <div>
+              <h5 class="mb-1">Thêm thiết bị nhanh</h5>
+              <small class="text-muted">Nhập vào danh sách giám sát</small>
+            </div>
+          </header>
+          <form id="addDeviceForm" class="add-device-form">
+            <input type="text" id="newDeviceName" placeholder="Tên thiết bị *" required>
+            <input type="text" id="newDeviceIp" placeholder="Địa chỉ IP *" required>
+            <select id="newDeviceProtocol">
+              <option value="mqtt">MQTT</option>
+              <option value="modbus">Modbus TCP</option>
+            </select>
+            <select id="newDeviceStatus">
+              <option value="online">Online</option>
+              <option value="offline">Offline</option>
+            </select>
+            <input type="number" id="newDeviceVoltage" placeholder="Điện áp (V)" min="0">
+            <input type="number" id="newDeviceCurrent" placeholder="Dòng (A)" min="0">
+            <button type="submit"><i class="fa fa-plus"></i> Thêm</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Map -->
   <div class="row g-3">
-    <!-- ATS 1 -->
-    <div class="col-md-6">
-      <div class="card">
-        <!-- <h5 class="text-primary">NGUỒN 1</h5> -->
-        <h5 class="text-center bg-success text-white py-2 rounded">NGUỒN 1</h5>
-
-
-        <h6 class="text-primary">Thông số điện lưới ATS 1</h6>
-        <div class="row mb-2">
-          <div class="col phase-col align-reading border border-secondary rounded p-2 me-2">
-            <strong>Pha A</strong>
-            <p>UAB: <span id="gen1-uab1">-</span></p>
-            <p>UA: <span id="gen1-ua1">-</span></p>
-            <p>Góc pha: <span id="gen1-phaA1">-</span></p>
-          </div>
-          <div class="col phase-col align-reading border border-secondary rounded p-2 me-2">
-            <strong>Pha B</strong>
-            <p>UBC: <span id="gen1-ubc1">-</span></p>
-            <p>UB: <span id="gen1-ub1">-</span></p>
-            <p>Góc pha: <span id="gen1-phaB1">-</span></p>
-          </div>
-          <div class="col phase-col align-reading border border-secondary rounded p-2">
-            <strong>Pha C</strong>
-            <p>UCA: <span id="gen1-uca1">-</span></p>
-            <p>UC: <span id="gen1-uc1">-</span></p>
-            <p>Góc pha: <span id="gen1-phaC1">-</span></p>
-          </div>
-        </div>
-
-        <p>Tần số điện lưới: <span id="gen1-freq1">-</span> Hz</p>
-
-        <h6 class="text-primary">Thông số máy phát 1</h6>
-        <div class="row mb-2">
-          <div class="col phase-col align-reading border border-secondary rounded p-2 me-2">
-            <strong>Pha A</strong>
-            <p>UAB: <span id="gen1-uab2">-</span></p>
-            <p>UA: <span id="gen1-ua2">-</span></p>
-            <p>Góc pha: <span id="gen1-phaA2">-</span></p>
-          </div>
-          <div class="col phase-col align-reading border border-secondary rounded p-2 me-2">
-            <strong>Pha B</strong>
-            <p>UBC: <span id="gen1-ubc2">-</span></p>
-            <p>UB: <span id="gen1-ub2">-</span></p>
-            <p>Góc pha: <span id="gen1-phaB2">-</span></p>
-          </div>
-          <div class="col phase-col align-reading border border-secondary rounded p-2">
-            <strong>Pha C</strong>
-            <p>UCA: <span id="gen1-uca2">-</span></p>
-            <p>UC: <span id="gen1-uc2">-</span></p>
-            <p>Góc pha: <span id="gen1-phaC2">-</span></p>
-          </div>
-        </div>
-
-        <p>Tần số máy phát: <span id="gen1-freq2">-</span> Hz</p>
-
-        <h6 class="text-primary">Thông số dòng điện tổng ATS 1</h6>
-        <div class="row mb-2">
-          <div class="col phase-col border border-secondary rounded p-2 me-2">
-            <strong>Pha A</strong>
-            <p>Dòng điện pha A: <span id="gen1-ia">-</span> A</p>
-          </div>
-          <div class="col phase-col border border-secondary rounded p-2 me-2">
-            <strong>Pha B</strong>
-            <p>Dòng điện pha B: <span id="gen1-ib">-</span> A</p>
-          </div>
-          <div class="col phase-col border border-secondary rounded p-2">
-            <strong>Pha C</strong>
-            <p>Dòng điện pha C: <span id="gen1-ic">-</span> A</p>
-          </div>
-        </div>
-
-        <canvas id="chart-gen1" height="220"></canvas>
-        <p class="text-muted small">Cập nhật: <span id="updated-time-gen1">-</span></p>
-
-        <div class="control-buttons text-center">
-          <div class="mb-2">
-            <div id="flash-message-1" class="text-center fw-bold mb-2" style="display:none;"></div>
-            <button id="mode-status-1" class="btn btn-outline-dark" onclick="toggleMode(1)">Chế độ: --</button>
-          </div>
-          <button class="btn btn-outline-success" onclick="sendControl(1, 'auto_on')">Chuyển AUTO</button>
-          <button class="btn btn-outline-danger" onclick="sendControl(1, 'auto_off')">Chuyển MANUAL</button>
-          <button class="btn btn-primary" onclick="sendControl(1, 'start')">Khởi động</button>
-          <button class="btn btn-danger" onclick="sendControl(1, 'stop')">Tắt</button>
-          <button id="btn-close-a-1" class="btn btn-success" onclick="sendControl(1, 'close_a')">Đóng A</button>
-          <button id="btn-open-1" class="btn btn-warning" onclick="sendControl(1, 'open')">Cắt điện</button>
-          <button id="btn-close-b-1" class="btn btn-success" onclick="sendControl(1, 'close_b')">Đóng B</button>
-
-        </div>
-        <!-- <div class="text-center text-danger fw-bold mt-1" id="status1"></div> -->
-        <div class="text-center fw-bold mt-2" id="flash-message-1" style="display:none;"></div>
-
-      </div>
-    </div>
-
-
-    <!-- ATS 2 -->
-    <div class="col-md-6">
-      <div class="card">
-        <!-- <h5 class="text-primary">NGUỒN 2</h5> -->
-        <h5 class="text-center bg-success text-white py-2 rounded">NGUỒN 2</h5>
-
-        <h6 class="text-primary">Thông số điện lưới ATS 2</h6>
-        <div class="row mb-2">
-          <div class="col phase-col align-reading border border-secondary rounded p-2 me-2">
-            <strong>Pha A</strong>
-            <p>UAB: <span id="gen2-uab1">-</span></p>
-            <p>UA: <span id="gen2-ua1">-</span></p>
-            <p>Góc pha: <span id="gen2-phaA1">-</span></p>
-          </div>
-          <div class="col phase-col align-reading border border-secondary rounded p-2 me-2">
-            <strong>Pha B</strong>
-            <p>UBC: <span id="gen2-ubc1">-</span></p>
-            <p>UB: <span id="gen2-ub1">-</span></p>
-            <p>Góc pha: <span id="gen2-phaB1">-</span></p>
-          </div>
-          <div class="col phase-col align-reading border border-secondary rounded p-2">
-            <strong>Pha C</strong>
-            <p>UCA: <span id="gen2-uca1">-</span></p>
-            <p>UC: <span id="gen2-uc1">-</span></p>
-            <p>Góc pha: <span id="gen2-phaC1">-</span></p>
-          </div>
-        </div>
-
-
-        <p>Tần số điện lưới: <span id="gen2-freq1">-</span> Hz</p>
-
-        <h6 class="text-primary">Thông số máy phát 2</h6>
-        <div class="row mb-2">
-          <div class="col phase-col align-reading border border-secondary rounded p-2 me-2">
-            <strong>Pha A</strong>
-            <p>UAB: <span id="gen2-uab2">-</span></p>
-            <p>UA: <span id="gen2-ua2">-</span></p>
-            <p>Góc pha: <span id="gen2-phaA2">-</span></p>
-          </div>
-          <div class="col phase-col align-reading border border-secondary rounded p-2 me-2">
-            <strong>Pha B</strong>
-            <p>UBC: <span id="gen2-ubc2">-</span></p>
-            <p>UB: <span id="gen2-ub2">-</span></p>
-            <p>Góc pha: <span id="gen2-phaB2">-</span></p>
-          </div>
-          <div class="col phase-col align-reading border border-secondary rounded p-2">
-            <strong>Pha C</strong>
-            <p>UCA: <span id="gen2-uca2">-</span></p>
-            <p>UC: <span id="gen2-uc2">-</span></p>
-            <p>Góc pha: <span id="gen2-phaC2">-</span></p>
-          </div>
-        </div>
-
-
-        <p>Tần số máy phát: <span id="gen2-freq2">-</span> Hz</p>
-        <h6 class="text-primary">Thông số dòng điện tổng ATS 2</h6>
-        <div class="row mb-2">
-          <div class="col phase-col align-reading border border-secondary rounded p-2 me-2">
-            <strong>Pha A</strong>
-            <p>Dòng điện pha A: <span id="gen2-ia">-</span> A</p>
-          </div>
-          <div class="col phase-col align-reading border border-secondary rounded p-2 me-2">
-            <strong>Pha B</strong>
-            <p>Dòng điện pha B: <span id="gen2-ib">-</span> A</p>
-          </div>
-          <div class="col phase-col align-reading border border-secondary rounded p-2">
-            <strong>Pha C</strong>
-            <p>Dòng điện pha C: <span id="gen2-ic">-</span> A</p>
-          </div>
-        </div>
-
-        <canvas id="chart-gen2" height="220"></canvas>
-        <p class="text-muted small">Cập nhật: <span id="updated-time-gen2">-</span></p>
-        <!-- test biểu đồ -->
-        <!-- Biểu đồ lịch sử ATS cho gen1 và gen2 -->
-
-        <!-- end -->
-        <div class="control-buttons text-center">
-          <div id="flash-message-2" class="text-center fw-bold mb-2" style="display:none;"></div>
-          <div class="mb-2">
-            <button id="mode-status-2" class="btn btn-outline-dark" onclick="toggleMode(2)">Chế độ: --</button>
-          </div>
-          <button class="btn btn-outline-success" onclick="sendControl(2, 'auto_on')">Chuyển AUTO</button>
-          <button class="btn btn-outline-danger" onclick="sendControl(2, 'auto_off')">Chuyển MANUAL</button>
-          <button class="btn btn-primary" onclick="sendControl(2, 'start')">Khởi động</button>
-          <button class="btn btn-danger" onclick="sendControl(2, 'stop')">Tắt</button>
-          <button id="btn-close-a-2" class="btn btn-success" onclick="sendControl(2, 'close_a')">Đóng A</button>
-          <button id="btn-open-2" class="btn btn-warning" onclick="sendControl(2, 'open')">Cắt điện</button>
-          <button id="btn-close-b-2" class="btn btn-success" onclick="sendControl(2, 'close_b')">Đóng B</button>
-
-        </div>
-        <!-- <div class="text-center text-danger fw-bold mt-1" id="status2"></div> -->
-        <div class="text-center fw-bold mt-2" id="flash-message-2" style="display:none;"></div>
-      </div>
-    </div>
+    
   </div>
 
 
@@ -572,6 +772,8 @@
         lat: 10.776889,
         lng: 106.700806,
         status: "online",
+        ip: "192.168.1.10",
+        protocol: "modbus",
         voltage: 220,
         current: 12
       },
@@ -581,52 +783,66 @@
         lat: 10.772302,
         lng: 106.698372,
         status: "offline",
+        ip: "192.168.1.11",
+        protocol: "mqtt",
         voltage: 0,
         current: 0
       }
     ];
 
+    function renderDeviceSummary() {
+      const total = devices.length;
+      const online = devices.filter(d => d.status === "online").length;
+      const offline = total - online;
+
+      const onlineEl = document.getElementById("onlineDeviceCount");
+      const offlineEl = document.getElementById("offlineDeviceCount");
+      const totalEl = document.getElementById("totalDeviceCount");
+      if (onlineEl) onlineEl.textContent = online;
+      if (offlineEl) offlineEl.textContent = offline;
+      if (totalEl) totalEl.textContent = total;
+
+      const tbody = document.getElementById("deviceTableBody");
+      if (tbody) {
+        tbody.innerHTML = "";
+        devices.slice(0, 5).forEach(device => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${device.name}</td>
+            <td><span class="status-pill ${device.status}">${device.status.toUpperCase()}</span></td>
+            <td>${(device.protocol || '').toUpperCase()}</td>
+            <td>${device.ip || '-'}</td>
+            <td>${device.voltage}V</td>
+            <td>${device.current}A</td>
+          `;
+          tbody.appendChild(row);
+        });
+      }
+
+      const listEl = document.getElementById("deviceList");
+      if (listEl) {
+        listEl.innerHTML = "";
+        devices.forEach(device => {
+          const item = document.createElement("li");
+          item.innerHTML = `
+            <strong>${device.name}</strong><br>
+            ${device.ip || '---'} · ${device.protocol ? device.protocol.toUpperCase() : '---'}<br>
+            Status: <span class="status-${device.status}">${device.status.toUpperCase()}</span>
+          `;
+          listEl.appendChild(item);
+        });
+      }
+    }
+
     function initMap() {
       const center = { lat: 10.775, lng: 106.699 };
-      const map = new google.maps.Map(document.getElementById("map"), {
+      mapInstance = new google.maps.Map(document.getElementById("map"), {
         zoom: 14,
         center: center,
         mapTypeId: 'roadmap'
       });
 
-      devices.forEach(device => {
-        const marker = new google.maps.Marker({
-          position: { lat: device.lat, lng: device.lng },
-          map: map,
-          title: device.name,
-          icon: getMarkerIcon(device.status)
-        });
-
-        const infoContent = `
-          <div class="info-window">
-            <strong>${device.name}</strong><br>
-            Status: <span class="status-${device.status}">${device.status.toUpperCase()}</span><br>
-            Voltage: ${device.voltage}V<br>
-            Current: ${device.current}A
-          </div>`;
-
-        const infoWindow = new google.maps.InfoWindow({
-          content: infoContent
-        });
-
-        marker.addListener("click", () => {
-          infoWindow.open(map, marker);
-        });
-
-        // Add device to sidebar
-        const deviceList = document.getElementById("deviceList");
-        const listItem = document.createElement("li");
-        listItem.innerHTML = `
-          <strong>${device.name}</strong><br>
-          Status: <span class="status-${device.status}">${device.status.toUpperCase()}</span>
-        `;
-        deviceList.appendChild(listItem);
-      });
+      updateMapMarkers();
     }
 
     // Toggle sidebar visibility
@@ -659,6 +875,98 @@
         userInfoPanel.classList.remove("open");
       });
     });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      renderDeviceSummary();
+
+      const form = document.getElementById("addDeviceForm");
+      if (form) {
+        form.addEventListener("submit", (event) => {
+          event.preventDefault();
+          const nameInput = document.getElementById("newDeviceName");
+          const ipInput = document.getElementById("newDeviceIp");
+          const voltageInput = document.getElementById("newDeviceVoltage");
+          const currentInput = document.getElementById("newDeviceCurrent");
+          const statusSelect = document.getElementById("newDeviceStatus");
+          const protocolSelect = document.getElementById("newDeviceProtocol");
+
+          const name = nameInput.value.trim();
+          const ip = ipInput.value.trim();
+          if (!name) {
+            alert("Vui lòng nhập tên thiết bị");
+            return;
+          }
+          if (!ip) {
+            alert("Vui lòng nhập địa chỉ IP");
+            return;
+          }
+
+          const voltage = parseFloat(voltageInput.value) || 0;
+          const current = parseFloat(currentInput.value) || 0;
+          const status = statusSelect.value;
+          const protocol = protocolSelect.value;
+
+          devices.unshift({
+            id: Date.now(),
+            name,
+            lat: devices[0]?.lat || 10.775,
+            lng: devices[0]?.lng || 106.699,
+            status,
+            ip,
+            protocol,
+            voltage,
+            current
+          });
+
+          nameInput.value = "";
+          ipInput.value = "";
+          voltageInput.value = "";
+          currentInput.value = "";
+          statusSelect.value = "online";
+          protocolSelect.value = "mqtt";
+
+          renderDeviceSummary();
+          updateMapMarkers();
+        });
+      }
+    });
+
+    let mapInstance;
+    const markers = [];
+
+    function updateMapMarkers() {
+      if (!mapInstance) return;
+      markers.forEach(marker => marker.setMap(null));
+      markers.length = 0;
+
+      devices.forEach(device => {
+        const marker = new google.maps.Marker({
+          position: { lat: device.lat, lng: device.lng },
+          map: mapInstance,
+          title: device.name,
+          icon: getMarkerIcon(device.status)
+        });
+        markers.push(marker);
+
+        const infoContent = `
+          <div class="info-window">
+            <strong>${device.name}</strong><br>
+            IP: ${device.ip || '-'}<br>
+            Protocol: ${device.protocol ? device.protocol.toUpperCase() : '-'}<br>
+            Status: <span class="status-${device.status}">${device.status.toUpperCase()}</span><br>
+            Voltage: ${device.voltage}V<br>
+            Current: ${device.current}A
+          </div>`;
+
+        const infoWindow = new google.maps.InfoWindow({
+          content: infoContent
+        });
+
+        marker.addListener("click", () => {
+          infoWindow.open(mapInstance, marker);
+        });
+      });
+    }
   </script>
 </body>
 </html>
