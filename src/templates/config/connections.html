@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="dashboard-wrapper">
+  <div class="page-header d-flex justify-content-between align-items-center mb-4">
+    <div>
+      <p class="text-muted mb-1">Cấu hình hệ thống</p>
+      <h2 class="page-title">Tham số kết nối</h2>
+      <p class="page-subtitle">Thiết lập MQTT broker và Modbus TCP để thu thập dữ liệu từ thiết bị.</p>
+    </div>
+  </div>
+
+  <div class="row g-4">
+    <div class="col-lg-6">
+      <div class="card shadow-sm">
+        <div class="card-header">
+          <h5 class="mb-0">MQTT Broker</h5>
+          <small class="text-muted">Thông tin kết nối publish/subcribe</small>
+        </div>
+        <div class="card-body">
+          <form method="POST">
+            <input type="hidden" name="config_type" value="mqtt">
+            {% set mqtt = connection_config.get('mqtt', {}) %}
+            <div class="mb-3">
+              <label class="form-label">Host</label>
+              <input type="text" class="form-control" name="mqtt_host" value="{{ mqtt.get('host','') }}" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Port</label>
+              <input type="number" class="form-control" name="mqtt_port" value="{{ mqtt.get('port','1883') }}" required>
+            </div>
+            <div class="row g-3 mb-3">
+              <div class="col">
+                <label class="form-label">Username</label>
+                <input type="text" class="form-control" name="mqtt_username" value="{{ mqtt.get('username','') }}">
+              </div>
+              <div class="col">
+                <label class="form-label">Password</label>
+                <input type="password" class="form-control" name="mqtt_password" value="{{ mqtt.get('password','') }}">
+              </div>
+            </div>
+            <div class="mb-4">
+              <label class="form-label">Topic</label>
+              <input type="text" class="form-control" name="mqtt_topic" value="{{ mqtt.get('topic','tn4/data') }}">
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Lưu cấu hình MQTT</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="card shadow-sm">
+        <div class="card-header">
+          <h5 class="mb-0">Modbus TCP</h5>
+          <small class="text-muted">Kết nối gateway đọc thông số</small>
+        </div>
+        <div class="card-body">
+          <form method="POST">
+            <input type="hidden" name="config_type" value="modbus">
+            {% set modbus = connection_config.get('modbus', {}) %}
+            <div class="mb-3">
+              <label class="form-label">IP Address</label>
+              <input type="text" class="form-control" name="modbus_ip" value="{{ modbus.get('ip','') }}" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Port</label>
+              <input type="number" class="form-control" name="modbus_port" value="{{ modbus.get('port','502') }}" required>
+            </div>
+            <div class="row g-3 mb-3">
+              <div class="col">
+                <label class="form-label">Unit ID</label>
+                <input type="number" class="form-control" name="modbus_unit" value="{{ modbus.get('unit_id','1') }}">
+              </div>
+              <div class="col">
+                <label class="form-label">Chu kỳ đọc (ms)</label>
+                <input type="number" class="form-control" name="modbus_interval" value="{{ modbus.get('interval','1000') }}">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Lưu cấu hình Modbus</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

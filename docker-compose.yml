@@ -7,6 +7,13 @@ services:
       - ./src/.env
     ports:
       - "80:58888"
+    volumes:
+      # Mount toàn bộ mã nguồn để đảm bảo dữ liệu viết ra được lưu tại thư mục dự án
+      - ./:/app
+      # Lưu riêng dữ liệu cấu hình/thư viện trong thư mục data để tránh ghi đè khi build
+      - ./data:/app/data
+      # Lưu các file cấu hình JSON, log trong thư mục database/data_setup
+      - ./src/database/data_setup:/app/src/database/data_setup
     depends_on:
       - mqtt
       - influxdb

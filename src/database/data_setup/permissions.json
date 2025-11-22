@@ -1,69 +1,74 @@
 {
-    "main_menu": [
-      {
-        "permission": "view_dashboard",
-        "label": "dashboard",
-        "url": "/dashboard",
-        "icon": "fa fa-home"
-      },
-      {
-        "permission": "control_ats",
-        "label": "Quyền điều khiển ATS",
-        "url": "#",
-        "icon": "fa fa-bolt"
-      },
-      {
-        "permission": "view_dashboard_ats",
-        "label": "Điều khiển ATS",
-        "url": "/ats_dashboard",
-        "icon": "fa fa-home"
-      },
-      {
-        "permission": "uv",
-        "label": "Phòng UV",
-        "url": "/uv",
-        "icon": "fa fa-edit"
-      },
-      {
-        "permission": "manage_users",
-        "label": "Phân Quyền",
-        "url": "/manage_users",
-        "icon": "fa fa-edit"
-      },
-      {
-        "permission": "access_history",
-        "label": "Lịch sử đăng nhập",
-        "url": "/access_history",
-        "icon": "fa fa-edit"
-      },
-      {
-        "permission": "firmware_update",
-        "label": "Cập nhật Firmware",
-        "url": "/firmware/upload",
-        "icon": "fa fa-upload"
-      }
-    ],
-    "camera_menu": [
-      {
-        "label": "Camera hủy xác",
-        "url": "/camera"
-      },
-      {
-        "label": "Camera bảo vệ",
-        "url": "projects.html"
-      },
-      {
-        "label": "Camera đường lùa heo",
-        "url": "project_detail.html"
-      },
-      {
-        "label": "Camera rửa xe 1",
-        "url": "contacts.html"
-      },
-      {
-        "label": "Camera rửa xe 2",
-        "url": "profile.html"
-      }
-    ]
-  }
-  
+  "main_menu": [
+    {
+      "permission": "view_dashboard",
+      "label": "dashboard",
+      "url": "/dashboard",
+      "icon": "fa fa-home"
+    },
+    {
+      "permission": "control_ats",
+      "label": "Quyền điều khiển ATS",
+      "url": "#",
+      "icon": "fa fa-bolt"
+    },
+    {
+      "permission": "view_dashboard_ats",
+      "label": "Điều khiển ATS",
+      "url": "/ats_dashboard",
+      "icon": "fa fa-home"
+    },
+    {
+      "permission": "uv",
+      "label": "Phòng UV",
+      "url": "/uv",
+      "icon": "fa fa-edit"
+    },
+    {
+      "permission": "manage_users",
+      "label": "Phân Quyền",
+      "url": "/manage_users",
+      "icon": "fa fa-edit"
+    },
+    {
+      "permission": "access_history",
+      "label": "Lịch sử đăng nhập",
+      "url": "/access_history",
+      "icon": "fa fa-edit"
+    },
+    {
+      "permission": "firmware_update",
+      "label": "Cập nhật Firmware",
+      "url": "/firmware/upload",
+      "icon": "fa fa-upload"
+    },
+    {
+      "permission": "edit_settings",
+      "label": "Cấu hình kết nối",
+      "url": "/connection_settings",
+      "icon": "fa fa-sliders"
+    }
+  ],
+  "camera_menu": [
+    {
+      "label": "Camera hủy xác",
+      "url": "/camera"
+    },
+    {
+      "label": "Camera bảo vệ",
+      "url": "projects.html"
+    },
+    {
+      "label": "Camera đường lùa heo",
+      "url": "project_detail.html"
+    },
+    {
+      "label": "Camera rửa xe 1",
+      "url": "contacts.html"
+    },
+    {
+      "label": "Camera rửa xe 2",
+      "url": "profile.html"
+    }
+  ]
+}

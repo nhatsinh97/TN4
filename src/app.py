@@ -188,6 +188,7 @@ device_requests = {}
 # Cơ sở dữ liệu người dùng lưu trong file JSON
 # Đường dẫn đến file JSON chứa thông tin server
 SERVER_FILE = str(BASE_DIR / 'database' / 'data_setup' / 'servers.json')
+CONNECTION_CONFIG_FILE = str(BASE_DIR / 'database' / 'data_setup' / 'connection_settings.json')
 DATA_FILE = str(BASE_DIR / 'database' / 'data_setup' / 'data_setup.json')
 # Đường dẫn tới file JSON lưu lịch sử số lượng request của các thiết bị
 REQUEST_HISTORY_FILE = str(BASE_DIR / 'database' / 'data_setup' / 'request_history.json')
@@ -700,6 +701,57 @@ def save_servers():
     with open(SERVER_FILE, 'w') as file:
         json.dump(servers, file)
     return '', 204
+
+@app.route('/connection_settings', methods=['GET', 'POST'])
+def connection_settings():
+    if not session.get('logged_in'):
+        return redirect(url_for('login'))
+
+    username = session.get('username')
+    users = load_users()
+    user = next((u for u in users['users'] if u['username'] == username), None)
+    permissions = get_user_permissions(username)
+
+    try:
+        with open(CONNECTION_CONFIG_FILE, 'r') as file:
+            connection_config = json.load(file)
+            if isinstance(connection_config, list):
+                connection_config = {}
+    except FileNotFoundError:
+        connection_config = {}
+
+    if request.method == 'POST':
+        config_type = request.form.get('config_type')
+        if config_type == 'mqtt':
+            connection_config['mqtt'] = {
+                "host": request.form.get('mqtt_host', '').strip(),
+                "port": request.form.get('mqtt_port', '').strip(),
+                "username": request.form.get('mqtt_username', '').strip(),
+                "password": request.form.get('mqtt_password', '').strip(),
+                "topic": request.form.get('mqtt_topic', '').strip(),
+            }
+            flash("Đã cập nhật cấu hình MQTT", "success")
+        elif config_type == 'modbus':
+            connection_config['modbus'] = {
+                "ip": request.form.get('modbus_ip', '').strip(),
+                "port": request.form.get('modbus_port', '').strip(),
+                "unit_id": request.form.get('modbus_unit', '').strip(),
+                "interval": request.form.get('modbus_interval', '').strip(),
+            }
+            flash("Đã cập nhật cấu hình Modbus TCP", "success")
+
+        with open(CONNECTION_CONFIG_FILE, 'w') as file:
+            json.dump(connection_config, file, indent=2)
+        return redirect(url_for('connection_settings'))
+
+    seo = {"title": "Cấu hình kết nối"}
+    return render_template(
+        'config/connections.html',
+        seo=seo,
+        permissions=permissions,
+        user=user,
+        connection_config=connection_config
+    )
 @app.route('/uv')
 def uv():
     return render_template('uv/uv.html')

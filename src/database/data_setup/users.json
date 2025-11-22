@@ -9,7 +9,8 @@
                 "view_dashboard_ats",
                 "uv",
                 "manage_users",
-                "access_history"
+                "access_history",
+                "edit_settings"
             ],
             "avatar": "/static/avatar/admin.jpg"
         },
@@ -38,6 +39,15 @@
                 "manage_users",
                 "access_history"
             ]
+        },
+        {
+            "username": "q",
+            "password": "7694f4a66316e53c8cdd9d9954bd611d",
+            "role": "user",
+            "permissions": [
+                "view_dashboard"
+            ],
+            "avatar": "/static/avatar/q.jpg"
         }
     ]
 }
