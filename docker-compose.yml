@@ -6,7 +6,7 @@ services:
     env_file:
       - ./src/.env
     ports:
-      - "58888:58888"
+      - "80:58888"
     depends_on:
       - mqtt
       - influxdb
