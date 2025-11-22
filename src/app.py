@@ -515,7 +515,7 @@ def login():
             log_access(username, ip)
 
 
-            return redirect(url_for('ats'))
+            return redirect(url_for('dashboard'))
         else:
             flash('Tên đăng nhập hoặc mật khẩu không đúng!')
     
@@ -659,7 +659,28 @@ from flask import flash, redirect, url_for
 
 @app.route('/register', methods=['POST'])
 def register():
-    # Xử lý logic tạo tài khoản
+    username = request.form.get('username', '').strip()
+    password = request.form.get('password', '').strip()
+
+    if not username or not password:
+        flash("Tên đăng nhập và mật khẩu là bắt buộc!", "error")
+        return redirect(url_for('login'))
+
+    users_data = load_users()
+    existing = next((u for u in users_data.get('users', []) if u['username'].lower() == username.lower()), None)
+    if existing:
+        flash("Tên đăng nhập đã tồn tại!", "error")
+        return redirect(url_for('login'))
+
+    new_user = {
+        "username": username,
+        "password": password,
+        "role": "user",
+        "permissions": ["view_dashboard"],
+        "avatar": "/static/avatar/default.jpg"
+    }
+    users_data.setdefault('users', []).append(new_user)
+    save_users(users_data)
     flash("Tạo tài khoản thành công!", "success")
     return redirect(url_for('login'))
 

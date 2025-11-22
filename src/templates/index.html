@@ -1,6 +1,6 @@
-{% extends 'base.html' %}
+﻿{% extends 'base.html' %}
 
-{% block content %}
+<!-- {% block content %} -->
 <link rel="stylesheet" href="{{ url_for('static', filename='index/trangchinh.css') }}">
 <script src="{{ url_for('static', filename='index/trangchinh.js') }}"></script>
 
@@ -9,7 +9,7 @@
     <div class="mb-3">
       <p class="text-muted mb-1">Chào {{ user.username }},</p>
       <h2 class="page-title">Tổng quan vận hành trại</h2>
-      <p class="page-subtitle">Theo dõi nhanh trạng thái thiết bị, yêu cầu xử lý và các hành động thường dùng.</p>
+      <p class="page-subtitle">Theo dõi nhanh trạng thái thiết bị, yêu cầu xử lý và các thao tác thường dùng.</p>
       <div class="status-badges">
         <span class="badge badge-soft-success">Đang online: {{ online_devices }}</span>
         <span class="badge badge-soft-warning">Đang offline: {{ offline_devices }}</span>
@@ -73,170 +73,181 @@
     </div>
   </div>
 
-  <div class="row g-3">
-    <div class="col-lg-8">
-      <div class="card shadow-sm h-100">
-        <div class="card-header d-flex justify-content-between align-items-center">
-          <div>
-            <h5 class="mb-0">Sức khỏe hệ thống</h5>
-            <small class="text-muted">Tổng hợp nhanh tình trạng thiết bị</small>
-          </div>
-          {% set availability = (online_devices / total_devices * 100) if total_devices > 0 else 0 %}
-          <span class="chip chip-success">{{ availability|round(0, 'floor') }}% hoạt động</span>
-        </div>
-        <div class="card-body">
-          <div class="progress-wrapper">
-            <div class="d-flex justify-content-between align-items-center mb-2">
-              <span class="text-muted">Tỉ lệ khả dụng</span>
-              <span class="fw-semibold">{{ availability|round(1) }}%</span>
+  <div class="row g-3 main-grid">
+    <div class="col-xxl-8 col-lg-7">
+      <div class="stacked-panels">
+        <section class="card panel-card">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <div>
+              <h5 class="mb-0">Tình trạng thiết bị</h5>
+              <small class="text-muted">Theo dõi tỷ lệ khả dụng và cảnh báo</small>
             </div>
-            <div class="progress">
-              <div class="progress-bar bg-success" role="progressbar" style="width: {{ availability }}%" aria-valuenow="{{ availability }}" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
+            {% set availability = (online_devices / total_devices * 100) if total_devices > 0 else 0 %}
+            <span class="chip chip-success">{{ availability|round(0, 'floor') }}% hoạt động</span>
           </div>
-          <div class="health-grid mt-3">
-            <div class="health-item">
-              <span class="dot online"></span>
-              <div>
-                <p class="mb-0">Kết nối ổn định</p>
-                <small class="text-muted">{{ online_devices }} thiết bị phản hồi trong 60s</small>
+          <div class="card-body">
+            <div class="health-progress">
+              <div class="summary">
+                <p class="label text-muted mb-1">Tỷ lệ khả dụng</p>
+                <h4 class="mb-2">{{ availability|round(1) }}%</h4>
+                <p class="small text-muted mb-0">Được tính dựa trên số thiết bị online hiện tại.</p>
+              </div>
+              <div class="progress-track">
+                <div class="progress">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: {{ availability }}%" aria-valuenow="{{ availability }}" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
               </div>
             </div>
-            <div class="health-item">
-              <span class="dot offline"></span>
-              <div>
-                <p class="mb-0">Mất tín hiệu</p>
-                <small class="text-muted">{{ offline_devices }} thiết bị cần kiểm tra</small>
+            <div class="health-grid mt-3">
+              <div class="health-item">
+                <span class="dot online"></span>
+                <div>
+                  <p class="mb-0">Kết nối ổn định</p>
+                  <small class="text-muted">{{ online_devices }} thiết bị phản hồi trong 60s</small>
+                </div>
               </div>
-            </div>
-            <div class="health-item">
-              <span class="dot neutral"></span>
-              <div>
-                <p class="mb-0">Yêu cầu mới</p>
-                <small class="text-muted">{{ totalRequests }} yêu cầu trong ngày</small>
+              <div class="health-item">
+                <span class="dot offline"></span>
+                <div>
+                  <p class="mb-0">Mất tín hiệu</p>
+                  <small class="text-muted">{{ offline_devices }} thiết bị cần kiểm tra</small>
+                </div>
+              </div>
+              <div class="health-item">
+                <span class="dot neutral"></span>
+                <div>
+                  <p class="mb-0">Yêu cầu mới</p>
+                  <small class="text-muted">{{ totalRequests }} yêu cầu trong ngày</small>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4">
-      <div class="card shadow-sm h-100">
-        <div class="card-header d-flex justify-content-between align-items-center">
-          <div>
-            <h5 class="mb-0">Hành động nhanh</h5>
-            <small class="text-muted">Truy cập các tính năng quan trọng</small>
-          </div>
-        </div>
-        <div class="card-body quick-actions">
-          <a class="quick-action" href="/ats_dashboard">
-            <div class="icon"><i class="fa fa-microchip"></i></div>
-            <div>
-              <p class="title">Dashboard ATS</p>
-              <small>Giám sát và điều khiển ATS theo thời gian thực</small>
-            </div>
-            <i class="fa fa-chevron-right chevron"></i>
-          </a>
-          {% if 'manage_users' in permissions %}
-          <a class="quick-action" href="/manage_users">
-            <div class="icon"><i class="fa fa-users"></i></div>
-            <div>
-              <p class="title">Quản lý người dùng</p>
-              <small>Phân quyền và cập nhật tài khoản</small>
-            </div>
-            <i class="fa fa-chevron-right chevron"></i>
-          </a>
-          {% endif %}
-          <a class="quick-action" href="/camera">
-            <div class="icon"><i class="fa fa-video-camera"></i></div>
-            <div>
-              <p class="title">Camera trại</p>
-              <small>Xem trực tiếp tình trạng chuồng trại</small>
-            </div>
-            <i class="fa fa-chevron-right chevron"></i>
-          </a>
-          <a class="quick-action" href="/check_iot">
-            <div class="icon"><i class="fa fa-server"></i></div>
-            <div>
-              <p class="title">Kiểm tra IoT</p>
-              <small>Đánh giá trạng thái server và gateway</small>
-            </div>
-            <i class="fa fa-chevron-right chevron"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+        </section>
 
-  <div class="row g-3 mt-1">
-    <div class="col-lg-6">
-      <div class="card shadow-sm h-100">
-        <div class="card-header d-flex justify-content-between align-items-center">
-          <h5 class="mb-0">Hoạt động gần đây</h5>
-          <span class="chip chip-info">Realtime</span>
-        </div>
-        <div class="card-body">
-          <ul class="activity-list">
-            <li>
-              <div class="icon success"><i class="fa fa-check"></i></div>
-              <div>
-                <p class="mb-0">Kết nối MQTT ổn định</p>
-                <small class="text-muted">Broker phản hồi bình thường</small>
-              </div>
-              <span class="time">vừa xong</span>
-            </li>
-            <li>
-              <div class="icon warning"><i class="fa fa-exclamation"></i></div>
-              <div>
-                <p class="mb-0">Có thiết bị mới offline</p>
-                <small class="text-muted">Kiểm tra nguồn điện và mạng</small>
-              </div>
-              <span class="time">5 phút trước</span>
-            </li>
-            <li>
-              <div class="icon info"><i class="fa fa-info"></i></div>
-              <div>
-                <p class="mb-0">Ghi nhận {{ totalRequests }} yêu cầu</p>
-                <small class="text-muted">Tự động đồng bộ về hệ thống</small>
-              </div>
-              <span class="time">hôm nay</span>
-            </li>
-          </ul>
-        </div>
+        <section class="card panel-card">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <div>
+              <h5 class="mb-0">Hoạt động gần đây</h5>
+              <small class="text-muted">Tự động cập nhật từ hệ thống</small>
+            </div>
+            <span class="chip chip-info">Realtime</span>
+          </div>
+          <div class="card-body">
+            <ul class="activity-list">
+              <li>
+                <div class="icon success"><i class="fa fa-check"></i></div>
+                <div>
+                  <p class="mb-0">Kết nối MQTT ổn định</p>
+                  <small class="text-muted">Broker phản hồi bình thường</small>
+                </div>
+                <span class="time">vừa xong</span>
+              </li>
+              <li>
+                <div class="icon warning"><i class="fa fa-exclamation"></i></div>
+                <div>
+                  <p class="mb-0">Có thiết bị mới offline</p>
+                  <small class="text-muted">Kiểm tra nguồn điện và mạng</small>
+                </div>
+                <span class="time">5 phút trước</span>
+              </li>
+              <li>
+                <div class="icon info"><i class="fa fa-info"></i></div>
+                <div>
+                  <p class="mb-0">Ghi nhận {{ totalRequests }} yêu cầu</p>
+                  <small class="text-muted">Từ cộng đồng vận hành</small>
+                </div>
+                <span class="time">hôm nay</span>
+              </li>
+            </ul>
+          </div>
+        </section>
       </div>
     </div>
-    <div class="col-lg-6">
-      <div class="card shadow-sm h-100">
-        <div class="card-header d-flex justify-content-between align-items-center">
-          <h5 class="mb-0">Nhật ký bảo trì</h5>
-          <span class="chip chip-neutral">Khuyến nghị</span>
-        </div>
-        <div class="card-body maintenance-list">
-          <div class="maintenance-item">
-            <div class="dot online"></div>
+
+    <div class="col-xxl-4 col-lg-5">
+      <div class="stacked-panels">
+        <section class="card panel-card">
+          <div class="card-header d-flex justify-content-between align-items-center">
             <div>
-              <p class="mb-0">Kiểm tra tủ ATS</p>
-              <small class="text-muted">Đảm bảo thông số Modbus được cập nhật liên tục</small>
+              <h5 class="mb-0">Lối tắt & tác vụ</h5>
+              <small class="text-muted">Bấm để mở nhanh các khu vực chính</small>
             </div>
-            <span class="tag">15 phút</span>
           </div>
-          <div class="maintenance-item">
-            <div class="dot accent"></div>
+          <div class="card-body">
+            <div class="quick-actions-grid">
+              <a class="quick-action" href="/ats_dashboard">
+                <div class="icon"><i class="fa fa-microchip"></i></div>
+                <div>
+                  <p class="title">Dashboard ATS</p>
+                  <small>Giám sát & điều khiển thời gian thực</small>
+                </div>
+                <i class="fa fa-chevron-right chevron"></i>
+              </a>
+              {% if 'manage_users' in permissions %}
+              <a class="quick-action" href="/manage_users">
+                <div class="icon"><i class="fa fa-users"></i></div>
+                <div>
+                  <p class="title">Quản lý người dùng</p>
+                  <small>Phân quyền và cập nhật tài khoản</small>
+                </div>
+                <i class="fa fa-chevron-right chevron"></i>
+              </a>
+              {% endif %}
+              <a class="quick-action" href="/camera">
+                <div class="icon"><i class="fa fa-video-camera"></i></div>
+                <div>
+                  <p class="title">Camera trại</p>
+                  <small>Xem trực tiếp khu vực chuồng trại</small>
+                </div>
+                <i class="fa fa-chevron-right chevron"></i>
+              </a>
+              <a class="quick-action" href="/check_iot">
+                <div class="icon"><i class="fa fa-server"></i></div>
+                <div>
+                  <p class="title">Kiểm tra IoT</p>
+                  <small>Đánh giá trạng thái server & gateway</small>
+                </div>
+                <i class="fa fa-chevron-right chevron"></i>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="card panel-card">
+          <div class="card-header d-flex justify-content-between align-items-center">
             <div>
-              <p class="mb-0">Vệ sinh cảm biến</p>
-              <small class="text-muted">Giảm nhiễu tín hiệu và tăng độ chính xác</small>
+              <h5 class="mb-0">Nhật ký bảo trì</h5>
+              <small class="text-muted">Các hạng mục ưu tiên trong ngày</small>
             </div>
-            <span class="tag">1 giờ</span>
+            <span class="chip chip-neutral">Khuyến nghị</span>
           </div>
-          <div class="maintenance-item">
-            <div class="dot offline"></div>
-            <div>
-              <p class="mb-0">Kiểm tra kết nối mạng</p>
-              <small class="text-muted">Dự phòng 4G cho các gateway xa</small>
+          <div class="card-body maintenance-list">
+            <div class="maintenance-item">
+              <div class="dot online"></div>
+              <div>
+                <p class="mb-0">Kiểm tra tủ ATS</p>
+                <small class="text-muted">Đảm bảo thang số Modbus được cập nhật liên tục</small>
+              </div>
+              <span class="tag">15 phút</span>
             </div>
-            <span class="tag">Hôm nay</span>
+            <div class="maintenance-item">
+              <div class="dot accent"></div>
+              <div>
+                <p class="mb-0">Vệ sinh cảm biến</p>
+                <small class="text-muted">Giảm nhiễu tín hiệu và tăng độ chính xác</small>
+              </div>
+              <span class="tag">1 giờ</span>
+            </div>
+            <div class="maintenance-item">
+              <div class="dot offline"></div>
+              <div>
+                <p class="mb-0">Kiểm tra kết nối mạng</p>
+                <small class="text-muted">Dự phòng 4G cho các gateway xa</small>
+              </div>
+              <span class="tag">Hôm nay</span>
+            </div>
           </div>
-        </div>
+        </section>
       </div>
     </div>
   </div>

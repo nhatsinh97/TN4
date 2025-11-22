@@ -1,59 +1,95 @@
-<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-  <div class="menu_section">
-    <h3>General</h3>
+<nav id="sidebar-menu" class="main_menu_side hidden-print main_menu enhanced-sidebar">
+  <section class="menu-section">
+    <p class="menu-heading">Tổng quan</p>
     {% if menu_items %}
-    <ul class="nav side-menu">
+    <ul class="nav side-menu primary-menu">
       {% for item in menu_items %}
       {% if item.permission in permissions %}
-      <li class="{% if request.path == item.url %}active{% endif %}">
-        <a href="{{ item.url }}" class="ajax-link"><i class="{{ item.icon }}"></i> {{ item.label }}</a>
+      {% set is_active = request.path.startswith(item.url) %}
+      <li class="menu-item {% if is_active %}active{% endif %}">
+        <a href="{{ item.url }}" class="ajax-link">
+          <span class="icon-wrapper"><i class="{{ item.icon }}"></i></span>
+          <span class="label">{{ item.label }}</span>
+          {% if is_active %}
+          <span class="active-indicator"></span>
+          {% endif %}
+        </a>
       </li>
       {% endif %}
       {% endfor %}
     </ul>
     {% else %}
-    <p>Không có mục menu nào để hiển thị.</p>
+    <p class="empty-state">Không có mục menu nào để hiển thị.</p>
     {% endif %}
-  </div>
+  </section>
 
   {% if 'manage_users' in permissions or 'edit_settings' in permissions or 'access_history' in permissions %}
-  <div class="menu_section">
-    <h3>Quản lý</h3>
-    <ul class="nav side-menu">
+  <section class="menu-section">
+    <p class="menu-heading">Quản lý</p>
+    <ul class="nav side-menu secondary-menu">
       {% if 'manage_users' in permissions or 'access_history' in permissions %}
-      <li>
-        <a><i class="fa fa-users"></i> Quản lý người dùng <span class="fa fa-chevron-down"></span></a>
+      <li class="menu-item has-children">
+        <a>
+          <span class="icon-wrapper"><i class="fa fa-users"></i></span>
+          <span class="label">Người dùng</span>
+          <span class="fa fa-chevron-down caret"></span>
+        </a>
         <ul class="nav child_menu">
           {% if 'manage_users' in permissions %}
-          <li><a href="/manage_users" class="ajax-link"><i class="fa fa-users"></i> Phân quyền</a></li>
+          <li>
+            <a href="/manage_users" class="ajax-link">
+              <i class="fa fa-users"></i>
+              Phân quyền
+            </a>
+          </li>
           {% endif %}
           {% if 'access_history' in permissions %}
-          <li><a href="/access_history" class="ajax-link">Lịch sử đăng nhập</a></li>
+          <li>
+            <a href="/access_history" class="ajax-link">
+              <i class="fa fa-history"></i>
+              Lịch sử đăng nhập
+            </a>
+          </li>
           {% endif %}
         </ul>
       </li>
       {% endif %}
       {% if 'edit_settings' in permissions %}
-      <li><a href="/settings" class="ajax-link"><i class="fa fa-sliders"></i> Cài đặt</a></li>
+      <li class="menu-item">
+        <a href="/settings" class="ajax-link">
+          <span class="icon-wrapper"><i class="fa fa-sliders"></i></span>
+          <span class="label">Cài đặt hệ thống</span>
+        </a>
+      </li>
       {% endif %}
     </ul>
-  </div>
+  </section>
   {% endif %}
 
-  <div class="menu_section">
-    <h3>Xem Camera trại</h3>
+  <section class="menu-section">
+    <p class="menu-heading">Xem camera trại</p>
     {% if camera_items %}
-    <ul class="nav side-menu">
-      <li><a><i class="fa fa-video-camera"></i> Farm TN4 <span class="fa fa-chevron-down"></span></a>
+    <ul class="nav side-menu tertiary-menu">
+      <li class="menu-item has-children">
+        <a>
+          <span class="icon-wrapper"><i class="fa fa-video-camera"></i></span>
+          <span class="label">Farm TN4</span>
+          <span class="fa fa-chevron-down caret"></span>
+        </a>
         <ul class="nav child_menu">
           {% for cam in camera_items %}
-          <li><a href="{{ cam.url }}" class="ajax-link">{{ cam.label }}</a></li>
+          <li>
+            <a href="{{ cam.url }}" class="ajax-link">
+              <i class="fa fa-circle"></i>
+              {{ cam.label }}
+            </a>
+          </li>
           {% endfor %}
         </ul>
       </li>
     </ul>
     {% else %}
-    <p>Không có camera nào để hiển thị.</p>
+    <p class="empty-state">Không có camera nào để hiển thị.</p>
     {% endif %}
-  </div>
-</div>
+  </section>
+</nav>

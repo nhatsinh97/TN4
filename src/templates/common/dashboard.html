@@ -349,6 +349,80 @@
       border-bottom: none;
     }
 
+    .user-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .user-actions button {
+      flex: 1;
+      min-width: 120px;
+      border: none;
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: filter 0.15s ease;
+    }
+
+    .user-actions .btn-edit {
+      background: #e0e7ff;
+      color: #312e81;
+    }
+
+    .user-actions .btn-avatar {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .user-actions button:hover {
+      filter: brightness(1.05);
+    }
+
+    .user-form {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .user-form.open {
+      display: flex;
+    }
+
+    .user-form input {
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 6px 10px;
+      font-size: 14px;
+    }
+
+    .user-form .action-row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .user-form .action-row button {
+      flex: 1;
+      border: none;
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .user-form .btn-save {
+      background: #4338ca;
+      color: #fff;
+    }
+
+    .user-form .btn-cancel {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
     .sidebar-menu-list {
       margin-top: 18px;
       border-top: 1px solid #e2e8f0;
@@ -626,11 +700,24 @@
     <button class="close-btn" id="closeUserInfo">✖</button>
     <div class="header">User Information</div>
     <ul>
-      <li><strong>Name:</strong> John Doe</li>
-      <li><strong>Email:</strong> john.doe@example.com</li>
-      <li><strong>Role:</strong> Admin fake</li>
+      <li><strong>Name:</strong> <span id="profileName">{{ user.username if user else 'User' }}</span></li>
+      <li><strong>Email:</strong> <span id="profileEmail">{{ user.email if user and user.email else 'unknown@domain.com' }}</span></li>
+      <li><strong>Role:</strong> <span id="profileRole">{{ permissions|join(', ') if permissions else 'User' }}</span></li>
       <li><a href="/logout" class="text-danger"><strong>Logout</strong></a></li>
     </ul>
+    <div class="user-actions">
+      <button class="btn-edit" id="editProfileBtn">Cập nhật thông tin</button>
+      <label class="btn-avatar" for="avatarUpload">Đổi ảnh</label>
+      <input type="file" id="avatarUpload" accept="image/*" style="display:none;">
+    </div>
+    <form id="userForm" class="user-form">
+      <input type="text" id="formName" placeholder="Tên hiển thị">
+      <input type="email" id="formEmail" placeholder="Email">
+      <div class="action-row">
+        <button type="button" class="btn-save" id="saveProfileBtn">Lưu</button>
+        <button type="button" class="btn-cancel" id="cancelProfileBtn">Hủy</button>
+      </div>
+    </form>
   </div>
 
   <!-- Overview -->
@@ -864,15 +951,54 @@
       const userAvatar = document.getElementById("userAvatar");
       const userInfoPanel = document.getElementById("userInfoPanel");
       const closeUserInfo = document.getElementById("closeUserInfo");
+      const editBtn = document.getElementById("editProfileBtn");
+      const userForm = document.getElementById("userForm");
+      const saveBtn = document.getElementById("saveProfileBtn");
+      const cancelBtn = document.getElementById("cancelProfileBtn");
+      const avatarUpload = document.getElementById("avatarUpload");
 
-      // Hiển thị bảng thông tin người dùng khi nhấn vào avatar
+      const profileName = document.getElementById("profileName");
+      const profileEmail = document.getElementById("profileEmail");
+
+      const formName = document.getElementById("formName");
+      const formEmail = document.getElementById("formEmail");
+
+      const openForm = () => {
+        formName.value = profileName.textContent || "";
+        formEmail.value = profileEmail.textContent || "";
+        userForm.classList.add("open");
+      };
+
+      const closeForm = () => {
+        userForm.classList.remove("open");
+      };
+
       userAvatar.addEventListener("click", () => {
         userInfoPanel.classList.add("open");
       });
 
-      // Đóng bảng thông tin người dùng khi nhấn vào nút đóng
       closeUserInfo.addEventListener("click", () => {
         userInfoPanel.classList.remove("open");
+        closeForm();
+      });
+
+      editBtn.addEventListener("click", openForm);
+      cancelBtn.addEventListener("click", closeForm);
+
+      saveBtn.addEventListener("click", () => {
+        profileName.textContent = formName.value || profileName.textContent;
+        profileEmail.textContent = formEmail.value || profileEmail.textContent;
+        closeForm();
+      });
+
+      avatarUpload.addEventListener("change", (event) => {
+        const file = event.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = () => {
+          userAvatar.style.backgroundImage = `url('${reader.result}')`;
+        };
+        reader.readAsDataURL(file);
       });
     });
 

@@ -34,76 +34,58 @@
   <link href="{{ url_for('static', filename='dashboard/char.css') }}" rel="stylesheet">
   <link href="{{ url_for('static', filename='css/toolbar.css') }}" rel="stylesheet">
   <link href="{{ url_for('static', filename='css/ui-refresh.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/app-shell.css') }}" rel="stylesheet">
   <!-- {% block extra_css %}{% endblock %} -->
 
 </head>
 
-<body class="nav-md modern-theme">
-  <div class="container body">
-    <div class="main_container">
-      <div class="col-md-3 left_col">
-        <div class="left_col scroll-view">
-          <div class="navbar nav_title" style="border: 0;">
-            <a href="/Home" class="site_title">
-              <!-- <img src="{{ user.avatar }}" alt="Logo" style="height: 42px; margin-right: 1px;"> -->
-              <img src="{{ url_for('static', filename='/images/logotn4.png') }}" alt="Logo" style="height: 42px; margin-right: 1px;">
-              <span>Project - SINH</span>
-            </a>
-          </div>
+<body class="app-shell">
+  <div class="app-container">
+    <aside class="app-sidebar">
+      <a href="/Home" class="app-brand">
+        <img src="{{ url_for('static', filename='/images/logotn4.png') }}" alt="Logo">
+        <span>TN4 IoT Console</span>
+      </a>
 
-          <div class="clearfix"></div>
-
-          <!-- menu profile quick info -->
-          {% include 'common/profile.html' %}
-          <!-- /menu profile quick info -->
-
-          <br />
-
-          <!-- sidebar menu -->
-          {% include 'common/sidebar.html' %}
-          <!-- /sidebar menu -->
-
-          <!-- /menu footer buttons -->
-          {% include 'common/menu_footer_buttons.html' %}
-          <!-- /menu footer buttons -->
-        </div>
+      <div class="app-profile">
+        {% include 'common/profile.html' %}
       </div>
 
-      <!-- top navigation -->
+      {% include 'common/sidebar.html' %}
+
+      {% include 'common/menu_footer_buttons.html' %}
+    </aside>
+
+    <div class="app-main-layout">
+
       {% include 'common/header.html' %}
-      <!-- /top navigation -->
 
-      <!-- page content -->
-      <div class="right_col" role="main" id="content">
+      <main class="app-main" role="main">
+        <div id="content">
 
-        {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-        <div class="container mt-3">
-          {% for category, message in messages %}
-          <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
-            {{ message }}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Đóng">
-              <span aria-hidden="true">&times;</span>
-            </button>
+          {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+          <div class="alerts-stack">
+            {% for category, message in messages %}
+            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+              {{ message }}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Đóng">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            {% endfor %}
           </div>
-          {% endfor %}
+          {% endif %}
+          {% endwith %}
+
+          {% block content %}{% endblock %}
         </div>
-        {% endif %}
-        {% endwith %}
+      </main>
 
-        {% block content %}{% endblock %}
-      </div>
-
-      <!-- /page content -->
-
-      <!-- footer content -->
-      <footer>
-        <div class="pull-right">
-          Bản quyền thuộc về <a href="https://locohost">Nguyễn Nhất Sinh</a>
-        </div>
-        <div class="clearfix"></div>
+      <footer class="app-footer">
+        <div>© TN4 IoT Platform</div>
+        <div>Bản quyền thuộc về <a href="https://locohost">Nguyễn Nhất Sinh</a></div>
       </footer>
-      <!-- /footer content -->
     </div>
   </div>
 

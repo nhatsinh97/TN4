@@ -23,6 +23,10 @@ body {
     padding: 16px;
 }
 
+.main-grid {
+    margin-top: 4px;
+}
+
 .page-header {
     background: var(--panel);
     border: 1px solid var(--border);
@@ -82,6 +86,17 @@ body {
     border: 1px solid var(--border);
     height: 100%;
     transition: border-color 0.12s ease, transform 0.12s ease;
+}
+
+.stacked-panels {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+}
+
+.panel-card {
+    height: 100%;
 }
 
 .metrics-row .metric-card:hover {
@@ -165,6 +180,21 @@ body {
 .chip-info { color: var(--neutral); }
 .chip-neutral { color: var(--accent); }
 
+.health-progress {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.health-progress .summary {
+    flex: 1 1 180px;
+}
+
+.health-progress .progress-track {
+    flex: 1 1 220px;
+}
+
 .progress-wrapper {
     background: var(--panel);
     border: 1px solid var(--border);
@@ -206,9 +236,9 @@ body {
 .dot.neutral { background: var(--neutral); }
 .dot.accent { background: var(--accent); }
 
-.quick-actions {
-    display: flex;
-    flex-direction: column;
+.quick-actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 12px;
 }
 
@@ -318,6 +348,11 @@ body {
 @media (max-width: 991px) {
     .metric-card {
         flex-direction: row;
+    }
+
+    .health-progress {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
 
